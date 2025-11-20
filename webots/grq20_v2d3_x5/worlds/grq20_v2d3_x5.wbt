@@ -2,60 +2,31 @@
 
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/BrushedAluminium.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/Floor.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/solids/protos/SolidBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/Grass.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/chairs/protos/Chair.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/street_furniture/protos/TrashBin.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/fruits/protos/Apple.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/fruits/protos/Orange.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/kitchen/breakfast/protos/CerealBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/kitchen/breakfast/protos/BiscuitBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/drinks/protos/BeerBottle.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/hospital/protos/MedicineBottle.proto"
 
 WorldInfo {
   basicTimeStep 2
 }
 Viewpoint {
-  orientation 0.23191091936950645 0.12818511000709387 -0.9642540656122014 2.1622218938414925
-  position 1.8730852032549323 3.5486661247619455 2.3075765194615556
+  orientation -0.1792033844595288 0.890801209338815 0.4175635908921599 0.8979363164753714
+  position -8.827702310011647 -5.137704353430689 7.91315280604935
 }
 TexturedBackground {
 }
 TexturedBackgroundLight {
 }
-Solid {
-  children [
-    Floor {
-    }
-    SolidBox {
-      translation 5.005 0 0.05
-      name "wall"
-      size 0.01 10 0.1
-      appearance BrushedAluminium {
-      }
-    }
-    SolidBox {
-      translation -5.005 0 0.05
-      name "wall#2"
-      size 0.01 10 0.1
-      appearance BrushedAluminium {
-      }
-    }
-    SolidBox {
-      translation 0 5.005 0.05
-      name "wall#3"
-      size 10.02 0.01 0.1
-      appearance BrushedAluminium {
-      }
-    }
-    SolidBox {
-      translation 0 -5.005 0.05
-      name "wall#4"
-      size 10.02 0.01 0.1
-      appearance BrushedAluminium {
-      }
-    }
-  ]
-  name "rectangle arena"
-  model "rectangle arena"
-}
-Robot {
-  translation 0.0008683442228777866 -0.0002728399057587193 0.3677833277595379
-  rotation 0.2991695417860289 0.9541997496344319 0.0006504345663648261 0.0023752137742080338
+DEF Grq20V2d3X5 Robot {
+  translation -3.44027 -3.99976 0.39631
+  rotation 0.00013369199860469803 5.477069942837518e-05 0.9999999895633099 1.57071
   children [
     Shape {
       appearance DEF base_link_material PBRAppearance {
@@ -71,7 +42,7 @@ Robot {
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        position 1.308799859171947e-05
+        position 2.632845807564315e-05
         anchor 0.2987 0.06 0
       }
       device [
@@ -88,7 +59,7 @@ Robot {
       ]
       endPoint Solid {
         translation 0.2987 0.06 0
-        rotation 1 0 0 1.3088004675305432e-05
+        rotation 1 0 0 2.6328458546773495e-05
         children [
           Shape {
             appearance DEF FL_hip_material PBRAppearance {
@@ -104,7 +75,7 @@ Robot {
           }
           HingeJoint {
             jointParameters HingeJointParameters {
-              position 0.8399986661429388
+              position 0.839999118342544
               axis 0 1 0
               anchor 0 0.1341 0
             }
@@ -122,7 +93,7 @@ Robot {
             ]
             endPoint Solid {
               translation 0 0.1341 0
-              rotation 0 0.9999999999999999 0 0.8399986661429386
+              rotation 0 1 0 0.8399991183425439
               children [
                 Shape {
                   appearance DEF FL_thigh_material PBRAppearance {
@@ -138,7 +109,7 @@ Robot {
                 }
                 HingeJoint {
                   jointParameters HingeJointParameters {
-                    position -1.6100222034481237
+                    position -1.6100445581272262
                     axis 0 1 0
                     anchor 0 0 -0.26
                   }
@@ -156,7 +127,7 @@ Robot {
                   ]
                   endPoint Solid {
                     translation 0 0 -0.26
-                    rotation 0 -1 0 1.6100222034481237
+                    rotation 0 -1 0 1.6100445581272262
                     children [
                       Shape {
                         appearance DEF FL_calf_material PBRAppearance {
@@ -301,7 +272,7 @@ Robot {
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        position 1.1762725871449206e-05
+        position 2.3550496206812056e-05
         anchor -0.2987 0.06 0
       }
       device [
@@ -318,7 +289,7 @@ Robot {
       ]
       endPoint Solid {
         translation -0.2987 0.06 0
-        rotation 1 0 0 1.1762708973689013e-05
+        rotation 1 0 0 2.3550492112128164e-05
         children [
           Shape {
             appearance DEF RL_hip_material PBRAppearance {
@@ -334,7 +305,7 @@ Robot {
           }
           HingeJoint {
             jointParameters HingeJointParameters {
-              position 0.8400013783295616
+              position 0.8400016141837824
               axis 0 1 0
               anchor 0 0.1341 0
             }
@@ -352,7 +323,7 @@ Robot {
             ]
             endPoint Solid {
               translation 0 0.1341 0
-              rotation 0 1 0 0.8400013783295613
+              rotation 0 1 0 0.8400016141837823
               children [
                 Shape {
                   appearance DEF RL_thigh_material PBRAppearance {
@@ -364,7 +335,7 @@ Robot {
                 }
                 HingeJoint {
                   jointParameters HingeJointParameters {
-                    position -1.6100204516638372
+                    position -1.6100408994710087
                     axis 0 1 0
                     anchor 0 0 -0.26
                   }
@@ -382,7 +353,7 @@ Robot {
                   ]
                   endPoint Solid {
                     translation 0 0 -0.26
-                    rotation 0 -1 0 1.610020451663837
+                    rotation 0 -1 0 1.610040899471009
                     children [
                       Shape {
                         appearance DEF RL_calf_material PBRAppearance {
@@ -523,7 +494,7 @@ Robot {
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        position -1.3608479112470206e-05
+        position -2.723636747514746e-05
         anchor 0.2987 -0.06 0
       }
       device [
@@ -540,7 +511,7 @@ Robot {
       ]
       endPoint Solid {
         translation 0.2987 -0.06 0
-        rotation -0.9999999999999999 0 0 1.3608472712935453e-05
+        rotation -0.9999999999999999 0 0 2.7236371616302063e-05
         children [
           Transform {
             scale 1 -1 1
@@ -562,7 +533,7 @@ Robot {
           }
           HingeJoint {
             jointParameters HingeJointParameters {
-              position 0.8400012168061004
+              position 0.8400017037363011
               axis 0 1 0
               anchor 0 -0.1341 0
             }
@@ -580,7 +551,7 @@ Robot {
             ]
             endPoint Solid {
               translation 0 -0.1341 0
-              rotation 0 1 0 0.8400012168061004
+              rotation 0 1 0 0.8400017037363012
               children [
                 Transform {
                   scale 1 -1 1
@@ -602,7 +573,7 @@ Robot {
                 }
                 HingeJoint {
                   jointParameters HingeJointParameters {
-                    position -1.6100229361313694
+                    position -1.6100458252532375
                     axis 0 1 0
                     anchor 0 0 -0.26
                   }
@@ -620,7 +591,7 @@ Robot {
                   ]
                   endPoint Solid {
                     translation 0 0 -0.26
-                    rotation 0 -1 0 1.6100229361313694
+                    rotation 0 -1 0 1.6100458252532375
                     children [
                       Transform {
                         scale 1 -1 1
@@ -771,7 +742,7 @@ Robot {
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        position -1.1988835092680006e-05
+        position -2.4165622630865946e-05
         anchor -0.2987 -0.06 0
       }
       device [
@@ -788,7 +759,7 @@ Robot {
       ]
       endPoint Solid {
         translation -0.2987 -0.06 0
-        rotation -1 0 0 1.1988833859206752e-05
+        rotation -0.9999999999999999 0 0 2.4165622503050426e-05
         children [
           Transform {
             scale 1 -1 1
@@ -810,7 +781,7 @@ Robot {
           }
           HingeJoint {
             jointParameters HingeJointParameters {
-              position 0.8400014164989072
+              position 0.84000168515963
               axis 0 1 0
               anchor 0 -0.1341 0
             }
@@ -828,7 +799,7 @@ Robot {
             ]
             endPoint Solid {
               translation 0 -0.1341 0
-              rotation 0 0.9999999999999999 0 0.8400014164989071
+              rotation 0 1 0 0.8400016851596298
               children [
                 Transform {
                   scale 1 -1 1
@@ -845,7 +816,7 @@ Robot {
                 }
                 HingeJoint {
                   jointParameters HingeJointParameters {
-                    position -1.6100207490346292
+                    position -1.6100417356183143
                     axis 0 1 0
                     anchor 0 0 -0.26
                   }
@@ -863,7 +834,7 @@ Robot {
                   ]
                   endPoint Solid {
                     translation 0 0 -0.26
-                    rotation 0 -1 0 1.6100207490346292
+                    rotation 0 -0.9999999999999999 0 1.6100417356183143
                     children [
                       Transform {
                         scale 1 -1 1
@@ -1024,7 +995,7 @@ Robot {
         }
         HingeJoint {
           jointParameters HingeJointParameters {
-            position 2.604541194172087e-07
+            position 2.4393837900579164e-07
             axis 0 0 1
             anchor 0 0 0.0605
           }
@@ -1041,8 +1012,8 @@ Robot {
             }
           ]
           endPoint Solid {
-            translation 0 0 0.0605
-            rotation 0 0 1 2.598106231415675e-07
+            translation 2.89512306179239e-07 -2.18397648126588e-09 0.048155667943072245
+            rotation -0.012598951169210755 -0.9999205996272115 -0.0002467196663010881 8.170833220990815e-05
             children [
               Shape {
                 appearance DEF link1_material PBRAppearance {
@@ -1058,7 +1029,7 @@ Robot {
               }
               HingeJoint {
                 jointParameters HingeJointParameters {
-                  position -7.446178376113721e-07
+                  position -1.491813345578169e-06
                   axis 0 1 0
                   anchor 0.02 0 0.04
                 }
@@ -1076,7 +1047,7 @@ Robot {
                 ]
                 endPoint Solid {
                   translation 0.02 0 0.04
-                  rotation 0 -1 0 7.444617746351282e-07
+                  rotation 0 -0.9999999999999999 0 1.4919031871299883e-06
                   children [
                     Shape {
                       appearance DEF link2_material PBRAppearance {
@@ -1092,7 +1063,7 @@ Robot {
                     }
                     HingeJoint {
                       jointParameters HingeJointParameters {
-                        position -5.494592543620058e-06
+                        position -1.098660149878583e-05
                         axis 0 -1 -7e-06
                         anchor -0.264 0 0
                       }
@@ -1100,7 +1071,7 @@ Robot {
                         RotationalMotor {
                           name "joint3"
                           maxVelocity 1000
-                          minPosition -5.494592543620058e-06
+                          minPosition -1.098660149878583e-05
                           maxPosition 3.14
                           maxTorque 100
                         }
@@ -1110,7 +1081,7 @@ Robot {
                       ]
                       endPoint Solid {
                         translation -0.264 0 0
-                        rotation 0.9999999999962262 9.13969121634909e-12 -2.747296271809904e-06 3.1416
+                        rotation 0.999999999984912 1.8275066785876427e-11 -5.49330074936543e-06 3.1416
                         children [
                           Shape {
                             appearance DEF link3_material PBRAppearance {
@@ -1126,7 +1097,7 @@ Robot {
                           }
                           HingeJoint {
                             jointParameters HingeJointParameters {
-                              position -1.3223568213760473e-06
+                              position -2.644221717140738e-06
                               axis 0 1 0
                               anchor 0.245 0 -0.056
                             }
@@ -1144,7 +1115,7 @@ Robot {
                             ]
                             endPoint Solid {
                               translation 0.245 0 -0.056
-                              rotation 0 -0.9999999999999999 0 1.3224308331211922e-06
+                              rotation 0 -1 0 2.6441899553323326e-06
                               children [
                                 Shape {
                                   appearance DEF link4_material PBRAppearance {
@@ -1160,7 +1131,7 @@ Robot {
                                 }
                                 HingeJoint {
                                   jointParameters HingeJointParameters {
-                                    position 7.680723128117333e-07
+                                    position 8.155045084720863e-07
                                     axis 0 0 1
                                     anchor 0.06775 0.0005 -0.0865
                                   }
@@ -1178,7 +1149,7 @@ Robot {
                                   ]
                                   endPoint Solid {
                                     translation 0.06775 0.0005 -0.0865
-                                    rotation 0 0 0.9999999999999999 7.679521278575185e-07
+                                    rotation 0 0 1 8.15625916922337e-07
                                     children [
                                       Shape {
                                         appearance DEF link5_material PBRAppearance {
@@ -1194,7 +1165,7 @@ Robot {
                                       }
                                       HingeJoint {
                                         jointParameters HingeJointParameters {
-                                          position 4.7094022778392543e-07
+                                          position 4.419401312375422e-07
                                           anchor 0.02895 0 0.0865
                                         }
                                         device [
@@ -1211,7 +1182,7 @@ Robot {
                                         ]
                                         endPoint Solid {
                                           translation 0.02895 0 0.0865
-                                          rotation -1 0 0 3.1415995290597722
+                                          rotation -1 0 0 3.141599558059869
                                           children [
                                             Shape {
                                               appearance DEF link6_material PBRAppearance {
@@ -1227,14 +1198,14 @@ Robot {
                                             }
                                             SliderJoint {
                                               jointParameters JointParameters {
-                                                position -4.5464458567780565e-10
+                                                position -5.050564692333658e-10
                                                 axis 0 1 0
                                               }
                                               device [
                                                 LinearMotor {
                                                   name "joint7"
                                                   maxVelocity 1000
-                                                  minPosition -4.5464458567780565e-10
+                                                  minPosition -5.050564692333658e-10
                                                   maxPosition 0.044
                                                   maxForce 100
                                                 }
@@ -1243,7 +1214,7 @@ Robot {
                                                 }
                                               ]
                                               endPoint Solid {
-                                                translation 0.08657 0.024895999545355416 -0.000244
+                                                translation 0.08657 0.024895999494943533 -0.000244
                                                 children [
                                                   Shape {
                                                     appearance DEF link7_material PBRAppearance {
@@ -1293,7 +1264,7 @@ Robot {
                                             }
                                             SliderJoint {
                                               jointParameters JointParameters {
-                                                position 4.5472714288588713e-10
+                                                position 5.051413120144115e-10
                                                 axis 0 -1 0
                                               }
                                               device [
@@ -1308,7 +1279,7 @@ Robot {
                                                 }
                                               ]
                                               endPoint Solid {
-                                                translation 0.08657 -0.02490000045472714 -0.000244
+                                                translation 0.08657 -0.02490000050514131 -0.000244
                                                 children [
                                                   Shape {
                                                     appearance DEF link8_material PBRAppearance {
@@ -1552,7 +1523,7 @@ Robot {
       }
     }
   ]
-  name "Grq20V2d3Default"
+  name "Grq20V2d3X5"
   boundingObject Group {
     children [
       Pose {
@@ -1597,16 +1568,1733 @@ Robot {
       }
     ]
   }
-  physics Physics {
-    density -1
-    mass 25.267696
-    centerOfMass [
-      -0.001678 -0.004565 0.003165
-    ]
-    inertiaMatrix [
-      0.166907 0.8444934 0.9116615
-      -0.0002328 0.0044427 -0.0002798
-    ]
-  }
+  controller "<extern>"
   supervisor TRUE
+}
+RectangleArena {
+  floorSize 10 10
+  floorAppearance Grass {
+  }
+  wallHeight 0.8
+  wallAppearance Appearance {
+    material Material {
+      diffuseColor 0.568627 0.254902 0.67451
+    }
+  }
+}
+BiscuitBox {
+  translation 1.49 -1.3 0.5
+  rotation 0 0 1 -1.5707953071795862
+}
+CerealBox {
+  translation 1.21 -1.54 0.5
+  size 0.06 0.1 0.1
+}
+Orange {
+  translation 1.39 1.34 0.55
+}
+Apple {
+  translation 1.11 1.67 0.54
+}
+TrashBin {
+  translation 4.36 0.569998 2.67501e-06
+  rotation 1.125079999996903e-14 -2.346409999993541e-06 0.9999999999972473 3.14159
+}
+TrashBin {
+  translation 4.36 1.53 7.18034e-06
+  rotation 1.125079999996903e-14 -2.346409999993541e-06 0.9999999999972473 3.14159
+  name "trash bin(1)"
+  binColor 0.603922 0.6 0.588235
+}
+TrashBin {
+  translation 4.36 -1.26 -5.91303e-06
+  rotation 1.125079999996903e-14 -2.346409999993541e-06 0.9999999999972473 3.14159
+  name "trash bin(2)"
+  binColor 0.878431 0.105882 0.141176
+}
+TrashBin {
+  translation 4.36 -0.320002 -1.50161e-06
+  rotation 1.125079999996903e-14 -2.346409999993541e-06 0.9999999999972473 3.14159
+  name "trash bin(3)"
+  binColor 0.109804 0.443137 0.847059
+}
+Solid {
+  translation 1.41 1.61 0
+  children [
+    Solid {
+      translation 0 0 0.475
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.141176 0.121569 0.192157
+            baseColorMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_base_color.jpg"
+              ]
+              filtering 5
+            }
+            roughnessMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_roughness.jpg"
+              ]
+              filtering 5
+            }
+            metalness 0
+            normalMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_normal.jpg"
+              ]
+              filtering 5
+            }
+            normalMapFactor 0.5
+            occlusionMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_occlusion.jpg"
+              ]
+              filtering 5
+            }
+            textureTransform TextureTransform {
+              scale 10 10
+            }
+          }
+          geometry IndexedFaceSet {
+            coord Coordinate {
+              point [
+                -0.4 0.4 0.025
+                0.4 0.4 0.025
+                0.4 0.4 -0.025
+                -0.4 0.4 -0.025
+                -0.4 -0.4 -0.025
+                0.4 -0.4 -0.025
+                0.4 -0.4 0.025
+                -0.4 -0.4 0.025
+                -0.4 -0.4 0.025
+                0.4 -0.4 0.025
+                0.4 0.4 0.025
+                -0.4 0.4 0.025
+                0.4 -0.4 -0.025
+                -0.4 -0.4 -0.025
+                -0.4 0.4 -0.025
+                0.4 0.4 -0.025
+                -0.4 -0.4 -0.025
+                -0.4 -0.4 0.025
+                -0.4 0.4 0.025
+                -0.4 0.4 -0.025
+                0.4 -0.4 0.025
+                0.4 -0.4 -0.025
+                0.4 0.4 -0.025
+                0.4 0.4 0.025
+              ]
+            }
+            texCoord TextureCoordinate {
+              point [
+                1 0.0625
+                0 0.0625
+                0 0
+                1 0
+                0 0
+                1 0
+                1 0.0625
+                0 0.0625
+                0 1
+                0 0
+                1 0
+                1 1
+                0 1
+                0 0
+                1 0
+                1 1
+                1 0
+                1 0.0625
+                0 0.0625
+                0 0
+                0 0.0625
+                0 0
+                1 0
+                1 0.0625
+              ]
+            }
+            coordIndex [
+              0, 1, 2, 3, -1, 4, 5, 6, 7, -1, 8, 9, 10, 11, -1, 12, 13, 14, 15, -1, 16, 17, 18, 19, -1, 20, 21, 22, 23, -1
+            ]
+            creaseAngle 1.5
+          }
+        }
+      ]
+      name "main frame"
+      model "box"
+      boundingObject Box {
+        size 0.8 0.8 0.05
+      }
+    }
+    Solid {
+      translation 0.375 0.375 0.225
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.141176 0.121569 0.192157
+            baseColorMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_base_color.jpg"
+              ]
+              filtering 5
+            }
+            roughnessMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_roughness.jpg"
+              ]
+              filtering 5
+            }
+            metalness 0
+            normalMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_normal.jpg"
+              ]
+              filtering 5
+            }
+            normalMapFactor 0.5
+            occlusionMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_occlusion.jpg"
+              ]
+              filtering 5
+            }
+            textureTransform TextureTransform {
+              scale 4 5
+            }
+          }
+          geometry IndexedFaceSet {
+            coord Coordinate {
+              point [
+                -0.025 0.025 0.225
+                0.025 0.025 0.225
+                0.025 0.025 -0.225
+                -0.025 0.025 -0.225
+                -0.025 -0.025 -0.225
+                0.025 -0.025 -0.225
+                0.025 -0.025 0.225
+                -0.025 -0.025 0.225
+                -0.025 -0.025 0.225
+                0.025 -0.025 0.225
+                0.025 0.025 0.225
+                -0.025 0.025 0.225
+                0.025 -0.025 -0.225
+                -0.025 -0.025 -0.225
+                -0.025 0.025 -0.225
+                0.025 0.025 -0.225
+                -0.025 -0.025 -0.225
+                -0.025 -0.025 0.225
+                -0.025 0.025 0.225
+                -0.025 0.025 -0.225
+                0.025 -0.025 0.225
+                0.025 -0.025 -0.225
+                0.025 0.025 -0.225
+                0.025 0.025 0.225
+              ]
+            }
+            texCoord TextureCoordinate {
+              point [
+                0.11111111111111112 1
+                0 1
+                0 0
+                0.11111111111111112 0
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 1
+                0 1
+                0 0.11111111111111112
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 0.11111111111111112
+                0 0.11111111111111112
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 0.11111111111111112
+                0.11111111111111112 0
+                0.11111111111111112 1
+                0 1
+                0 0
+                0 1
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 1
+              ]
+            }
+            coordIndex [
+              0, 1, 2, 3, -1, 4, 5, 6, 7, -1, 8, 9, 10, 11, -1, 12, 13, 14, 15, -1, 16, 17, 18, 19, -1, 20, 21, 22, 23, -1
+            ]
+            creaseAngle 1.5
+          }
+        }
+      ]
+      name "foot 1"
+      model "box"
+      boundingObject Box {
+        size 0.05 0.05 0.45
+      }
+    }
+    Solid {
+      translation -0.375 0.375 0.225
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.141176 0.121569 0.192157
+            baseColorMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_base_color.jpg"
+              ]
+              filtering 5
+            }
+            roughnessMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_roughness.jpg"
+              ]
+              filtering 5
+            }
+            metalness 0
+            normalMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_normal.jpg"
+              ]
+              filtering 5
+            }
+            normalMapFactor 0.5
+            occlusionMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_occlusion.jpg"
+              ]
+              filtering 5
+            }
+            textureTransform TextureTransform {
+              scale 4 5
+            }
+          }
+          geometry IndexedFaceSet {
+            coord Coordinate {
+              point [
+                -0.025 0.025 0.225
+                0.025 0.025 0.225
+                0.025 0.025 -0.225
+                -0.025 0.025 -0.225
+                -0.025 -0.025 -0.225
+                0.025 -0.025 -0.225
+                0.025 -0.025 0.225
+                -0.025 -0.025 0.225
+                -0.025 -0.025 0.225
+                0.025 -0.025 0.225
+                0.025 0.025 0.225
+                -0.025 0.025 0.225
+                0.025 -0.025 -0.225
+                -0.025 -0.025 -0.225
+                -0.025 0.025 -0.225
+                0.025 0.025 -0.225
+                -0.025 -0.025 -0.225
+                -0.025 -0.025 0.225
+                -0.025 0.025 0.225
+                -0.025 0.025 -0.225
+                0.025 -0.025 0.225
+                0.025 -0.025 -0.225
+                0.025 0.025 -0.225
+                0.025 0.025 0.225
+              ]
+            }
+            texCoord TextureCoordinate {
+              point [
+                0.11111111111111112 1
+                0 1
+                0 0
+                0.11111111111111112 0
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 1
+                0 1
+                0 0.11111111111111112
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 0.11111111111111112
+                0 0.11111111111111112
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 0.11111111111111112
+                0.11111111111111112 0
+                0.11111111111111112 1
+                0 1
+                0 0
+                0 1
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 1
+              ]
+            }
+            coordIndex [
+              0, 1, 2, 3, -1, 4, 5, 6, 7, -1, 8, 9, 10, 11, -1, 12, 13, 14, 15, -1, 16, 17, 18, 19, -1, 20, 21, 22, 23, -1
+            ]
+            creaseAngle 1.5
+          }
+        }
+      ]
+      name "foot 2"
+      model "box"
+      boundingObject Box {
+        size 0.05 0.05 0.45
+      }
+    }
+    Solid {
+      translation 0.375 -0.375 0.225
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.141176 0.121569 0.192157
+            baseColorMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_base_color.jpg"
+              ]
+              filtering 5
+            }
+            roughnessMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_roughness.jpg"
+              ]
+              filtering 5
+            }
+            metalness 0
+            normalMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_normal.jpg"
+              ]
+              filtering 5
+            }
+            normalMapFactor 0.5
+            occlusionMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_occlusion.jpg"
+              ]
+              filtering 5
+            }
+            textureTransform TextureTransform {
+              scale 4 5
+            }
+          }
+          geometry IndexedFaceSet {
+            coord Coordinate {
+              point [
+                -0.025 0.025 0.225
+                0.025 0.025 0.225
+                0.025 0.025 -0.225
+                -0.025 0.025 -0.225
+                -0.025 -0.025 -0.225
+                0.025 -0.025 -0.225
+                0.025 -0.025 0.225
+                -0.025 -0.025 0.225
+                -0.025 -0.025 0.225
+                0.025 -0.025 0.225
+                0.025 0.025 0.225
+                -0.025 0.025 0.225
+                0.025 -0.025 -0.225
+                -0.025 -0.025 -0.225
+                -0.025 0.025 -0.225
+                0.025 0.025 -0.225
+                -0.025 -0.025 -0.225
+                -0.025 -0.025 0.225
+                -0.025 0.025 0.225
+                -0.025 0.025 -0.225
+                0.025 -0.025 0.225
+                0.025 -0.025 -0.225
+                0.025 0.025 -0.225
+                0.025 0.025 0.225
+              ]
+            }
+            texCoord TextureCoordinate {
+              point [
+                0.11111111111111112 1
+                0 1
+                0 0
+                0.11111111111111112 0
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 1
+                0 1
+                0 0.11111111111111112
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 0.11111111111111112
+                0 0.11111111111111112
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 0.11111111111111112
+                0.11111111111111112 0
+                0.11111111111111112 1
+                0 1
+                0 0
+                0 1
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 1
+              ]
+            }
+            coordIndex [
+              0, 1, 2, 3, -1, 4, 5, 6, 7, -1, 8, 9, 10, 11, -1, 12, 13, 14, 15, -1, 16, 17, 18, 19, -1, 20, 21, 22, 23, -1
+            ]
+            creaseAngle 1.5
+          }
+        }
+      ]
+      name "foot 3"
+      model "box"
+      boundingObject Box {
+        size 0.05 0.05 0.45
+      }
+    }
+    Solid {
+      translation -0.375 -0.375 0.225
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.141176 0.121569 0.192157
+            baseColorMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_base_color.jpg"
+              ]
+              filtering 5
+            }
+            roughnessMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_roughness.jpg"
+              ]
+              filtering 5
+            }
+            metalness 0
+            normalMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_normal.jpg"
+              ]
+              filtering 5
+            }
+            normalMapFactor 0.5
+            occlusionMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_occlusion.jpg"
+              ]
+              filtering 5
+            }
+            textureTransform TextureTransform {
+              scale 4 5
+            }
+          }
+          geometry IndexedFaceSet {
+            coord Coordinate {
+              point [
+                -0.025 0.025 0.225
+                0.025 0.025 0.225
+                0.025 0.025 -0.225
+                -0.025 0.025 -0.225
+                -0.025 -0.025 -0.225
+                0.025 -0.025 -0.225
+                0.025 -0.025 0.225
+                -0.025 -0.025 0.225
+                -0.025 -0.025 0.225
+                0.025 -0.025 0.225
+                0.025 0.025 0.225
+                -0.025 0.025 0.225
+                0.025 -0.025 -0.225
+                -0.025 -0.025 -0.225
+                -0.025 0.025 -0.225
+                0.025 0.025 -0.225
+                -0.025 -0.025 -0.225
+                -0.025 -0.025 0.225
+                -0.025 0.025 0.225
+                -0.025 0.025 -0.225
+                0.025 -0.025 0.225
+                0.025 -0.025 -0.225
+                0.025 0.025 -0.225
+                0.025 0.025 0.225
+              ]
+            }
+            texCoord TextureCoordinate {
+              point [
+                0.11111111111111112 1
+                0 1
+                0 0
+                0.11111111111111112 0
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 1
+                0 1
+                0 0.11111111111111112
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 0.11111111111111112
+                0 0.11111111111111112
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 0.11111111111111112
+                0.11111111111111112 0
+                0.11111111111111112 1
+                0 1
+                0 0
+                0 1
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 1
+              ]
+            }
+            coordIndex [
+              0, 1, 2, 3, -1, 4, 5, 6, 7, -1, 8, 9, 10, 11, -1, 12, 13, 14, 15, -1, 16, 17, 18, 19, -1, 20, 21, 22, 23, -1
+            ]
+            creaseAngle 1.5
+          }
+        }
+      ]
+      name "foot 4"
+      model "box"
+      boundingObject Box {
+        size 0.05 0.05 0.45
+      }
+    }
+  ]
+  name "table"
+  model "table"
+}
+Solid {
+  translation 1.5 -1.62 0
+  children [
+    Solid {
+      translation 0 0 0.475
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.141176 0.121569 0.192157
+            baseColorMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_base_color.jpg"
+              ]
+              filtering 5
+            }
+            roughnessMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_roughness.jpg"
+              ]
+              filtering 5
+            }
+            metalness 0
+            normalMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_normal.jpg"
+              ]
+              filtering 5
+            }
+            normalMapFactor 0.5
+            occlusionMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_occlusion.jpg"
+              ]
+              filtering 5
+            }
+            textureTransform TextureTransform {
+              scale 10 10
+            }
+          }
+          geometry IndexedFaceSet {
+            coord Coordinate {
+              point [
+                -0.4 0.4 0.025
+                0.4 0.4 0.025
+                0.4 0.4 -0.025
+                -0.4 0.4 -0.025
+                -0.4 -0.4 -0.025
+                0.4 -0.4 -0.025
+                0.4 -0.4 0.025
+                -0.4 -0.4 0.025
+                -0.4 -0.4 0.025
+                0.4 -0.4 0.025
+                0.4 0.4 0.025
+                -0.4 0.4 0.025
+                0.4 -0.4 -0.025
+                -0.4 -0.4 -0.025
+                -0.4 0.4 -0.025
+                0.4 0.4 -0.025
+                -0.4 -0.4 -0.025
+                -0.4 -0.4 0.025
+                -0.4 0.4 0.025
+                -0.4 0.4 -0.025
+                0.4 -0.4 0.025
+                0.4 -0.4 -0.025
+                0.4 0.4 -0.025
+                0.4 0.4 0.025
+              ]
+            }
+            texCoord TextureCoordinate {
+              point [
+                1 0.0625
+                0 0.0625
+                0 0
+                1 0
+                0 0
+                1 0
+                1 0.0625
+                0 0.0625
+                0 1
+                0 0
+                1 0
+                1 1
+                0 1
+                0 0
+                1 0
+                1 1
+                1 0
+                1 0.0625
+                0 0.0625
+                0 0
+                0 0.0625
+                0 0
+                1 0
+                1 0.0625
+              ]
+            }
+            coordIndex [
+              0, 1, 2, 3, -1, 4, 5, 6, 7, -1, 8, 9, 10, 11, -1, 12, 13, 14, 15, -1, 16, 17, 18, 19, -1, 20, 21, 22, 23, -1
+            ]
+            creaseAngle 1.5
+          }
+        }
+      ]
+      name "main frame"
+      model "box"
+      boundingObject Box {
+        size 0.8 0.8 0.05
+      }
+    }
+    Solid {
+      translation 0.375 0.375 0.225
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.141176 0.121569 0.192157
+            baseColorMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_base_color.jpg"
+              ]
+              filtering 5
+            }
+            roughnessMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_roughness.jpg"
+              ]
+              filtering 5
+            }
+            metalness 0
+            normalMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_normal.jpg"
+              ]
+              filtering 5
+            }
+            normalMapFactor 0.5
+            occlusionMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_occlusion.jpg"
+              ]
+              filtering 5
+            }
+            textureTransform TextureTransform {
+              scale 4 5
+            }
+          }
+          geometry IndexedFaceSet {
+            coord Coordinate {
+              point [
+                -0.025 0.025 0.225
+                0.025 0.025 0.225
+                0.025 0.025 -0.225
+                -0.025 0.025 -0.225
+                -0.025 -0.025 -0.225
+                0.025 -0.025 -0.225
+                0.025 -0.025 0.225
+                -0.025 -0.025 0.225
+                -0.025 -0.025 0.225
+                0.025 -0.025 0.225
+                0.025 0.025 0.225
+                -0.025 0.025 0.225
+                0.025 -0.025 -0.225
+                -0.025 -0.025 -0.225
+                -0.025 0.025 -0.225
+                0.025 0.025 -0.225
+                -0.025 -0.025 -0.225
+                -0.025 -0.025 0.225
+                -0.025 0.025 0.225
+                -0.025 0.025 -0.225
+                0.025 -0.025 0.225
+                0.025 -0.025 -0.225
+                0.025 0.025 -0.225
+                0.025 0.025 0.225
+              ]
+            }
+            texCoord TextureCoordinate {
+              point [
+                0.11111111111111112 1
+                0 1
+                0 0
+                0.11111111111111112 0
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 1
+                0 1
+                0 0.11111111111111112
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 0.11111111111111112
+                0 0.11111111111111112
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 0.11111111111111112
+                0.11111111111111112 0
+                0.11111111111111112 1
+                0 1
+                0 0
+                0 1
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 1
+              ]
+            }
+            coordIndex [
+              0, 1, 2, 3, -1, 4, 5, 6, 7, -1, 8, 9, 10, 11, -1, 12, 13, 14, 15, -1, 16, 17, 18, 19, -1, 20, 21, 22, 23, -1
+            ]
+            creaseAngle 1.5
+          }
+        }
+      ]
+      name "foot 1"
+      model "box"
+      boundingObject Box {
+        size 0.05 0.05 0.45
+      }
+    }
+    Solid {
+      translation -0.375 0.375 0.225
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.141176 0.121569 0.192157
+            baseColorMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_base_color.jpg"
+              ]
+              filtering 5
+            }
+            roughnessMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_roughness.jpg"
+              ]
+              filtering 5
+            }
+            metalness 0
+            normalMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_normal.jpg"
+              ]
+              filtering 5
+            }
+            normalMapFactor 0.5
+            occlusionMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_occlusion.jpg"
+              ]
+              filtering 5
+            }
+            textureTransform TextureTransform {
+              scale 4 5
+            }
+          }
+          geometry IndexedFaceSet {
+            coord Coordinate {
+              point [
+                -0.025 0.025 0.225
+                0.025 0.025 0.225
+                0.025 0.025 -0.225
+                -0.025 0.025 -0.225
+                -0.025 -0.025 -0.225
+                0.025 -0.025 -0.225
+                0.025 -0.025 0.225
+                -0.025 -0.025 0.225
+                -0.025 -0.025 0.225
+                0.025 -0.025 0.225
+                0.025 0.025 0.225
+                -0.025 0.025 0.225
+                0.025 -0.025 -0.225
+                -0.025 -0.025 -0.225
+                -0.025 0.025 -0.225
+                0.025 0.025 -0.225
+                -0.025 -0.025 -0.225
+                -0.025 -0.025 0.225
+                -0.025 0.025 0.225
+                -0.025 0.025 -0.225
+                0.025 -0.025 0.225
+                0.025 -0.025 -0.225
+                0.025 0.025 -0.225
+                0.025 0.025 0.225
+              ]
+            }
+            texCoord TextureCoordinate {
+              point [
+                0.11111111111111112 1
+                0 1
+                0 0
+                0.11111111111111112 0
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 1
+                0 1
+                0 0.11111111111111112
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 0.11111111111111112
+                0 0.11111111111111112
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 0.11111111111111112
+                0.11111111111111112 0
+                0.11111111111111112 1
+                0 1
+                0 0
+                0 1
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 1
+              ]
+            }
+            coordIndex [
+              0, 1, 2, 3, -1, 4, 5, 6, 7, -1, 8, 9, 10, 11, -1, 12, 13, 14, 15, -1, 16, 17, 18, 19, -1, 20, 21, 22, 23, -1
+            ]
+            creaseAngle 1.5
+          }
+        }
+      ]
+      name "foot 2"
+      model "box"
+      boundingObject Box {
+        size 0.05 0.05 0.45
+      }
+    }
+    Solid {
+      translation 0.375 -0.375 0.225
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.141176 0.121569 0.192157
+            baseColorMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_base_color.jpg"
+              ]
+              filtering 5
+            }
+            roughnessMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_roughness.jpg"
+              ]
+              filtering 5
+            }
+            metalness 0
+            normalMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_normal.jpg"
+              ]
+              filtering 5
+            }
+            normalMapFactor 0.5
+            occlusionMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_occlusion.jpg"
+              ]
+              filtering 5
+            }
+            textureTransform TextureTransform {
+              scale 4 5
+            }
+          }
+          geometry IndexedFaceSet {
+            coord Coordinate {
+              point [
+                -0.025 0.025 0.225
+                0.025 0.025 0.225
+                0.025 0.025 -0.225
+                -0.025 0.025 -0.225
+                -0.025 -0.025 -0.225
+                0.025 -0.025 -0.225
+                0.025 -0.025 0.225
+                -0.025 -0.025 0.225
+                -0.025 -0.025 0.225
+                0.025 -0.025 0.225
+                0.025 0.025 0.225
+                -0.025 0.025 0.225
+                0.025 -0.025 -0.225
+                -0.025 -0.025 -0.225
+                -0.025 0.025 -0.225
+                0.025 0.025 -0.225
+                -0.025 -0.025 -0.225
+                -0.025 -0.025 0.225
+                -0.025 0.025 0.225
+                -0.025 0.025 -0.225
+                0.025 -0.025 0.225
+                0.025 -0.025 -0.225
+                0.025 0.025 -0.225
+                0.025 0.025 0.225
+              ]
+            }
+            texCoord TextureCoordinate {
+              point [
+                0.11111111111111112 1
+                0 1
+                0 0
+                0.11111111111111112 0
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 1
+                0 1
+                0 0.11111111111111112
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 0.11111111111111112
+                0 0.11111111111111112
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 0.11111111111111112
+                0.11111111111111112 0
+                0.11111111111111112 1
+                0 1
+                0 0
+                0 1
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 1
+              ]
+            }
+            coordIndex [
+              0, 1, 2, 3, -1, 4, 5, 6, 7, -1, 8, 9, 10, 11, -1, 12, 13, 14, 15, -1, 16, 17, 18, 19, -1, 20, 21, 22, 23, -1
+            ]
+            creaseAngle 1.5
+          }
+        }
+      ]
+      name "foot 3"
+      model "box"
+      boundingObject Box {
+        size 0.05 0.05 0.45
+      }
+    }
+    Solid {
+      translation -0.375 -0.375 0.225
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.141176 0.121569 0.192157
+            baseColorMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_base_color.jpg"
+              ]
+              filtering 5
+            }
+            roughnessMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_roughness.jpg"
+              ]
+              filtering 5
+            }
+            metalness 0
+            normalMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_normal.jpg"
+              ]
+              filtering 5
+            }
+            normalMapFactor 0.5
+            occlusionMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_occlusion.jpg"
+              ]
+              filtering 5
+            }
+            textureTransform TextureTransform {
+              scale 4 5
+            }
+          }
+          geometry IndexedFaceSet {
+            coord Coordinate {
+              point [
+                -0.025 0.025 0.225
+                0.025 0.025 0.225
+                0.025 0.025 -0.225
+                -0.025 0.025 -0.225
+                -0.025 -0.025 -0.225
+                0.025 -0.025 -0.225
+                0.025 -0.025 0.225
+                -0.025 -0.025 0.225
+                -0.025 -0.025 0.225
+                0.025 -0.025 0.225
+                0.025 0.025 0.225
+                -0.025 0.025 0.225
+                0.025 -0.025 -0.225
+                -0.025 -0.025 -0.225
+                -0.025 0.025 -0.225
+                0.025 0.025 -0.225
+                -0.025 -0.025 -0.225
+                -0.025 -0.025 0.225
+                -0.025 0.025 0.225
+                -0.025 0.025 -0.225
+                0.025 -0.025 0.225
+                0.025 -0.025 -0.225
+                0.025 0.025 -0.225
+                0.025 0.025 0.225
+              ]
+            }
+            texCoord TextureCoordinate {
+              point [
+                0.11111111111111112 1
+                0 1
+                0 0
+                0.11111111111111112 0
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 1
+                0 1
+                0 0.11111111111111112
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 0.11111111111111112
+                0 0.11111111111111112
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 0.11111111111111112
+                0.11111111111111112 0
+                0.11111111111111112 1
+                0 1
+                0 0
+                0 1
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 1
+              ]
+            }
+            coordIndex [
+              0, 1, 2, 3, -1, 4, 5, 6, 7, -1, 8, 9, 10, 11, -1, 12, 13, 14, 15, -1, 16, 17, 18, 19, -1, 20, 21, 22, 23, -1
+            ]
+            creaseAngle 1.5
+          }
+        }
+      ]
+      name "foot 4"
+      model "box"
+      boundingObject Box {
+        size 0.05 0.05 0.45
+      }
+    }
+  ]
+  name "table(1)"
+  model "table"
+}
+Solid {
+  translation -1.28 0.03 0
+  children [
+    Solid {
+      translation 0 0 0.475
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.141176 0.121569 0.192157
+            baseColorMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_base_color.jpg"
+              ]
+              filtering 5
+            }
+            roughnessMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_roughness.jpg"
+              ]
+              filtering 5
+            }
+            metalness 0
+            normalMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_normal.jpg"
+              ]
+              filtering 5
+            }
+            normalMapFactor 0.5
+            occlusionMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_occlusion.jpg"
+              ]
+              filtering 5
+            }
+            textureTransform TextureTransform {
+              scale 10 10
+            }
+          }
+          geometry IndexedFaceSet {
+            coord Coordinate {
+              point [
+                -0.4 0.4 0.025
+                0.4 0.4 0.025
+                0.4 0.4 -0.025
+                -0.4 0.4 -0.025
+                -0.4 -0.4 -0.025
+                0.4 -0.4 -0.025
+                0.4 -0.4 0.025
+                -0.4 -0.4 0.025
+                -0.4 -0.4 0.025
+                0.4 -0.4 0.025
+                0.4 0.4 0.025
+                -0.4 0.4 0.025
+                0.4 -0.4 -0.025
+                -0.4 -0.4 -0.025
+                -0.4 0.4 -0.025
+                0.4 0.4 -0.025
+                -0.4 -0.4 -0.025
+                -0.4 -0.4 0.025
+                -0.4 0.4 0.025
+                -0.4 0.4 -0.025
+                0.4 -0.4 0.025
+                0.4 -0.4 -0.025
+                0.4 0.4 -0.025
+                0.4 0.4 0.025
+              ]
+            }
+            texCoord TextureCoordinate {
+              point [
+                1 0.0625
+                0 0.0625
+                0 0
+                1 0
+                0 0
+                1 0
+                1 0.0625
+                0 0.0625
+                0 1
+                0 0
+                1 0
+                1 1
+                0 1
+                0 0
+                1 0
+                1 1
+                1 0
+                1 0.0625
+                0 0.0625
+                0 0
+                0 0.0625
+                0 0
+                1 0
+                1 0.0625
+              ]
+            }
+            coordIndex [
+              0, 1, 2, 3, -1, 4, 5, 6, 7, -1, 8, 9, 10, 11, -1, 12, 13, 14, 15, -1, 16, 17, 18, 19, -1, 20, 21, 22, 23, -1
+            ]
+            creaseAngle 1.5
+          }
+        }
+      ]
+      name "main frame"
+      model "box"
+      boundingObject Box {
+        size 0.8 0.8 0.05
+      }
+    }
+    Solid {
+      translation 0.375 0.375 0.225
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.141176 0.121569 0.192157
+            baseColorMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_base_color.jpg"
+              ]
+              filtering 5
+            }
+            roughnessMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_roughness.jpg"
+              ]
+              filtering 5
+            }
+            metalness 0
+            normalMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_normal.jpg"
+              ]
+              filtering 5
+            }
+            normalMapFactor 0.5
+            occlusionMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_occlusion.jpg"
+              ]
+              filtering 5
+            }
+            textureTransform TextureTransform {
+              scale 4 5
+            }
+          }
+          geometry IndexedFaceSet {
+            coord Coordinate {
+              point [
+                -0.025 0.025 0.225
+                0.025 0.025 0.225
+                0.025 0.025 -0.225
+                -0.025 0.025 -0.225
+                -0.025 -0.025 -0.225
+                0.025 -0.025 -0.225
+                0.025 -0.025 0.225
+                -0.025 -0.025 0.225
+                -0.025 -0.025 0.225
+                0.025 -0.025 0.225
+                0.025 0.025 0.225
+                -0.025 0.025 0.225
+                0.025 -0.025 -0.225
+                -0.025 -0.025 -0.225
+                -0.025 0.025 -0.225
+                0.025 0.025 -0.225
+                -0.025 -0.025 -0.225
+                -0.025 -0.025 0.225
+                -0.025 0.025 0.225
+                -0.025 0.025 -0.225
+                0.025 -0.025 0.225
+                0.025 -0.025 -0.225
+                0.025 0.025 -0.225
+                0.025 0.025 0.225
+              ]
+            }
+            texCoord TextureCoordinate {
+              point [
+                0.11111111111111112 1
+                0 1
+                0 0
+                0.11111111111111112 0
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 1
+                0 1
+                0 0.11111111111111112
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 0.11111111111111112
+                0 0.11111111111111112
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 0.11111111111111112
+                0.11111111111111112 0
+                0.11111111111111112 1
+                0 1
+                0 0
+                0 1
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 1
+              ]
+            }
+            coordIndex [
+              0, 1, 2, 3, -1, 4, 5, 6, 7, -1, 8, 9, 10, 11, -1, 12, 13, 14, 15, -1, 16, 17, 18, 19, -1, 20, 21, 22, 23, -1
+            ]
+            creaseAngle 1.5
+          }
+        }
+      ]
+      name "foot 1"
+      model "box"
+      boundingObject Box {
+        size 0.05 0.05 0.45
+      }
+    }
+    Solid {
+      translation -0.375 0.375 0.225
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.141176 0.121569 0.192157
+            baseColorMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_base_color.jpg"
+              ]
+              filtering 5
+            }
+            roughnessMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_roughness.jpg"
+              ]
+              filtering 5
+            }
+            metalness 0
+            normalMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_normal.jpg"
+              ]
+              filtering 5
+            }
+            normalMapFactor 0.5
+            occlusionMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_occlusion.jpg"
+              ]
+              filtering 5
+            }
+            textureTransform TextureTransform {
+              scale 4 5
+            }
+          }
+          geometry IndexedFaceSet {
+            coord Coordinate {
+              point [
+                -0.025 0.025 0.225
+                0.025 0.025 0.225
+                0.025 0.025 -0.225
+                -0.025 0.025 -0.225
+                -0.025 -0.025 -0.225
+                0.025 -0.025 -0.225
+                0.025 -0.025 0.225
+                -0.025 -0.025 0.225
+                -0.025 -0.025 0.225
+                0.025 -0.025 0.225
+                0.025 0.025 0.225
+                -0.025 0.025 0.225
+                0.025 -0.025 -0.225
+                -0.025 -0.025 -0.225
+                -0.025 0.025 -0.225
+                0.025 0.025 -0.225
+                -0.025 -0.025 -0.225
+                -0.025 -0.025 0.225
+                -0.025 0.025 0.225
+                -0.025 0.025 -0.225
+                0.025 -0.025 0.225
+                0.025 -0.025 -0.225
+                0.025 0.025 -0.225
+                0.025 0.025 0.225
+              ]
+            }
+            texCoord TextureCoordinate {
+              point [
+                0.11111111111111112 1
+                0 1
+                0 0
+                0.11111111111111112 0
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 1
+                0 1
+                0 0.11111111111111112
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 0.11111111111111112
+                0 0.11111111111111112
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 0.11111111111111112
+                0.11111111111111112 0
+                0.11111111111111112 1
+                0 1
+                0 0
+                0 1
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 1
+              ]
+            }
+            coordIndex [
+              0, 1, 2, 3, -1, 4, 5, 6, 7, -1, 8, 9, 10, 11, -1, 12, 13, 14, 15, -1, 16, 17, 18, 19, -1, 20, 21, 22, 23, -1
+            ]
+            creaseAngle 1.5
+          }
+        }
+      ]
+      name "foot 2"
+      model "box"
+      boundingObject Box {
+        size 0.05 0.05 0.45
+      }
+    }
+    Solid {
+      translation 0.375 -0.375 0.225
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.141176 0.121569 0.192157
+            baseColorMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_base_color.jpg"
+              ]
+              filtering 5
+            }
+            roughnessMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_roughness.jpg"
+              ]
+              filtering 5
+            }
+            metalness 0
+            normalMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_normal.jpg"
+              ]
+              filtering 5
+            }
+            normalMapFactor 0.5
+            occlusionMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_occlusion.jpg"
+              ]
+              filtering 5
+            }
+            textureTransform TextureTransform {
+              scale 4 5
+            }
+          }
+          geometry IndexedFaceSet {
+            coord Coordinate {
+              point [
+                -0.025 0.025 0.225
+                0.025 0.025 0.225
+                0.025 0.025 -0.225
+                -0.025 0.025 -0.225
+                -0.025 -0.025 -0.225
+                0.025 -0.025 -0.225
+                0.025 -0.025 0.225
+                -0.025 -0.025 0.225
+                -0.025 -0.025 0.225
+                0.025 -0.025 0.225
+                0.025 0.025 0.225
+                -0.025 0.025 0.225
+                0.025 -0.025 -0.225
+                -0.025 -0.025 -0.225
+                -0.025 0.025 -0.225
+                0.025 0.025 -0.225
+                -0.025 -0.025 -0.225
+                -0.025 -0.025 0.225
+                -0.025 0.025 0.225
+                -0.025 0.025 -0.225
+                0.025 -0.025 0.225
+                0.025 -0.025 -0.225
+                0.025 0.025 -0.225
+                0.025 0.025 0.225
+              ]
+            }
+            texCoord TextureCoordinate {
+              point [
+                0.11111111111111112 1
+                0 1
+                0 0
+                0.11111111111111112 0
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 1
+                0 1
+                0 0.11111111111111112
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 0.11111111111111112
+                0 0.11111111111111112
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 0.11111111111111112
+                0.11111111111111112 0
+                0.11111111111111112 1
+                0 1
+                0 0
+                0 1
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 1
+              ]
+            }
+            coordIndex [
+              0, 1, 2, 3, -1, 4, 5, 6, 7, -1, 8, 9, 10, 11, -1, 12, 13, 14, 15, -1, 16, 17, 18, 19, -1, 20, 21, 22, 23, -1
+            ]
+            creaseAngle 1.5
+          }
+        }
+      ]
+      name "foot 3"
+      model "box"
+      boundingObject Box {
+        size 0.05 0.05 0.45
+      }
+    }
+    Solid {
+      translation -0.375 -0.375 0.225
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.141176 0.121569 0.192157
+            baseColorMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_base_color.jpg"
+              ]
+              filtering 5
+            }
+            roughnessMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_roughness.jpg"
+              ]
+              filtering 5
+            }
+            metalness 0
+            normalMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_normal.jpg"
+              ]
+              filtering 5
+            }
+            normalMapFactor 0.5
+            occlusionMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/varnished_pine/varnished_pine_occlusion.jpg"
+              ]
+              filtering 5
+            }
+            textureTransform TextureTransform {
+              scale 4 5
+            }
+          }
+          geometry IndexedFaceSet {
+            coord Coordinate {
+              point [
+                -0.025 0.025 0.225
+                0.025 0.025 0.225
+                0.025 0.025 -0.225
+                -0.025 0.025 -0.225
+                -0.025 -0.025 -0.225
+                0.025 -0.025 -0.225
+                0.025 -0.025 0.225
+                -0.025 -0.025 0.225
+                -0.025 -0.025 0.225
+                0.025 -0.025 0.225
+                0.025 0.025 0.225
+                -0.025 0.025 0.225
+                0.025 -0.025 -0.225
+                -0.025 -0.025 -0.225
+                -0.025 0.025 -0.225
+                0.025 0.025 -0.225
+                -0.025 -0.025 -0.225
+                -0.025 -0.025 0.225
+                -0.025 0.025 0.225
+                -0.025 0.025 -0.225
+                0.025 -0.025 0.225
+                0.025 -0.025 -0.225
+                0.025 0.025 -0.225
+                0.025 0.025 0.225
+              ]
+            }
+            texCoord TextureCoordinate {
+              point [
+                0.11111111111111112 1
+                0 1
+                0 0
+                0.11111111111111112 0
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 1
+                0 1
+                0 0.11111111111111112
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 0.11111111111111112
+                0 0.11111111111111112
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 0.11111111111111112
+                0.11111111111111112 0
+                0.11111111111111112 1
+                0 1
+                0 0
+                0 1
+                0 0
+                0.11111111111111112 0
+                0.11111111111111112 1
+              ]
+            }
+            coordIndex [
+              0, 1, 2, 3, -1, 4, 5, 6, 7, -1, 8, 9, 10, 11, -1, 12, 13, 14, 15, -1, 16, 17, 18, 19, -1, 20, 21, 22, 23, -1
+            ]
+            creaseAngle 1.5
+          }
+        }
+      ]
+      name "foot 4"
+      model "box"
+      boundingObject Box {
+        size 0.05 0.05 0.45
+      }
+    }
+  ]
+  name "table(2)"
+  model "table"
+}
+Chair {
+  translation 2.32 -1.64 0
+  rotation 0 0 1 3.14159
+  color 0.141176 0.121569 0.192157
+}
+Chair {
+  translation 2.23 1.65 0
+  rotation 0 0 1 3.14159
+  name "chair(1)"
+  color 0.141176 0.121569 0.192157
+}
+Chair {
+  translation -1.32 0.84 0
+  rotation 0 0 1 -1.5707953071795862
+  name "chair(4)"
+  color 0.141176 0.121569 0.192157
+}
+Chair {
+  translation -2.12 0.04 0
+  rotation 0 0 1 1.01503e-06
+  name "chair(5)"
+  color 0.141176 0.121569 0.192157
+}
+Chair {
+  translation 1.4 2.5 0
+  rotation 0 0 1 -1.5707953071795862
+  name "chair(2)"
+  color 0.141176 0.121569 0.192157
+}
+Chair {
+  translation 1.48 -2.54 0
+  rotation 0 0 1 1.5708
+  name "chair(3)"
+  color 0.141176 0.121569 0.192157
+}
+Solid {
+  translation 1.13 1.34 0.5
+  children [
+    CadShape {
+      url [
+        "../protos/obj_assert/banana/banana.obj"
+      ]
+    }
+  ]
+  name "banana"
+}
+Solid {
+  translation 1.23 -1.88 0.5
+  children [
+    CadShape {
+      url [
+        "../protos/obj_assert/Box/Box.obj"
+        ""
+        ""
+      ]
+    }
+  ]
+  name "box"
+}
+BeerBottle {
+  translation -1.35 -0.23 0.5
+}
+DEF flacon MedicineBottle {
+  translation -1.13 -0.25 0.54
+}
+DEF flacon MedicineBottle {
+  translation -1 -0.06 0.54
+  name "medicine bottle(1)"
 }
