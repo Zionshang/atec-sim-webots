@@ -2,42 +2,64 @@
 
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/BrushedAluminium.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/solids/protos/SolidBox.proto"
 
 WorldInfo {
-  basicTimeStep 1
+  basicTimeStep 2
 }
 Viewpoint {
-  orientation 0.12501289908237423 -0.030435819281030244 -0.9916881747644835 3.6153781356566475
-  position 2.5741026083949854 -1.1822744240193002 0.8608302940760211
+  orientation 0.23191091936950645 0.12818511000709387 -0.9642540656122014 2.1622218938414925
+  position 1.8730852032549323 3.5486661247619455 2.3075765194615556
 }
 TexturedBackground {
 }
 TexturedBackgroundLight {
 }
-RectangleArena {
-  floorSize 100 100
-}
-DEF GalileoV1d6X5 Robot {
-  translation 0 0 0.41
+Solid {
   children [
-    Solid {
-      children [
-        Gyro {
-        }
-        InertialUnit {
-          name "imu"
-        }
-        Accelerometer {
-        }
-      ]
-      physics Physics {
-        density -1
-        mass 0.001
+    Floor {
+    }
+    SolidBox {
+      translation 5.005 0 0.05
+      name "wall"
+      size 0.01 10 0.1
+      appearance BrushedAluminium {
       }
     }
+    SolidBox {
+      translation -5.005 0 0.05
+      name "wall#2"
+      size 0.01 10 0.1
+      appearance BrushedAluminium {
+      }
+    }
+    SolidBox {
+      translation 0 5.005 0.05
+      name "wall#3"
+      size 10.02 0.01 0.1
+      appearance BrushedAluminium {
+      }
+    }
+    SolidBox {
+      translation 0 -5.005 0.05
+      name "wall#4"
+      size 10.02 0.01 0.1
+      appearance BrushedAluminium {
+      }
+    }
+  ]
+  name "rectangle arena"
+  model "rectangle arena"
+}
+Robot {
+  translation 0.0008683442228777866 -0.0002728399057587193 0.3677833277595379
+  rotation 0.2991695417860289 0.9541997496344319 0.0006504345663648261 0.0023752137742080338
+  children [
     Shape {
       appearance DEF base_link_material PBRAppearance {
+        baseColor 0.8 0.4 0
         roughness 1
         metalness 0
       }
@@ -49,26 +71,28 @@ DEF GalileoV1d6X5 Robot {
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        anchor 0.279 0.067 0
+        position 1.308799859171947e-05
+        anchor 0.2987 0.06 0
       }
       device [
         RotationalMotor {
           name "FL_hip_joint"
-          maxVelocity 12
-          minPosition -0.698132
-          maxPosition 0.698132
-          maxTorque 120
+          maxVelocity 22
+          minPosition -0.741764919444444
+          maxPosition 0.741764919444444
+          maxTorque 150
         }
         PositionSensor {
           name "FL_hip_joint_sensor"
         }
       ]
       endPoint Solid {
-        translation 0.279 0.067 0
-        rotation 1 0 0 0
+        translation 0.2987 0.06 0
+        rotation 1 0 0 1.3088004675305432e-05
         children [
           Shape {
             appearance DEF FL_hip_material PBRAppearance {
+              baseColor 1 0.4 0.4
               roughness 1
               metalness 0
             }
@@ -80,28 +104,29 @@ DEF GalileoV1d6X5 Robot {
           }
           HingeJoint {
             jointParameters HingeJointParameters {
-              position 0.72
+              position 0.8399986661429388
               axis 0 1 0
-              anchor 0 0.1103 0
+              anchor 0 0.1341 0
             }
             device [
               RotationalMotor {
                 name "FL_thigh_joint"
-                maxVelocity 12
-                minPosition -1.762783
-                maxPosition 3.647738
-                maxTorque 120
+                maxVelocity 22
+                minPosition -1.22173
+                maxPosition 3.8397
+                maxTorque 150
               }
               PositionSensor {
                 name "FL_thigh_joint_sensor"
               }
             ]
             endPoint Solid {
-              translation 0 0.1103 0
-              rotation 0 1 0 0.7200000000000003
+              translation 0 0.1341 0
+              rotation 0 0.9999999999999999 0 0.8399986661429386
               children [
                 Shape {
                   appearance DEF FL_thigh_material PBRAppearance {
+                    baseColor 1 1 0.4
                     roughness 1
                     metalness 0
                   }
@@ -113,17 +138,17 @@ DEF GalileoV1d6X5 Robot {
                 }
                 HingeJoint {
                   jointParameters HingeJointParameters {
-                    position -1.44
+                    position -1.6100222034481237
                     axis 0 1 0
                     anchor 0 0 -0.26
                   }
                   device [
                     RotationalMotor {
                       name "FL_calf_joint"
-                      maxVelocity 12
-                      minPosition -2.740167
-                      maxPosition -0.383972
-                      maxTorque 120
+                      maxVelocity 22
+                      minPosition -2.77507346333333
+                      maxPosition -0.541052058888889
+                      maxTorque 150
                     }
                     PositionSensor {
                       name "FL_calf_joint_sensor"
@@ -131,10 +156,11 @@ DEF GalileoV1d6X5 Robot {
                   ]
                   endPoint Solid {
                     translation 0 0 -0.26
-                    rotation 0 -1 0 1.4399999999999997
+                    rotation 0 -1 0 1.6100222034481237
                     children [
                       Shape {
                         appearance DEF FL_calf_material PBRAppearance {
+                          baseColor 0.4 1 0.4
                           roughness 1
                           metalness 0
                         }
@@ -145,10 +171,11 @@ DEF GalileoV1d6X5 Robot {
                         }
                       }
                       Solid {
-                        translation 0 0 -0.26
+                        translation 0 0 -0.26149
                         children [
                           Shape {
                             appearance DEF FL_foot_material PBRAppearance {
+                              baseColor 0 0.5 1
                               roughness 1
                               metalness 0
                             }
@@ -163,12 +190,12 @@ DEF GalileoV1d6X5 Robot {
                         }
                         physics Physics {
                           density -1
-                          mass 0.04
+                          mass 0.000205
                           centerOfMass [
                             0 0 0
                           ]
                           inertiaMatrix [
-                            9.6e-06 9.6e-06 9.6e-06
+                            1.096001e-09 1.096001e-09 1.096001e-09
                             0 0 0
                           ]
                         }
@@ -178,20 +205,20 @@ DEF GalileoV1d6X5 Robot {
                     boundingObject Group {
                       children [
                         Pose {
-                          translation 0.015 0 -0.235
-                          rotation 0 1 0 0.5
+                          translation 0.00919 0 -0.06536
+                          rotation 0 -1 0 0.139626
                           children [
                             Box {
-                              size 0.04 0.02 0.05
+                              size 0.033 0.033 0.23
                             }
                           ]
                         }
                         Pose {
-                          translation 0.0085 0 -0.092
-                          rotation 0 -1 0 0.15
+                          translation 0.01381 0 -0.21574
+                          rotation 0 1 0 0.24103
                           children [
                             Box {
-                              size 0.032 0.02 0.27
+                              size 0.036 0.036 0.09273
                             }
                           ]
                         }
@@ -199,13 +226,13 @@ DEF GalileoV1d6X5 Robot {
                     }
                     physics Physics {
                       density -1
-                      mass 0.324831
+                      mass 0.302786
                       centerOfMass [
-                        0.006276 6e-05 -0.145811
+                        0.008 0.003625 -0.128915
                       ]
                       inertiaMatrix [
-                        0.0041942 0.0042423 9.93e-05
-                        0 -3e-07 0
+                        0.0085187 0.0085725 0.0001128
+                        8.6e-06 0.0003718 0.0001434
                       ]
                     }
                   }
@@ -215,20 +242,30 @@ DEF GalileoV1d6X5 Robot {
               boundingObject Group {
                 children [
                   Pose {
-                    translation -0.025 0 -0.15
+                    translation 0 -0.02125 0
+                    rotation 0.5775032287046065 0.5775032287046065 -0.5770442285228318 2.093475
                     children [
-                      Box {
-                        size 0.05 0.02 0.18
+                      Cylinder {
+                        height 0.085
+                        radius 0.058
                       }
                     ]
                   }
                   Pose {
-                    translation 0 -0.065 0
-                    rotation 0.5775032287046065 0.5775032287046065 -0.5770442285228318 2.093475
+                    translation -0.02158 0 -0.09691
+                    rotation 0 1 0 0.122173
                     children [
-                      Cylinder {
-                        height 0.08
-                        radius 0.06
+                      Box {
+                        size 0.06368 0.036 0.19764
+                      }
+                    ]
+                  }
+                  Pose {
+                    translation -0.01645 0 -0.23181
+                    rotation 0 -1 0 0.436332
+                    children [
+                      Box {
+                        size 0.054 0.036 0.115
                       }
                     ]
                   }
@@ -236,13 +273,13 @@ DEF GalileoV1d6X5 Robot {
               }
               physics Physics {
                 density -1
-                mass 2.211555
+                mass 2.930464
                 centerOfMass [
-                  -0.0028 -0.03681 -0.023902
+                  -0.003481 -0.032125 -0.031894
                 ]
                 inertiaMatrix [
-                  0.012133 0.0117725 0.0019164
-                  0.0002099 -0.000542 0.0020399
+                  0.0264127 0.0232267 0.0081071
+                  5.18e-05 0.0012845 0.0002853
                 ]
               }
             }
@@ -251,39 +288,41 @@ DEF GalileoV1d6X5 Robot {
         name "FL_hip"
         physics Physics {
           density -1
-          mass 1.645937
+          mass 1.87369
           centerOfMass [
-            -0.003454 0.000147 -0.00096
+            -0.002155 0.006319 1e-06
           ]
           inertiaMatrix [
-            0.0004144 0.000796 0.0005767
-            1e-05 1.5e-06 -1.4e-06
+            0.0021359 0.0034595 0.002322
+            2.5e-05 0 0
           ]
         }
       }
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        anchor -0.279 0.067 0
+        position 1.1762725871449206e-05
+        anchor -0.2987 0.06 0
       }
       device [
         RotationalMotor {
           name "RL_hip_joint"
-          maxVelocity 12
-          minPosition -0.698132
-          maxPosition 0.698132
-          maxTorque 120
+          maxVelocity 22
+          minPosition -0.741764919444444
+          maxPosition 0.741764919444444
+          maxTorque 150
         }
         PositionSensor {
           name "RL_hip_joint_sensor"
         }
       ]
       endPoint Solid {
-        translation -0.279 0.067 0
-        rotation 1 0 0 0
+        translation -0.2987 0.06 0
+        rotation 1 0 0 1.1762708973689013e-05
         children [
           Shape {
             appearance DEF RL_hip_material PBRAppearance {
+              baseColor 0.8 1 0.8
               roughness 1
               metalness 0
             }
@@ -295,28 +334,29 @@ DEF GalileoV1d6X5 Robot {
           }
           HingeJoint {
             jointParameters HingeJointParameters {
-              position 0.72
+              position 0.8400013783295616
               axis 0 1 0
-              anchor 0 0.1103 0
+              anchor 0 0.1341 0
             }
             device [
               RotationalMotor {
                 name "RL_thigh_joint"
-                maxVelocity 12
-                minPosition -1.762783
-                maxPosition 3.647738
-                maxTorque 120
+                maxVelocity 22
+                minPosition -1.22173
+                maxPosition 3.8397
+                maxTorque 150
               }
               PositionSensor {
                 name "RL_thigh_joint_sensor"
               }
             ]
             endPoint Solid {
-              translation 0 0.1103 0
-              rotation 0 1 0 0.7200000000000003
+              translation 0 0.1341 0
+              rotation 0 1 0 0.8400013783295613
               children [
                 Shape {
                   appearance DEF RL_thigh_material PBRAppearance {
+                    baseColor 1 0.5 1
                     roughness 1
                     metalness 0
                   }
@@ -324,17 +364,17 @@ DEF GalileoV1d6X5 Robot {
                 }
                 HingeJoint {
                   jointParameters HingeJointParameters {
-                    position -1.44
+                    position -1.6100204516638372
                     axis 0 1 0
                     anchor 0 0 -0.26
                   }
                   device [
                     RotationalMotor {
                       name "RL_calf_joint"
-                      maxVelocity 12
-                      minPosition -2.740167
-                      maxPosition -0.383972
-                      maxTorque 120
+                      maxVelocity 22
+                      minPosition -2.77507346333333
+                      maxPosition -0.541052058888889
+                      maxTorque 150
                     }
                     PositionSensor {
                       name "RL_calf_joint_sensor"
@@ -342,20 +382,22 @@ DEF GalileoV1d6X5 Robot {
                   ]
                   endPoint Solid {
                     translation 0 0 -0.26
-                    rotation 0 -1 0 1.4399999999999997
+                    rotation 0 -1 0 1.610020451663837
                     children [
                       Shape {
                         appearance DEF RL_calf_material PBRAppearance {
+                          baseColor 1 0.4 0.4
                           roughness 1
                           metalness 0
                         }
                         geometry USE FL_CALF
                       }
                       Solid {
-                        translation 0 0 -0.26
+                        translation 0 0 -0.26149
                         children [
                           Shape {
                             appearance DEF RL_foot_material PBRAppearance {
+                              baseColor 1 1 0.4
                               roughness 1
                               metalness 0
                             }
@@ -370,12 +412,12 @@ DEF GalileoV1d6X5 Robot {
                         }
                         physics Physics {
                           density -1
-                          mass 0.04
+                          mass 0.000205
                           centerOfMass [
                             0 0 0
                           ]
                           inertiaMatrix [
-                            9.6e-06 9.6e-06 9.6e-06
+                            1.096001e-09 1.096001e-09 1.096001e-09
                             0 0 0
                           ]
                         }
@@ -385,20 +427,20 @@ DEF GalileoV1d6X5 Robot {
                     boundingObject Group {
                       children [
                         Pose {
-                          translation 0.015 0 -0.235
-                          rotation 0 1 0 0.5
+                          translation 0.00919 0 -0.06536
+                          rotation 0 -1 0 0.139626
                           children [
                             Box {
-                              size 0.04 0.02 0.05
+                              size 0.033 0.033 0.23
                             }
                           ]
                         }
                         Pose {
-                          translation 0.0085 0 -0.092
-                          rotation 0 -1 0 0.15
+                          translation 0.01381 0 -0.21574
+                          rotation 0 1 0 0.24103
                           children [
                             Box {
-                              size 0.032 0.02 0.27
+                              size 0.036 0.036 0.09273
                             }
                           ]
                         }
@@ -406,13 +448,13 @@ DEF GalileoV1d6X5 Robot {
                     }
                     physics Physics {
                       density -1
-                      mass 0.324831
+                      mass 0.302786
                       centerOfMass [
-                        0.006276 6e-05 -0.145811
+                        0.008 0.003625 -0.128915
                       ]
                       inertiaMatrix [
-                        0.0041942 0.0042423 9.93e-05
-                        0 -3e-07 0
+                        0.0085187 0.0085725 0.0001128
+                        8.6e-06 0.0003718 0.0001434
                       ]
                     }
                   }
@@ -422,20 +464,30 @@ DEF GalileoV1d6X5 Robot {
               boundingObject Group {
                 children [
                   Pose {
-                    translation -0.025 0 -0.15
+                    translation 0 -0.02125 0
+                    rotation 0.5775032287046065 0.5775032287046065 -0.5770442285228318 2.093475
                     children [
-                      Box {
-                        size 0.05 0.02 0.18
+                      Cylinder {
+                        height 0.085
+                        radius 0.058
                       }
                     ]
                   }
                   Pose {
-                    translation 0 -0.065 0
-                    rotation 0.5775032287046065 0.5775032287046065 -0.5770442285228318 2.093475
+                    translation -0.02158 0 -0.09691
+                    rotation 0 1 0 0.122173
                     children [
-                      Cylinder {
-                        height 0.08
-                        radius 0.06
+                      Box {
+                        size 0.06368 0.036 0.19764
+                      }
+                    ]
+                  }
+                  Pose {
+                    translation -0.01645 0 -0.23181
+                    rotation 0 -1 0 0.436332
+                    children [
+                      Box {
+                        size 0.054 0.036 0.115
                       }
                     ]
                   }
@@ -443,13 +495,13 @@ DEF GalileoV1d6X5 Robot {
               }
               physics Physics {
                 density -1
-                mass 2.211555
+                mass 2.930464
                 centerOfMass [
-                  -0.0028 -0.03681 -0.023902
+                  -0.003481 -0.032125 -0.031894
                 ]
                 inertiaMatrix [
-                  0.012133 0.0117725 0.0019164
-                  0.0002099 -0.000542 0.0020399
+                  0.0264127 0.0232267 0.0081071
+                  5.18e-05 0.0012845 0.0002853
                 ]
               }
             }
@@ -458,42 +510,44 @@ DEF GalileoV1d6X5 Robot {
         name "RL_hip"
         physics Physics {
           density -1
-          mass 1.645937
+          mass 1.87369
           centerOfMass [
-            -0.003454 0.000147 -0.00096
+            -0.002155 0.006319 1e-06
           ]
           inertiaMatrix [
-            0.0004144 0.000796 0.0005767
-            -1e-05 -1.5e-06 -1.4e-06
+            0.0021359 0.0034595 0.002322
+            2.5e-05 0 0
           ]
         }
       }
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        anchor 0.279 -0.067 0
+        position -1.3608479112470206e-05
+        anchor 0.2987 -0.06 0
       }
       device [
         RotationalMotor {
           name "FR_hip_joint"
-          maxVelocity 12
-          minPosition -0.698132
-          maxPosition 0.698132
-          maxTorque 120
+          maxVelocity 22
+          minPosition -0.741764919444444
+          maxPosition 0.741764919444444
+          maxTorque 150
         }
         PositionSensor {
           name "FR_hip_joint_sensor"
         }
       ]
       endPoint Solid {
-        translation 0.279 -0.067 0
-        rotation 1 0 0 0
+        translation 0.2987 -0.06 0
+        rotation -0.9999999999999999 0 0 1.3608472712935453e-05
         children [
           Transform {
             scale 1 -1 1
             children [
               Shape {
                 appearance DEF FR_hip_material PBRAppearance {
+                  baseColor 1 0.4 0.4
                   roughness 1
                   metalness 0
                 }
@@ -508,31 +562,32 @@ DEF GalileoV1d6X5 Robot {
           }
           HingeJoint {
             jointParameters HingeJointParameters {
-              position 0.72
+              position 0.8400012168061004
               axis 0 1 0
-              anchor 0 -0.1103 0
+              anchor 0 -0.1341 0
             }
             device [
               RotationalMotor {
                 name "FR_thigh_joint"
-                maxVelocity 12
-                minPosition -1.762783
-                maxPosition 3.647738
-                maxTorque 120
+                maxVelocity 22
+                minPosition -1.22173
+                maxPosition 3.8397
+                maxTorque 150
               }
               PositionSensor {
                 name "FR_thigh_joint_sensor"
               }
             ]
             endPoint Solid {
-              translation 0 -0.1103 0
-              rotation 0 1 0 0.7200000000000003
+              translation 0 -0.1341 0
+              rotation 0 1 0 0.8400012168061004
               children [
                 Transform {
                   scale 1 -1 1
                   children [
                     Shape {
                       appearance DEF FR_thigh_material PBRAppearance {
+                        baseColor 1 1 0.4
                         roughness 1
                         metalness 0
                       }
@@ -547,17 +602,17 @@ DEF GalileoV1d6X5 Robot {
                 }
                 HingeJoint {
                   jointParameters HingeJointParameters {
-                    position -1.44
+                    position -1.6100229361313694
                     axis 0 1 0
                     anchor 0 0 -0.26
                   }
                   device [
                     RotationalMotor {
                       name "FR_calf_joint"
-                      maxVelocity 12
-                      minPosition -2.740167
-                      maxPosition -0.383972
-                      maxTorque 120
+                      maxVelocity 22
+                      minPosition -2.77507346333333
+                      maxPosition -0.541052058888889
+                      maxTorque 150
                     }
                     PositionSensor {
                       name "FR_calf_joint_sensor"
@@ -565,13 +620,14 @@ DEF GalileoV1d6X5 Robot {
                   ]
                   endPoint Solid {
                     translation 0 0 -0.26
-                    rotation 0 -1 0 1.4399999999999997
+                    rotation 0 -1 0 1.6100229361313694
                     children [
                       Transform {
                         scale 1 -1 1
                         children [
                           Shape {
                             appearance DEF FR_calf_material PBRAppearance {
+                              baseColor 0.4 1 0.4
                               roughness 1
                               metalness 0
                             }
@@ -585,10 +641,11 @@ DEF GalileoV1d6X5 Robot {
                         ]
                       }
                       Solid {
-                        translation 0 0 -0.26
+                        translation 0 0 -0.26149
                         children [
                           Shape {
                             appearance DEF FR_foot_material PBRAppearance {
+                              baseColor 0 0.5 1
                               roughness 1
                               metalness 0
                             }
@@ -603,12 +660,12 @@ DEF GalileoV1d6X5 Robot {
                         }
                         physics Physics {
                           density -1
-                          mass 0.04
+                          mass 0.000205
                           centerOfMass [
                             0 0 0
                           ]
                           inertiaMatrix [
-                            9.6e-06 9.6e-06 9.6e-06
+                            1.096001e-09 1.096001e-09 1.096001e-09
                             0 0 0
                           ]
                         }
@@ -618,20 +675,20 @@ DEF GalileoV1d6X5 Robot {
                     boundingObject Group {
                       children [
                         Pose {
-                          translation 0.015 0 -0.235
-                          rotation 0 1 0 0.5
+                          translation 0.00919 0 -0.06536
+                          rotation 0 -1 0 0.139626
                           children [
                             Box {
-                              size 0.04 0.02 0.05
+                              size 0.033 0.033 0.23
                             }
                           ]
                         }
                         Pose {
-                          translation 0.0085 0 -0.092
-                          rotation 0 -1 0 0.15
+                          translation 0.01381 0 -0.21574
+                          rotation 0 1 0 0.24103
                           children [
                             Box {
-                              size 0.032 0.02 0.27
+                              size 0.036 0.036 0.09273
                             }
                           ]
                         }
@@ -639,13 +696,13 @@ DEF GalileoV1d6X5 Robot {
                     }
                     physics Physics {
                       density -1
-                      mass 0.324831
+                      mass 0.302786
                       centerOfMass [
-                        0.006276 -6e-05 -0.145811
+                        0.008 -0.003625 -0.128915
                       ]
                       inertiaMatrix [
-                        0.0041942 0.0042423 9.93e-05
-                        0 -3e-07 0
+                        0.0085187 0.0085725 0.0001128
+                        -8.6e-06 0.0003718 -0.0001434
                       ]
                     }
                   }
@@ -655,20 +712,30 @@ DEF GalileoV1d6X5 Robot {
               boundingObject Group {
                 children [
                   Pose {
-                    translation -0.025 0 -0.15
+                    translation 0 0.02125 0
+                    rotation 0.5775032287046065 0.5775032287046065 -0.5770442285228318 2.093475
                     children [
-                      Box {
-                        size 0.05 0.02 0.18
+                      Cylinder {
+                        height 0.085
+                        radius 0.058
                       }
                     ]
                   }
                   Pose {
-                    translation 0 0.065 0
-                    rotation 0.5775032287046065 0.5775032287046065 -0.5770442285228318 2.093475
+                    translation -0.02158 0 -0.09691
+                    rotation 0 1 0 0.122173
                     children [
-                      Cylinder {
-                        height 0.08
-                        radius 0.06
+                      Box {
+                        size 0.06368 0.036 0.19764
+                      }
+                    ]
+                  }
+                  Pose {
+                    translation -0.01645 0 -0.23181
+                    rotation 0 -1 0 0.436332
+                    children [
+                      Box {
+                        size 0.054 0.036 0.115
                       }
                     ]
                   }
@@ -676,13 +743,13 @@ DEF GalileoV1d6X5 Robot {
               }
               physics Physics {
                 density -1
-                mass 2.211555
+                mass 2.930464
                 centerOfMass [
-                  -0.0028 0.03681 -0.023902
+                  -0.003481 0.032125 -0.031894
                 ]
                 inertiaMatrix [
-                  0.012133 0.0117725 0.0019164
-                  -0.0002099 -0.000542 -0.0020399
+                  0.0264127 0.0232267 0.0081071
+                  -5.18e-05 0.0012845 -0.0002853
                 ]
               }
             }
@@ -691,42 +758,44 @@ DEF GalileoV1d6X5 Robot {
         name "FR_hip"
         physics Physics {
           density -1
-          mass 1.645937
+          mass 1.87369
           centerOfMass [
-            -0.003454 -0.000147 -0.00096
+            -0.002155 -0.006319 1e-06
           ]
           inertiaMatrix [
-            0.0004144 0.000796 0.0005767
-            -1e-05 1.5e-06 1.4e-06
+            0.0021359 0.0034595 0.002322
+            -2.5e-05 0 0
           ]
         }
       }
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        anchor -0.279 -0.067 0
+        position -1.1988835092680006e-05
+        anchor -0.2987 -0.06 0
       }
       device [
         RotationalMotor {
           name "RR_hip_joint"
-          maxVelocity 12
-          minPosition -0.698132
-          maxPosition 0.698132
-          maxTorque 120
+          maxVelocity 22
+          minPosition -0.741764919444444
+          maxPosition 0.741764919444444
+          maxTorque 150
         }
         PositionSensor {
           name "RR_hip_joint_sensor"
         }
       ]
       endPoint Solid {
-        translation -0.279 -0.067 0
-        rotation 1 0 0 0
+        translation -0.2987 -0.06 0
+        rotation -1 0 0 1.1988833859206752e-05
         children [
           Transform {
             scale 1 -1 1
             children [
               Shape {
                 appearance DEF RR_hip_material PBRAppearance {
+                  baseColor 0.8 1 0.8
                   roughness 1
                   metalness 0
                 }
@@ -741,31 +810,32 @@ DEF GalileoV1d6X5 Robot {
           }
           HingeJoint {
             jointParameters HingeJointParameters {
-              position 0.72
+              position 0.8400014164989072
               axis 0 1 0
-              anchor 0 -0.1103 0
+              anchor 0 -0.1341 0
             }
             device [
               RotationalMotor {
                 name "RR_thigh_joint"
-                maxVelocity 12
-                minPosition -1.762783
-                maxPosition 3.647738
-                maxTorque 120
+                maxVelocity 22
+                minPosition -1.22173
+                maxPosition 3.8397
+                maxTorque 150
               }
               PositionSensor {
                 name "RR_thigh_joint_sensor"
               }
             ]
             endPoint Solid {
-              translation 0 -0.1103 0
-              rotation 0 1 0 0.7200000000000003
+              translation 0 -0.1341 0
+              rotation 0 0.9999999999999999 0 0.8400014164989071
               children [
                 Transform {
                   scale 1 -1 1
                   children [
                     Shape {
                       appearance DEF RR_thigh_material PBRAppearance {
+                        baseColor 1 0.5 1
                         roughness 1
                         metalness 0
                       }
@@ -775,17 +845,17 @@ DEF GalileoV1d6X5 Robot {
                 }
                 HingeJoint {
                   jointParameters HingeJointParameters {
-                    position -1.44
+                    position -1.6100207490346292
                     axis 0 1 0
                     anchor 0 0 -0.26
                   }
                   device [
                     RotationalMotor {
                       name "RR_calf_joint"
-                      maxVelocity 12
-                      minPosition -2.740167
-                      maxPosition -0.383972
-                      maxTorque 120
+                      maxVelocity 22
+                      minPosition -2.77507346333333
+                      maxPosition -0.541052058888889
+                      maxTorque 150
                     }
                     PositionSensor {
                       name "RR_calf_joint_sensor"
@@ -793,13 +863,14 @@ DEF GalileoV1d6X5 Robot {
                   ]
                   endPoint Solid {
                     translation 0 0 -0.26
-                    rotation 0 -1 0 1.4399999999999997
+                    rotation 0 -1 0 1.6100207490346292
                     children [
                       Transform {
                         scale 1 -1 1
                         children [
                           Shape {
                             appearance DEF RR_calf_material PBRAppearance {
+                              baseColor 1 0.4 0.4
                               roughness 1
                               metalness 0
                             }
@@ -808,10 +879,11 @@ DEF GalileoV1d6X5 Robot {
                         ]
                       }
                       Solid {
-                        translation 0 0 -0.26
+                        translation 0 0 -0.26149
                         children [
                           Shape {
                             appearance DEF RR_foot_material PBRAppearance {
+                              baseColor 1 1 0.4
                               roughness 1
                               metalness 0
                             }
@@ -826,12 +898,12 @@ DEF GalileoV1d6X5 Robot {
                         }
                         physics Physics {
                           density -1
-                          mass 0.04
+                          mass 0.000205
                           centerOfMass [
                             0 0 0
                           ]
                           inertiaMatrix [
-                            9.6e-06 9.6e-06 9.6e-06
+                            1.096001e-09 1.096001e-09 1.096001e-09
                             0 0 0
                           ]
                         }
@@ -841,20 +913,20 @@ DEF GalileoV1d6X5 Robot {
                     boundingObject Group {
                       children [
                         Pose {
-                          translation 0.015 0 -0.235
-                          rotation 0 1 0 0.5
+                          translation 0.00919 0 -0.06536
+                          rotation 0 -1 0 0.139626
                           children [
                             Box {
-                              size 0.04 0.02 0.05
+                              size 0.033 0.033 0.23
                             }
                           ]
                         }
                         Pose {
-                          translation 0.0085 0 -0.092
-                          rotation 0 -1 0 0.15
+                          translation 0.01381 0 -0.21574
+                          rotation 0 1 0 0.24103
                           children [
                             Box {
-                              size 0.032 0.02 0.27
+                              size 0.036 0.036 0.09273
                             }
                           ]
                         }
@@ -862,13 +934,13 @@ DEF GalileoV1d6X5 Robot {
                     }
                     physics Physics {
                       density -1
-                      mass 0.324831
+                      mass 0.302786
                       centerOfMass [
-                        0.006276 -6e-05 -0.145811
+                        0.008 -0.003625 -0.128915
                       ]
                       inertiaMatrix [
-                        0.0041942 0.0042423 9.93e-05
-                        0 -3e-07 0
+                        0.0085187 0.0085725 0.0001128
+                        -8.6e-06 0.0003718 -0.0001434
                       ]
                     }
                   }
@@ -878,20 +950,30 @@ DEF GalileoV1d6X5 Robot {
               boundingObject Group {
                 children [
                   Pose {
-                    translation -0.025 0 -0.15
+                    translation 0 0.02125 0
+                    rotation 0.5775032287046065 0.5775032287046065 -0.5770442285228318 2.093475
                     children [
-                      Box {
-                        size 0.05 0.02 0.18
+                      Cylinder {
+                        height 0.085
+                        radius 0.058
                       }
                     ]
                   }
                   Pose {
-                    translation 0 0.065 0
-                    rotation 0.5775032287046065 0.5775032287046065 -0.5770442285228318 2.093475
+                    translation -0.02158 0 -0.09691
+                    rotation 0 1 0 0.122173
                     children [
-                      Cylinder {
-                        height 0.08
-                        radius 0.06
+                      Box {
+                        size 0.06368 0.036 0.19764
+                      }
+                    ]
+                  }
+                  Pose {
+                    translation -0.01645 0 -0.23181
+                    rotation 0 -1 0 0.436332
+                    children [
+                      Box {
+                        size 0.054 0.036 0.115
                       }
                     ]
                   }
@@ -899,13 +981,13 @@ DEF GalileoV1d6X5 Robot {
               }
               physics Physics {
                 density -1
-                mass 2.211555
+                mass 2.930464
                 centerOfMass [
-                  -0.0028 0.03681 -0.023902
+                  -0.003481 0.032125 -0.031894
                 ]
                 inertiaMatrix [
-                  0.012133 0.0117725 0.0019164
-                  -0.0002099 -0.000542 -0.0020399
+                  0.0264127 0.0232267 0.0081071
+                  -5.18e-05 0.0012845 -0.0002853
                 ]
               }
             }
@@ -914,22 +996,23 @@ DEF GalileoV1d6X5 Robot {
         name "RR_hip"
         physics Physics {
           density -1
-          mass 1.645937
+          mass 1.87369
           centerOfMass [
-            -0.003454 -0.000147 -0.00096
+            -0.002155 -0.006319 1e-06
           ]
           inertiaMatrix [
-            0.0004144 0.000796 0.0005767
-            1e-05 -1.5e-06 1.4e-06
+            0.0021359 0.0034595 0.002322
+            -2.5e-05 0 0
           ]
         }
       }
     }
     Solid {
-      translation 0.18 0 0.08
+      translation 0.17 0 0.08
       children [
         Shape {
           appearance DEF link0_material PBRAppearance {
+            baseColor 0.75294 0.75294 0.75294
             roughness 1
             metalness 0
           }
@@ -941,6 +1024,7 @@ DEF GalileoV1d6X5 Robot {
         }
         HingeJoint {
           jointParameters HingeJointParameters {
+            position 2.604541194172087e-07
             axis 0 0 1
             anchor 0 0 0.0605
           }
@@ -958,9 +1042,11 @@ DEF GalileoV1d6X5 Robot {
           ]
           endPoint Solid {
             translation 0 0 0.0605
+            rotation 0 0 1 2.598106231415675e-07
             children [
               Shape {
                 appearance DEF link1_material PBRAppearance {
+                  baseColor 0.79216 0.81961 0.93333
                   roughness 1
                   metalness 0
                 }
@@ -972,6 +1058,7 @@ DEF GalileoV1d6X5 Robot {
               }
               HingeJoint {
                 jointParameters HingeJointParameters {
+                  position -7.446178376113721e-07
                   axis 0 1 0
                   anchor 0.02 0 0.04
                 }
@@ -989,10 +1076,11 @@ DEF GalileoV1d6X5 Robot {
                 ]
                 endPoint Solid {
                   translation 0.02 0 0.04
-                  rotation 0 1 0 0
+                  rotation 0 -1 0 7.444617746351282e-07
                   children [
                     Shape {
                       appearance DEF link2_material PBRAppearance {
+                        baseColor 0.75294 0.75294 0.75294
                         roughness 1
                         metalness 0
                       }
@@ -1004,6 +1092,7 @@ DEF GalileoV1d6X5 Robot {
                     }
                     HingeJoint {
                       jointParameters HingeJointParameters {
+                        position -5.494592543620058e-06
                         axis 0 -1 -7e-06
                         anchor -0.264 0 0
                       }
@@ -1011,6 +1100,7 @@ DEF GalileoV1d6X5 Robot {
                         RotationalMotor {
                           name "joint3"
                           maxVelocity 1000
+                          minPosition -5.494592543620058e-06
                           maxPosition 3.14
                           maxTorque 100
                         }
@@ -1020,10 +1110,11 @@ DEF GalileoV1d6X5 Robot {
                       ]
                       endPoint Solid {
                         translation -0.264 0 0
-                        rotation 1 0 0 3.1416
+                        rotation 0.9999999999962262 9.13969121634909e-12 -2.747296271809904e-06 3.1416
                         children [
                           Shape {
                             appearance DEF link3_material PBRAppearance {
+                              baseColor 1 0.98431 0.96471
                               roughness 1
                               metalness 0
                             }
@@ -1035,6 +1126,7 @@ DEF GalileoV1d6X5 Robot {
                           }
                           HingeJoint {
                             jointParameters HingeJointParameters {
+                              position -1.3223568213760473e-06
                               axis 0 1 0
                               anchor 0.245 0 -0.056
                             }
@@ -1052,10 +1144,11 @@ DEF GalileoV1d6X5 Robot {
                             ]
                             endPoint Solid {
                               translation 0.245 0 -0.056
-                              rotation 0 1 0 0
+                              rotation 0 -0.9999999999999999 0 1.3224308331211922e-06
                               children [
                                 Shape {
                                   appearance DEF link4_material PBRAppearance {
+                                    baseColor 0.79216 0.81961 0.92941
                                     roughness 1
                                     metalness 0
                                   }
@@ -1067,6 +1160,7 @@ DEF GalileoV1d6X5 Robot {
                                 }
                                 HingeJoint {
                                   jointParameters HingeJointParameters {
+                                    position 7.680723128117333e-07
                                     axis 0 0 1
                                     anchor 0.06775 0.0005 -0.0865
                                   }
@@ -1084,9 +1178,11 @@ DEF GalileoV1d6X5 Robot {
                                   ]
                                   endPoint Solid {
                                     translation 0.06775 0.0005 -0.0865
+                                    rotation 0 0 0.9999999999999999 7.679521278575185e-07
                                     children [
                                       Shape {
                                         appearance DEF link5_material PBRAppearance {
+                                          baseColor 0.69804 0.69804 0.69804
                                           roughness 1
                                           metalness 0
                                         }
@@ -1098,6 +1194,7 @@ DEF GalileoV1d6X5 Robot {
                                       }
                                       HingeJoint {
                                         jointParameters HingeJointParameters {
+                                          position 4.7094022778392543e-07
                                           anchor 0.02895 0 0.0865
                                         }
                                         device [
@@ -1114,10 +1211,11 @@ DEF GalileoV1d6X5 Robot {
                                         ]
                                         endPoint Solid {
                                           translation 0.02895 0 0.0865
-                                          rotation -1 0 0 3.1416
+                                          rotation -1 0 0 3.1415995290597722
                                           children [
                                             Shape {
                                               appearance DEF link6_material PBRAppearance {
+                                                baseColor 0.89804 0.91765 0.92941
                                                 roughness 1
                                                 metalness 0
                                               }
@@ -1129,12 +1227,14 @@ DEF GalileoV1d6X5 Robot {
                                             }
                                             SliderJoint {
                                               jointParameters JointParameters {
+                                                position -4.5464458567780565e-10
                                                 axis 0 1 0
                                               }
                                               device [
                                                 LinearMotor {
                                                   name "joint7"
                                                   maxVelocity 1000
+                                                  minPosition -4.5464458567780565e-10
                                                   maxPosition 0.044
                                                   maxForce 100
                                                 }
@@ -1143,7 +1243,7 @@ DEF GalileoV1d6X5 Robot {
                                                 }
                                               ]
                                               endPoint Solid {
-                                                translation 0.08657 0.024896 -0.000244
+                                                translation 0.08657 0.024895999545355416 -0.000244
                                                 children [
                                                   Shape {
                                                     appearance DEF link7_material PBRAppearance {
@@ -1158,7 +1258,26 @@ DEF GalileoV1d6X5 Robot {
                                                   }
                                                 ]
                                                 name "link7"
-                                                boundingObject USE link7
+                                                boundingObject Group {
+                                                  children [
+                                                    Pose {
+                                                      translation 0.05 -0.023 0
+                                                      children [
+                                                        Box {
+                                                          size 0.04 0.004 0.0105
+                                                        }
+                                                      ]
+                                                    }
+                                                    Pose {
+                                                      translation 0.015 -0.023 0
+                                                      children [
+                                                        Box {
+                                                          size 0.03 0.004 0.036
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
                                                 physics Physics {
                                                   density -1
                                                   mass 0.064798
@@ -1174,6 +1293,7 @@ DEF GalileoV1d6X5 Robot {
                                             }
                                             SliderJoint {
                                               jointParameters JointParameters {
+                                                position 4.5472714288588713e-10
                                                 axis 0 -1 0
                                               }
                                               device [
@@ -1188,7 +1308,7 @@ DEF GalileoV1d6X5 Robot {
                                                 }
                                               ]
                                               endPoint Solid {
-                                                translation 0.08657 -0.0249 -0.000244
+                                                translation 0.08657 -0.02490000045472714 -0.000244
                                                 children [
                                                   Shape {
                                                     appearance DEF link8_material PBRAppearance {
@@ -1203,7 +1323,26 @@ DEF GalileoV1d6X5 Robot {
                                                   }
                                                 ]
                                                 name "link8"
-                                                boundingObject USE link8
+                                                boundingObject Group {
+                                                  children [
+                                                    Pose {
+                                                      translation 0.05 0.023 0
+                                                      children [
+                                                        Box {
+                                                          size 0.04 0.004 0.0105
+                                                        }
+                                                      ]
+                                                    }
+                                                    Pose {
+                                                      translation 0.015 0.023 0
+                                                      children [
+                                                        Box {
+                                                          size 0.03 0.004 0.036
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
                                                 physics Physics {
                                                   density -1
                                                   mass 0.064798
@@ -1413,26 +1552,61 @@ DEF GalileoV1d6X5 Robot {
       }
     }
   ]
-  name "GalileoV1d6X5"
-  boundingObject Pose {
-    translation 0 0 -0.01
+  name "Grq20V2d3Default"
+  boundingObject Group {
     children [
-      Box {
-        size 0.42 0.26 0.18
+      Pose {
+        translation 0 0 -0.01
+        children [
+          Box {
+            size 0.42 0.26 0.18
+          }
+        ]
+      }
+      Pose {
+        translation 0.32 0 0.01
+        children [
+          Box {
+            size 0.22 0.16 0.14
+          }
+        ]
+      }
+      Pose {
+        translation -0.32 0 0.01
+        children [
+          Box {
+            size 0.22 0.16 0.14
+          }
+        ]
+      }
+      Pose {
+        translation 0.27 0 0.1
+        children [
+          Box {
+            size 0.06 0.16 0.05
+          }
+        ]
+      }
+      Pose {
+        translation -0.27 0 0.1
+        children [
+          Box {
+            size 0.06 0.16 0.05
+          }
+        ]
       }
     ]
   }
   physics Physics {
     density -1
-    mass 24.042743
+    mass 25.267696
     centerOfMass [
-      0.002783 -0.009841 -0.000267
+      -0.001678 -0.004565 0.003165
     ]
     inertiaMatrix [
-      0.1136788 0.3485644 0.408405
-      0.0016372 0.0001502 3.6e-05
+      0.166907 0.8444934 0.9116615
+      -0.0002328 0.0044427 -0.0002798
     ]
   }
-  controller "<extern>"
   supervisor TRUE
 }

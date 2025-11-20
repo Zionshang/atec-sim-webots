@@ -1,19 +1,19 @@
 #VRML_SIM R2025a utf8
 # license: Apache License 2.0
 # license url: http://www.apache.org/licenses/LICENSE-2.0
-# This is a proto file for Webots for the GalileoV1d6X5
-# Extracted from: /home/zishang/ros2_workspace/robot_description/src/galileo_v1d6_x5_description/urdf/galileo_v1d6_x5.urdf
+# This is a proto file for Webots for the Grq20V2d3Default
+# Extracted from: /home/zishang/ros2_workspace/robot_description/src/grq20_v2d3_x5/grq20_v2d3_x5.urdf
 
-PROTO GalileoV1d6X5 [
+PROTO Grq20V2d3Default [
   field  SFVec3f     translation     0 0 0
   field  SFRotation  rotation        0 0 1 0
-  field  SFString    name            "GalileoV1d6X5"  # Is `Robot.name`.
-  field  SFString    controller      "void"         # Is `Robot.controller`.
-  field  MFString    controllerArgs  []             # Is `Robot.controllerArgs`.
-  field  SFString    customData      ""             # Is `Robot.customData`.
-  field  SFBool      supervisor      FALSE          # Is `Robot.supervisor`.
-  field  SFBool      synchronization TRUE           # Is `Robot.synchronization`.
-  field  SFBool      selfCollision   FALSE          # Is `Robot.selfCollision`.
+  field  SFString    name            "Grq20V2d3Default"  # Is `Robot.name`.
+  field  SFString    controller      "void"              # Is `Robot.controller`.
+  field  MFString    controllerArgs  []                  # Is `Robot.controllerArgs`.
+  field  SFString    customData      ""                  # Is `Robot.customData`.
+  field  SFBool      supervisor      FALSE               # Is `Robot.supervisor`.
+  field  SFBool      synchronization TRUE                # Is `Robot.synchronization`.
+  field  SFBool      selfCollision   FALSE               # Is `Robot.selfCollision`.
 ]
 {
   Robot {
@@ -28,83 +28,86 @@ PROTO GalileoV1d6X5 [
     children [
       Shape {
         appearance DEF base_link_material PBRAppearance {
+          baseColor 0.800000 0.400000 0.000000
           roughness 1.000000
           metalness 0
         }
         geometry DEF TRUCK Mesh {
-          url "./meshes/TRUCK.STL"
+          url "meshes/TRUCK.STL"
         }
       }
       HingeJoint {
         jointParameters HingeJointParameters {
-          anchor 0.279000 0.067000 0.000000
+          anchor 0.298700 0.060000 0.000000
         }
         device [
           RotationalMotor {
             name "FL_hip_joint"
-            maxVelocity 12.0
-            minPosition -0.698132
-            maxPosition 0.698132
-            maxTorque 120.0
+            maxVelocity 22.0
+            minPosition -0.741764919444444
+            maxPosition 0.741764919444444
+            maxTorque 150.0
           }
           PositionSensor {
             name "FL_hip_joint_sensor"
           }
         ]
         endPoint Solid {
-          translation 0.279000 0.067000 0.000000
+          translation 0.298700 0.060000 0.000000
           children [
             Shape {
               appearance DEF FL_hip_material PBRAppearance {
+                baseColor 1.000000 0.400000 0.400000
                 roughness 1.000000
                 metalness 0
               }
               geometry DEF FL_HIP Mesh {
-                url "./meshes/FL_HIP.STL"
+                url "meshes/FL_HIP.STL"
               }
             }
             HingeJoint {
               jointParameters HingeJointParameters {
                 axis 0.000000 1.000000 0.000000
-                anchor 0.000000 0.110300 0.000000
+                anchor 0.000000 0.134100 0.000000
               }
               device [
                 RotationalMotor {
                   name "FL_thigh_joint"
-                  maxVelocity 12.0
-                  minPosition -1.762783
-                  maxPosition 3.647738
-                  maxTorque 120.0
+                  maxVelocity 22.0
+                  minPosition -1.22173
+                  maxPosition 3.8397
+                  maxTorque 150.0
                 }
                 PositionSensor {
                   name "FL_thigh_joint_sensor"
                 }
               ]
               endPoint Solid {
-                translation 0.000000 0.110300 0.000000
+                translation 0.000000 0.134100 0.000000
                 children [
                   Shape {
                     appearance DEF FL_thigh_material PBRAppearance {
+                      baseColor 1.000000 1.000000 0.400000
                       roughness 1.000000
                       metalness 0
                     }
                     geometry DEF FL_THIGH Mesh {
-                      url "./meshes/FL_THIGH.STL"
+                      url "meshes/FL_THIGH.STL"
                     }
                   }
                   HingeJoint {
                     jointParameters HingeJointParameters {
-                      position -1.562069
+                      position -1.658063
                       axis 0.000000 1.000000 0.000000
                       anchor 0.000000 0.000000 -0.260000
                     }
                     device [
                       RotationalMotor {
                         name "FL_calf_joint"
-                        maxVelocity 12.0
-                        minPosition -2.740167
-                        maxPosition -0.383972
-                        maxTorque 120.0
+                        maxVelocity 22.0
+                        minPosition -2.77507346333333
+                        maxPosition -0.541052058888889
+                        maxTorque 150.0
                       }
                       PositionSensor {
                         name "FL_calf_joint_sensor"
@@ -112,22 +115,24 @@ PROTO GalileoV1d6X5 [
                     ]
                     endPoint Solid {
                       translation 0.000000 0.000000 -0.260000
-                      rotation 0.000000 -1.000000 0.000000 1.562069
+                      rotation 0.000000 -1.000000 0.000000 1.658063
                       children [
                         Shape {
                           appearance DEF FL_calf_material PBRAppearance {
+                            baseColor 0.400000 1.000000 0.400000
                             roughness 1.000000
                             metalness 0
                           }
                           geometry DEF FL_CALF Mesh {
-                            url "./meshes/FL_CALF.STL"
+                            url "meshes/FL_CALF.STL"
                           }
                         }
                         Solid {
-                          translation 0.000000 0.000000 -0.260000
+                          translation 0.000000 0.000000 -0.261490
                           children [
                             Shape {
                               appearance DEF FL_foot_material PBRAppearance {
+                                baseColor 0.000000 0.500000 1.000000
                                 roughness 1.000000
                                 metalness 0
                               }
@@ -142,10 +147,10 @@ PROTO GalileoV1d6X5 [
                           }
                           physics Physics {
                             density -1
-                            mass 0.040000
+                            mass 0.000205
                             centerOfMass [ 0.000000 0.000000 0.000000 ]
                             inertiaMatrix [
-                              9.600000e-06 9.600000e-06 9.600000e-06
+                              1.096001e-09 1.096001e-09 1.096001e-09
                               0.000000e+00 0.000000e+00 0.000000e+00
                             ]
                           }
@@ -155,20 +160,20 @@ PROTO GalileoV1d6X5 [
                       boundingObject Group {
                         children [
                           Pose {
-                            translation 0.015000 0.000000 -0.235000
-                            rotation 0.000000 1.000000 0.000000 0.500000
+                            translation 0.009190 0.000000 -0.065360
+                            rotation 0.000000 -1.000000 0.000000 0.139626
                             children [
                               Box {
-                                 size 0.040000 0.020000 0.050000
+                                 size 0.033000 0.033000 0.230000
                               }
                             ]
                           }
                           Pose {
-                            translation 0.008500 0.000000 -0.092000
-                            rotation 0.000000 -1.000000 0.000000 0.150000
+                            translation 0.013810 0.000000 -0.215740
+                            rotation 0.000000 1.000000 0.000000 0.241030
                             children [
                               Box {
-                                 size 0.032000 0.020000 0.270000
+                                 size 0.036000 0.036000 0.092730
                               }
                             ]
                           }
@@ -176,11 +181,11 @@ PROTO GalileoV1d6X5 [
                       }
                       physics Physics {
                         density -1
-                        mass 0.324831
-                        centerOfMass [ 0.006276 0.000060 -0.145811 ]
+                        mass 0.302786
+                        centerOfMass [ 0.008000 0.003625 -0.128915 ]
                         inertiaMatrix [
-                          4.194200e-03 4.242300e-03 9.930000e-05
-                          0.000000e+00 -3.000000e-07 0.000000e+00
+                          8.518700e-03 8.572500e-03 1.128000e-04
+                          8.600000e-06 3.718000e-04 1.434000e-04
                         ]
                       }
                     }
@@ -190,20 +195,30 @@ PROTO GalileoV1d6X5 [
                 boundingObject Group {
                   children [
                     Pose {
-                      translation -0.025000 0.000000 -0.150000
+                      translation 0.000000 -0.021250 0.000000
+                      rotation 0.577503 0.577503 -0.577044 2.093475
                       children [
-                        Box {
-                           size 0.050000 0.020000 0.180000
+                        Cylinder {
+                          radius 0.058
+                          height 0.085
                         }
                       ]
                     }
                     Pose {
-                      translation 0.000000 -0.065000 0.000000
-                      rotation 0.577503 0.577503 -0.577044 2.093475
+                      translation -0.021580 0.000000 -0.096910
+                      rotation 0.000000 1.000000 0.000000 0.122173
                       children [
-                        Cylinder {
-                          radius 0.06
-                          height 0.08
+                        Box {
+                           size 0.063680 0.036000 0.197640
+                        }
+                      ]
+                    }
+                    Pose {
+                      translation -0.016450 0.000000 -0.231810
+                      rotation 0.000000 -1.000000 0.000000 0.436332
+                      children [
+                        Box {
+                           size 0.054000 0.036000 0.115000
                         }
                       ]
                     }
@@ -211,11 +226,11 @@ PROTO GalileoV1d6X5 [
                 }
                 physics Physics {
                   density -1
-                  mass 2.211555
-                  centerOfMass [ -0.002800 -0.036810 -0.023902 ]
+                  mass 2.930464
+                  centerOfMass [ -0.003481 -0.032125 -0.031894 ]
                   inertiaMatrix [
-                    1.213300e-02 1.177250e-02 1.916400e-03
-                    2.099000e-04 -5.420000e-04 2.039900e-03
+                    2.641270e-02 2.322670e-02 8.107100e-03
+                    5.180000e-05 1.284500e-03 2.853000e-04
                   ]
                 }
               }
@@ -224,65 +239,67 @@ PROTO GalileoV1d6X5 [
           name "FL_hip"
           physics Physics {
             density -1
-            mass 1.645937
-            centerOfMass [ -0.003454 0.000147 -0.000960 ]
+            mass 1.873690
+            centerOfMass [ -0.002155 0.006319 0.000001 ]
             inertiaMatrix [
-              4.144000e-04 7.960000e-04 5.767000e-04
-              1.000000e-05 1.500000e-06 -1.400000e-06
+              2.135900e-03 3.459500e-03 2.322000e-03
+              2.500000e-05 0.000000e+00 0.000000e+00
             ]
           }
         }
       }
       HingeJoint {
         jointParameters HingeJointParameters {
-          anchor -0.279000 0.067000 0.000000
+          anchor -0.298700 0.060000 0.000000
         }
         device [
           RotationalMotor {
             name "RL_hip_joint"
-            maxVelocity 12.0
-            minPosition -0.698132
-            maxPosition 0.698132
-            maxTorque 120.0
+            maxVelocity 22.0
+            minPosition -0.741764919444444
+            maxPosition 0.741764919444444
+            maxTorque 150.0
           }
           PositionSensor {
             name "RL_hip_joint_sensor"
           }
         ]
         endPoint Solid {
-          translation -0.279000 0.067000 0.000000
+          translation -0.298700 0.060000 0.000000
           children [
             Shape {
               appearance DEF RL_hip_material PBRAppearance {
+                baseColor 0.800000 1.000000 0.800000
                 roughness 1.000000
                 metalness 0
               }
               geometry DEF RL_HIP Mesh {
-                url "./meshes/RL_HIP.STL"
+                url "meshes/RL_HIP.STL"
               }
             }
             HingeJoint {
               jointParameters HingeJointParameters {
                 axis 0.000000 1.000000 0.000000
-                anchor 0.000000 0.110300 0.000000
+                anchor 0.000000 0.134100 0.000000
               }
               device [
                 RotationalMotor {
                   name "RL_thigh_joint"
-                  maxVelocity 12.0
-                  minPosition -1.762783
-                  maxPosition 3.647738
-                  maxTorque 120.0
+                  maxVelocity 22.0
+                  minPosition -1.22173
+                  maxPosition 3.8397
+                  maxTorque 150.0
                 }
                 PositionSensor {
                   name "RL_thigh_joint_sensor"
                 }
               ]
               endPoint Solid {
-                translation 0.000000 0.110300 0.000000
+                translation 0.000000 0.134100 0.000000
                 children [
                   Shape {
                     appearance DEF RL_thigh_material PBRAppearance {
+                      baseColor 1.000000 0.500000 1.000000
                       roughness 1.000000
                       metalness 0
                     }
@@ -290,17 +307,17 @@ PROTO GalileoV1d6X5 [
                   }
                   HingeJoint {
                     jointParameters HingeJointParameters {
-                      position -1.562069
+                      position -1.658063
                       axis 0.000000 1.000000 0.000000
                       anchor 0.000000 0.000000 -0.260000
                     }
                     device [
                       RotationalMotor {
                         name "RL_calf_joint"
-                        maxVelocity 12.0
-                        minPosition -2.740167
-                        maxPosition -0.383972
-                        maxTorque 120.0
+                        maxVelocity 22.0
+                        minPosition -2.77507346333333
+                        maxPosition -0.541052058888889
+                        maxTorque 150.0
                       }
                       PositionSensor {
                         name "RL_calf_joint_sensor"
@@ -308,20 +325,22 @@ PROTO GalileoV1d6X5 [
                     ]
                     endPoint Solid {
                       translation 0.000000 0.000000 -0.260000
-                      rotation 0.000000 -1.000000 0.000000 1.562069
+                      rotation 0.000000 -1.000000 0.000000 1.658063
                       children [
                         Shape {
                           appearance DEF RL_calf_material PBRAppearance {
+                            baseColor 1.000000 0.400000 0.400000
                             roughness 1.000000
                             metalness 0
                           }
                           geometry USE FL_CALF
                         }
                         Solid {
-                          translation 0.000000 0.000000 -0.260000
+                          translation 0.000000 0.000000 -0.261490
                           children [
                             Shape {
                               appearance DEF RL_foot_material PBRAppearance {
+                                baseColor 1.000000 1.000000 0.400000
                                 roughness 1.000000
                                 metalness 0
                               }
@@ -336,10 +355,10 @@ PROTO GalileoV1d6X5 [
                           }
                           physics Physics {
                             density -1
-                            mass 0.040000
+                            mass 0.000205
                             centerOfMass [ 0.000000 0.000000 0.000000 ]
                             inertiaMatrix [
-                              9.600000e-06 9.600000e-06 9.600000e-06
+                              1.096001e-09 1.096001e-09 1.096001e-09
                               0.000000e+00 0.000000e+00 0.000000e+00
                             ]
                           }
@@ -349,20 +368,20 @@ PROTO GalileoV1d6X5 [
                       boundingObject Group {
                         children [
                           Pose {
-                            translation 0.015000 0.000000 -0.235000
-                            rotation 0.000000 1.000000 0.000000 0.500000
+                            translation 0.009190 0.000000 -0.065360
+                            rotation 0.000000 -1.000000 0.000000 0.139626
                             children [
                               Box {
-                                 size 0.040000 0.020000 0.050000
+                                 size 0.033000 0.033000 0.230000
                               }
                             ]
                           }
                           Pose {
-                            translation 0.008500 0.000000 -0.092000
-                            rotation 0.000000 -1.000000 0.000000 0.150000
+                            translation 0.013810 0.000000 -0.215740
+                            rotation 0.000000 1.000000 0.000000 0.241030
                             children [
                               Box {
-                                 size 0.032000 0.020000 0.270000
+                                 size 0.036000 0.036000 0.092730
                               }
                             ]
                           }
@@ -370,11 +389,11 @@ PROTO GalileoV1d6X5 [
                       }
                       physics Physics {
                         density -1
-                        mass 0.324831
-                        centerOfMass [ 0.006276 0.000060 -0.145811 ]
+                        mass 0.302786
+                        centerOfMass [ 0.008000 0.003625 -0.128915 ]
                         inertiaMatrix [
-                          4.194200e-03 4.242300e-03 9.930000e-05
-                          0.000000e+00 -3.000000e-07 0.000000e+00
+                          8.518700e-03 8.572500e-03 1.128000e-04
+                          8.600000e-06 3.718000e-04 1.434000e-04
                         ]
                       }
                     }
@@ -384,20 +403,30 @@ PROTO GalileoV1d6X5 [
                 boundingObject Group {
                   children [
                     Pose {
-                      translation -0.025000 0.000000 -0.150000
+                      translation 0.000000 -0.021250 0.000000
+                      rotation 0.577503 0.577503 -0.577044 2.093475
                       children [
-                        Box {
-                           size 0.050000 0.020000 0.180000
+                        Cylinder {
+                          radius 0.058
+                          height 0.085
                         }
                       ]
                     }
                     Pose {
-                      translation 0.000000 -0.065000 0.000000
-                      rotation 0.577503 0.577503 -0.577044 2.093475
+                      translation -0.021580 0.000000 -0.096910
+                      rotation 0.000000 1.000000 0.000000 0.122173
                       children [
-                        Cylinder {
-                          radius 0.06
-                          height 0.08
+                        Box {
+                           size 0.063680 0.036000 0.197640
+                        }
+                      ]
+                    }
+                    Pose {
+                      translation -0.016450 0.000000 -0.231810
+                      rotation 0.000000 -1.000000 0.000000 0.436332
+                      children [
+                        Box {
+                           size 0.054000 0.036000 0.115000
                         }
                       ]
                     }
@@ -405,11 +434,11 @@ PROTO GalileoV1d6X5 [
                 }
                 physics Physics {
                   density -1
-                  mass 2.211555
-                  centerOfMass [ -0.002800 -0.036810 -0.023902 ]
+                  mass 2.930464
+                  centerOfMass [ -0.003481 -0.032125 -0.031894 ]
                   inertiaMatrix [
-                    1.213300e-02 1.177250e-02 1.916400e-03
-                    2.099000e-04 -5.420000e-04 2.039900e-03
+                    2.641270e-02 2.322670e-02 8.107100e-03
+                    5.180000e-05 1.284500e-03 2.853000e-04
                   ]
                 }
               }
@@ -418,44 +447,45 @@ PROTO GalileoV1d6X5 [
           name "RL_hip"
           physics Physics {
             density -1
-            mass 1.645937
-            centerOfMass [ -0.003454 0.000147 -0.000960 ]
+            mass 1.873690
+            centerOfMass [ -0.002155 0.006319 0.000001 ]
             inertiaMatrix [
-              4.144000e-04 7.960000e-04 5.767000e-04
-              -1.000000e-05 -1.500000e-06 -1.400000e-06
+              2.135900e-03 3.459500e-03 2.322000e-03
+              2.500000e-05 0.000000e+00 0.000000e+00
             ]
           }
         }
       }
       HingeJoint {
         jointParameters HingeJointParameters {
-          anchor 0.279000 -0.067000 0.000000
+          anchor 0.298700 -0.060000 0.000000
         }
         device [
           RotationalMotor {
             name "FR_hip_joint"
-            maxVelocity 12.0
-            minPosition -0.698132
-            maxPosition 0.698132
-            maxTorque 120.0
+            maxVelocity 22.0
+            minPosition -0.741764919444444
+            maxPosition 0.741764919444444
+            maxTorque 150.0
           }
           PositionSensor {
             name "FR_hip_joint_sensor"
           }
         ]
         endPoint Solid {
-          translation 0.279000 -0.067000 0.000000
+          translation 0.298700 -0.060000 0.000000
           children [
             Transform {
               scale 1.000000 -1.000000 1.000000
               children [
                 Shape {
                   appearance DEF FR_hip_material PBRAppearance {
+                    baseColor 1.000000 0.400000 0.400000
                     roughness 1.000000
                     metalness 0
                   }
                   geometry DEF FL_HIP_cw Mesh {
-                    url "./meshes/FL_HIP.STL"
+                    url "meshes/FL_HIP.STL"
                     ccw FALSE
                   }
                 }
@@ -464,33 +494,34 @@ PROTO GalileoV1d6X5 [
             HingeJoint {
               jointParameters HingeJointParameters {
                 axis 0.000000 1.000000 0.000000
-                anchor 0.000000 -0.110300 0.000000
+                anchor 0.000000 -0.134100 0.000000
               }
               device [
                 RotationalMotor {
                   name "FR_thigh_joint"
-                  maxVelocity 12.0
-                  minPosition -1.762783
-                  maxPosition 3.647738
-                  maxTorque 120.0
+                  maxVelocity 22.0
+                  minPosition -1.22173
+                  maxPosition 3.8397
+                  maxTorque 150.0
                 }
                 PositionSensor {
                   name "FR_thigh_joint_sensor"
                 }
               ]
               endPoint Solid {
-                translation 0.000000 -0.110300 0.000000
+                translation 0.000000 -0.134100 0.000000
                 children [
                   Transform {
                     scale 1.000000 -1.000000 1.000000
                     children [
                       Shape {
                         appearance DEF FR_thigh_material PBRAppearance {
+                          baseColor 1.000000 1.000000 0.400000
                           roughness 1.000000
                           metalness 0
                         }
                         geometry DEF FL_THIGH_cw Mesh {
-                          url "./meshes/FL_THIGH.STL"
+                          url "meshes/FL_THIGH.STL"
                           ccw FALSE
                         }
                       }
@@ -498,17 +529,17 @@ PROTO GalileoV1d6X5 [
                   }
                   HingeJoint {
                     jointParameters HingeJointParameters {
-                      position -1.562069
+                      position -1.658063
                       axis 0.000000 1.000000 0.000000
                       anchor 0.000000 -0.000000 -0.260000
                     }
                     device [
                       RotationalMotor {
                         name "FR_calf_joint"
-                        maxVelocity 12.0
-                        minPosition -2.740167
-                        maxPosition -0.383972
-                        maxTorque 120.0
+                        maxVelocity 22.0
+                        minPosition -2.77507346333333
+                        maxPosition -0.541052058888889
+                        maxTorque 150.0
                       }
                       PositionSensor {
                         name "FR_calf_joint_sensor"
@@ -516,28 +547,30 @@ PROTO GalileoV1d6X5 [
                     ]
                     endPoint Solid {
                       translation 0.000000 -0.000000 -0.260000
-                      rotation 0.000000 -1.000000 0.000000 1.562069
+                      rotation 0.000000 -1.000000 0.000000 1.658063
                       children [
                         Transform {
                           scale 1.000000 -1.000000 1.000000
                           children [
                             Shape {
                               appearance DEF FR_calf_material PBRAppearance {
+                                baseColor 0.400000 1.000000 0.400000
                                 roughness 1.000000
                                 metalness 0
                               }
                               geometry DEF FL_CALF_cw Mesh {
-                                url "./meshes/FL_CALF.STL"
+                                url "meshes/FL_CALF.STL"
                                 ccw FALSE
                               }
                             }
                           ]
                         }
                         Solid {
-                          translation 0.000000 -0.000000 -0.260000
+                          translation 0.000000 -0.000000 -0.261490
                           children [
                             Shape {
                               appearance DEF FR_foot_material PBRAppearance {
+                                baseColor 0.000000 0.500000 1.000000
                                 roughness 1.000000
                                 metalness 0
                               }
@@ -552,11 +585,11 @@ PROTO GalileoV1d6X5 [
                           }
                           physics Physics {
                             density -1
-                            mass 0.040000
-                            centerOfMass [ 0.000000 0.000000 0.000000 ]
+                            mass 0.000205
+                            centerOfMass [ 0.000000 -0.000000 0.000000 ]
                             inertiaMatrix [
-                              9.600000e-06 9.600000e-06 9.600000e-06
-                              0.000000e+00 0.000000e+00 0.000000e+00
+                              1.096001e-09 1.096001e-09 1.096001e-09
+                              -0.000000e+00 0.000000e+00 -0.000000e+00
                             ]
                           }
                         }
@@ -565,20 +598,20 @@ PROTO GalileoV1d6X5 [
                       boundingObject Group {
                         children [
                           Pose {
-                            translation 0.015000 0.000000 -0.235000
-                            rotation 0.000000 1.000000 0.000000 0.500000
+                            translation 0.009190 0.000000 -0.065360
+                            rotation 0.000000 -1.000000 0.000000 0.139626
                             children [
                               Box {
-                                 size 0.040000 0.020000 0.050000
+                                 size 0.033000 0.033000 0.230000
                               }
                             ]
                           }
                           Pose {
-                            translation 0.008500 0.000000 -0.092000
-                            rotation 0.000000 -1.000000 0.000000 0.150000
+                            translation 0.013810 0.000000 -0.215740
+                            rotation 0.000000 1.000000 0.000000 0.241030
                             children [
                               Box {
-                                 size 0.032000 0.020000 0.270000
+                                 size 0.036000 0.036000 0.092730
                               }
                             ]
                           }
@@ -586,11 +619,11 @@ PROTO GalileoV1d6X5 [
                       }
                       physics Physics {
                         density -1
-                        mass 0.324831
-                        centerOfMass [ 0.006276 -0.000060 -0.145811 ]
+                        mass 0.302786
+                        centerOfMass [ 0.008000 -0.003625 -0.128915 ]
                         inertiaMatrix [
-                          4.194200e-03 4.242300e-03 9.930000e-05
-                          -0.000000e+00 -3.000000e-07 -0.000000e+00
+                          8.518700e-03 8.572500e-03 1.128000e-04
+                          -8.600000e-06 3.718000e-04 -1.434000e-04
                         ]
                       }
                     }
@@ -600,20 +633,30 @@ PROTO GalileoV1d6X5 [
                 boundingObject Group {
                   children [
                     Pose {
-                      translation -0.025000 0.000000 -0.150000
+                      translation 0.000000 0.021250 0.000000
+                      rotation 0.577503 0.577503 -0.577044 2.093475
                       children [
-                        Box {
-                           size 0.050000 0.020000 0.180000
+                        Cylinder {
+                          radius 0.058
+                          height 0.085
                         }
                       ]
                     }
                     Pose {
-                      translation 0.000000 0.065000 0.000000
-                      rotation 0.577503 0.577503 -0.577044 2.093475
+                      translation -0.021580 0.000000 -0.096910
+                      rotation 0.000000 1.000000 0.000000 0.122173
                       children [
-                        Cylinder {
-                          radius 0.06
-                          height 0.08
+                        Box {
+                           size 0.063680 0.036000 0.197640
+                        }
+                      ]
+                    }
+                    Pose {
+                      translation -0.016450 0.000000 -0.231810
+                      rotation 0.000000 -1.000000 0.000000 0.436332
+                      children [
+                        Box {
+                           size 0.054000 0.036000 0.115000
                         }
                       ]
                     }
@@ -621,11 +664,11 @@ PROTO GalileoV1d6X5 [
                 }
                 physics Physics {
                   density -1
-                  mass 2.211555
-                  centerOfMass [ -0.002800 0.036810 -0.023902 ]
+                  mass 2.930464
+                  centerOfMass [ -0.003481 0.032125 -0.031894 ]
                   inertiaMatrix [
-                    1.213300e-02 1.177250e-02 1.916400e-03
-                    -2.099000e-04 -5.420000e-04 -2.039900e-03
+                    2.641270e-02 2.322670e-02 8.107100e-03
+                    -5.180000e-05 1.284500e-03 -2.853000e-04
                   ]
                 }
               }
@@ -634,44 +677,45 @@ PROTO GalileoV1d6X5 [
           name "FR_hip"
           physics Physics {
             density -1
-            mass 1.645937
-            centerOfMass [ -0.003454 -0.000147 -0.000960 ]
+            mass 1.873690
+            centerOfMass [ -0.002155 -0.006319 0.000001 ]
             inertiaMatrix [
-              4.144000e-04 7.960000e-04 5.767000e-04
-              -1.000000e-05 1.500000e-06 1.400000e-06
+              2.135900e-03 3.459500e-03 2.322000e-03
+              -2.500000e-05 0.000000e+00 -0.000000e+00
             ]
           }
         }
       }
       HingeJoint {
         jointParameters HingeJointParameters {
-          anchor -0.279000 -0.067000 0.000000
+          anchor -0.298700 -0.060000 0.000000
         }
         device [
           RotationalMotor {
             name "RR_hip_joint"
-            maxVelocity 12.0
-            minPosition -0.698132
-            maxPosition 0.698132
-            maxTorque 120.0
+            maxVelocity 22.0
+            minPosition -0.741764919444444
+            maxPosition 0.741764919444444
+            maxTorque 150.0
           }
           PositionSensor {
             name "RR_hip_joint_sensor"
           }
         ]
         endPoint Solid {
-          translation -0.279000 -0.067000 0.000000
+          translation -0.298700 -0.060000 0.000000
           children [
             Transform {
               scale 1.000000 -1.000000 1.000000
               children [
                 Shape {
                   appearance DEF RR_hip_material PBRAppearance {
+                    baseColor 0.800000 1.000000 0.800000
                     roughness 1.000000
                     metalness 0
                   }
                   geometry DEF RL_HIP_cw Mesh {
-                    url "./meshes/RL_HIP.STL"
+                    url "meshes/RL_HIP.STL"
                     ccw FALSE
                   }
                 }
@@ -680,28 +724,29 @@ PROTO GalileoV1d6X5 [
             HingeJoint {
               jointParameters HingeJointParameters {
                 axis 0.000000 1.000000 0.000000
-                anchor 0.000000 -0.110300 0.000000
+                anchor 0.000000 -0.134100 0.000000
               }
               device [
                 RotationalMotor {
                   name "RR_thigh_joint"
-                  maxVelocity 12.0
-                  minPosition -1.762783
-                  maxPosition 3.647738
-                  maxTorque 120.0
+                  maxVelocity 22.0
+                  minPosition -1.22173
+                  maxPosition 3.8397
+                  maxTorque 150.0
                 }
                 PositionSensor {
                   name "RR_thigh_joint_sensor"
                 }
               ]
               endPoint Solid {
-                translation 0.000000 -0.110300 0.000000
+                translation 0.000000 -0.134100 0.000000
                 children [
                   Transform {
                     scale 1.000000 -1.000000 1.000000
                     children [
                       Shape {
                         appearance DEF RR_thigh_material PBRAppearance {
+                          baseColor 1.000000 0.500000 1.000000
                           roughness 1.000000
                           metalness 0
                         }
@@ -711,17 +756,17 @@ PROTO GalileoV1d6X5 [
                   }
                   HingeJoint {
                     jointParameters HingeJointParameters {
-                      position -1.562069
+                      position -1.658063
                       axis 0.000000 1.000000 0.000000
                       anchor 0.000000 -0.000000 -0.260000
                     }
                     device [
                       RotationalMotor {
                         name "RR_calf_joint"
-                        maxVelocity 12.0
-                        minPosition -2.740167
-                        maxPosition -0.383972
-                        maxTorque 120.0
+                        maxVelocity 22.0
+                        minPosition -2.77507346333333
+                        maxPosition -0.541052058888889
+                        maxTorque 150.0
                       }
                       PositionSensor {
                         name "RR_calf_joint_sensor"
@@ -729,13 +774,14 @@ PROTO GalileoV1d6X5 [
                     ]
                     endPoint Solid {
                       translation 0.000000 -0.000000 -0.260000
-                      rotation 0.000000 -1.000000 0.000000 1.562069
+                      rotation 0.000000 -1.000000 0.000000 1.658063
                       children [
                         Transform {
                           scale 1.000000 -1.000000 1.000000
                           children [
                             Shape {
                               appearance DEF RR_calf_material PBRAppearance {
+                                baseColor 1.000000 0.400000 0.400000
                                 roughness 1.000000
                                 metalness 0
                               }
@@ -744,10 +790,11 @@ PROTO GalileoV1d6X5 [
                           ]
                         }
                         Solid {
-                          translation 0.000000 -0.000000 -0.260000
+                          translation 0.000000 -0.000000 -0.261490
                           children [
                             Shape {
                               appearance DEF RR_foot_material PBRAppearance {
+                                baseColor 1.000000 1.000000 0.400000
                                 roughness 1.000000
                                 metalness 0
                               }
@@ -762,11 +809,11 @@ PROTO GalileoV1d6X5 [
                           }
                           physics Physics {
                             density -1
-                            mass 0.040000
-                            centerOfMass [ 0.000000 0.000000 0.000000 ]
+                            mass 0.000205
+                            centerOfMass [ 0.000000 -0.000000 0.000000 ]
                             inertiaMatrix [
-                              9.600000e-06 9.600000e-06 9.600000e-06
-                              0.000000e+00 0.000000e+00 0.000000e+00
+                              1.096001e-09 1.096001e-09 1.096001e-09
+                              -0.000000e+00 0.000000e+00 -0.000000e+00
                             ]
                           }
                         }
@@ -775,20 +822,20 @@ PROTO GalileoV1d6X5 [
                       boundingObject Group {
                         children [
                           Pose {
-                            translation 0.015000 0.000000 -0.235000
-                            rotation 0.000000 1.000000 0.000000 0.500000
+                            translation 0.009190 0.000000 -0.065360
+                            rotation 0.000000 -1.000000 0.000000 0.139626
                             children [
                               Box {
-                                 size 0.040000 0.020000 0.050000
+                                 size 0.033000 0.033000 0.230000
                               }
                             ]
                           }
                           Pose {
-                            translation 0.008500 0.000000 -0.092000
-                            rotation 0.000000 -1.000000 0.000000 0.150000
+                            translation 0.013810 0.000000 -0.215740
+                            rotation 0.000000 1.000000 0.000000 0.241030
                             children [
                               Box {
-                                 size 0.032000 0.020000 0.270000
+                                 size 0.036000 0.036000 0.092730
                               }
                             ]
                           }
@@ -796,11 +843,11 @@ PROTO GalileoV1d6X5 [
                       }
                       physics Physics {
                         density -1
-                        mass 0.324831
-                        centerOfMass [ 0.006276 -0.000060 -0.145811 ]
+                        mass 0.302786
+                        centerOfMass [ 0.008000 -0.003625 -0.128915 ]
                         inertiaMatrix [
-                          4.194200e-03 4.242300e-03 9.930000e-05
-                          -0.000000e+00 -3.000000e-07 -0.000000e+00
+                          8.518700e-03 8.572500e-03 1.128000e-04
+                          -8.600000e-06 3.718000e-04 -1.434000e-04
                         ]
                       }
                     }
@@ -810,20 +857,30 @@ PROTO GalileoV1d6X5 [
                 boundingObject Group {
                   children [
                     Pose {
-                      translation -0.025000 0.000000 -0.150000
+                      translation 0.000000 0.021250 0.000000
+                      rotation 0.577503 0.577503 -0.577044 2.093475
                       children [
-                        Box {
-                           size 0.050000 0.020000 0.180000
+                        Cylinder {
+                          radius 0.058
+                          height 0.085
                         }
                       ]
                     }
                     Pose {
-                      translation 0.000000 0.065000 0.000000
-                      rotation 0.577503 0.577503 -0.577044 2.093475
+                      translation -0.021580 0.000000 -0.096910
+                      rotation 0.000000 1.000000 0.000000 0.122173
                       children [
-                        Cylinder {
-                          radius 0.06
-                          height 0.08
+                        Box {
+                           size 0.063680 0.036000 0.197640
+                        }
+                      ]
+                    }
+                    Pose {
+                      translation -0.016450 0.000000 -0.231810
+                      rotation 0.000000 -1.000000 0.000000 0.436332
+                      children [
+                        Box {
+                           size 0.054000 0.036000 0.115000
                         }
                       ]
                     }
@@ -831,11 +888,11 @@ PROTO GalileoV1d6X5 [
                 }
                 physics Physics {
                   density -1
-                  mass 2.211555
-                  centerOfMass [ -0.002800 0.036810 -0.023902 ]
+                  mass 2.930464
+                  centerOfMass [ -0.003481 0.032125 -0.031894 ]
                   inertiaMatrix [
-                    1.213300e-02 1.177250e-02 1.916400e-03
-                    -2.099000e-04 -5.420000e-04 -2.039900e-03
+                    2.641270e-02 2.322670e-02 8.107100e-03
+                    -5.180000e-05 1.284500e-03 -2.853000e-04
                   ]
                 }
               }
@@ -844,25 +901,26 @@ PROTO GalileoV1d6X5 [
           name "RR_hip"
           physics Physics {
             density -1
-            mass 1.645937
-            centerOfMass [ -0.003454 -0.000147 -0.000960 ]
+            mass 1.873690
+            centerOfMass [ -0.002155 -0.006319 0.000001 ]
             inertiaMatrix [
-              4.144000e-04 7.960000e-04 5.767000e-04
-              1.000000e-05 -1.500000e-06 1.400000e-06
+              2.135900e-03 3.459500e-03 2.322000e-03
+              -2.500000e-05 0.000000e+00 -0.000000e+00
             ]
           }
         }
       }
       Solid {
-        translation 0.180000 0.000000 0.080000
+        translation 0.170000 0.000000 0.080000
         children [
           Shape {
             appearance DEF link0_material PBRAppearance {
+              baseColor 0.752940 0.752940 0.752940
               roughness 1.000000
               metalness 0
             }
             geometry DEF link0 Mesh {
-              url "/home/zishang/ros2_workspace/robot_description/src/galileo_v1d6_x5_description/meshes/link0.STL"
+              url "meshes/link0.STL"
             }
           }
           HingeJoint {
@@ -887,11 +945,12 @@ PROTO GalileoV1d6X5 [
               children [
                 Shape {
                   appearance DEF link1_material PBRAppearance {
+                    baseColor 0.792160 0.819610 0.933330
                     roughness 1.000000
                     metalness 0
                   }
                   geometry DEF link1 Mesh {
-                    url "/home/zishang/ros2_workspace/robot_description/src/galileo_v1d6_x5_description/meshes/link1.STL"
+                    url "meshes/link1.STL"
                   }
                 }
                 HingeJoint {
@@ -916,11 +975,12 @@ PROTO GalileoV1d6X5 [
                     children [
                       Shape {
                         appearance DEF link2_material PBRAppearance {
+                          baseColor 0.752940 0.752940 0.752940
                           roughness 1.000000
                           metalness 0
                         }
                         geometry DEF link2 Mesh {
-                          url "/home/zishang/ros2_workspace/robot_description/src/galileo_v1d6_x5_description/meshes/link2.STL"
+                          url "meshes/link2.STL"
                         }
                       }
                       HingeJoint {
@@ -945,11 +1005,12 @@ PROTO GalileoV1d6X5 [
                           children [
                             Shape {
                               appearance DEF link3_material PBRAppearance {
+                                baseColor 1.000000 0.984310 0.964710
                                 roughness 1.000000
                                 metalness 0
                               }
                               geometry DEF link3 Mesh {
-                                url "/home/zishang/ros2_workspace/robot_description/src/galileo_v1d6_x5_description/meshes/link3.STL"
+                                url "meshes/link3.STL"
                               }
                             }
                             HingeJoint {
@@ -974,11 +1035,12 @@ PROTO GalileoV1d6X5 [
                                 children [
                                   Shape {
                                     appearance DEF link4_material PBRAppearance {
+                                      baseColor 0.792160 0.819610 0.929410
                                       roughness 1.000000
                                       metalness 0
                                     }
                                     geometry DEF link4 Mesh {
-                                      url "/home/zishang/ros2_workspace/robot_description/src/galileo_v1d6_x5_description/meshes/link4.STL"
+                                      url "meshes/link4.STL"
                                     }
                                   }
                                   HingeJoint {
@@ -1003,11 +1065,12 @@ PROTO GalileoV1d6X5 [
                                       children [
                                         Shape {
                                           appearance DEF link5_material PBRAppearance {
+                                            baseColor 0.698040 0.698040 0.698040
                                             roughness 1.000000
                                             metalness 0
                                           }
                                           geometry DEF link5 Mesh {
-                                            url "/home/zishang/ros2_workspace/robot_description/src/galileo_v1d6_x5_description/meshes/link5.STL"
+                                            url "meshes/link5.STL"
                                           }
                                         }
                                         HingeJoint {
@@ -1032,11 +1095,12 @@ PROTO GalileoV1d6X5 [
                                             children [
                                               Shape {
                                                 appearance DEF link6_material PBRAppearance {
+                                                  baseColor 0.898040 0.917650 0.929410
                                                   roughness 1.000000
                                                   metalness 0
                                                 }
                                                 geometry DEF link6 Mesh {
-                                                  url "/home/zishang/ros2_workspace/robot_description/src/galileo_v1d6_x5_description/meshes/link6.STL"
+                                                  url "meshes/link6.STL"
                                                 }
                                               }
                                               SliderJoint {
@@ -1063,12 +1127,31 @@ PROTO GalileoV1d6X5 [
                                                         metalness 0
                                                       }
                                                       geometry DEF link7 Mesh {
-                                                        url "/home/zishang/ros2_workspace/robot_description/src/galileo_v1d6_x5_description/meshes/link7.STL"
+                                                        url "meshes/link7.STL"
                                                       }
                                                     }
                                                   ]
                                                   name "link7"
-                                                  boundingObject USE link7
+                                                  boundingObject Group {
+                                                    children [
+                                                      Pose {
+                                                        translation 0.050000 -0.023000 0.000000
+                                                        children [
+                                                          Box {
+                                                             size 0.040000 0.004000 0.010500
+                                                          }
+                                                        ]
+                                                      }
+                                                      Pose {
+                                                        translation 0.015000 -0.023000 0.000000
+                                                        children [
+                                                          Box {
+                                                             size 0.030000 0.004000 0.036000
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
                                                   physics Physics {
                                                     density -1
                                                     mass 0.064798
@@ -1104,12 +1187,31 @@ PROTO GalileoV1d6X5 [
                                                         metalness 0
                                                       }
                                                       geometry DEF link8 Mesh {
-                                                        url "/home/zishang/ros2_workspace/robot_description/src/galileo_v1d6_x5_description/meshes/link8.STL"
+                                                        url "meshes/link8.STL"
                                                       }
                                                     }
                                                   ]
                                                   name "link8"
-                                                  boundingObject USE link8
+                                                  boundingObject Group {
+                                                    children [
+                                                      Pose {
+                                                        translation 0.050000 0.023000 0.000000
+                                                        children [
+                                                          Box {
+                                                             size 0.040000 0.004000 0.010500
+                                                          }
+                                                        ]
+                                                      }
+                                                      Pose {
+                                                        translation 0.015000 0.023000 0.000000
+                                                        children [
+                                                          Box {
+                                                             size 0.030000 0.004000 0.036000
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
                                                   physics Physics {
                                                     density -1
                                                     mass 0.064798
@@ -1304,21 +1406,57 @@ PROTO GalileoV1d6X5 [
       }
     ]
     name IS name
-    boundingObject Pose {
-      translation 0.000000 0.000000 -0.010000
+    boundingObject Group {
       children [
-        Box {
-           size 0.420000 0.260000 0.180000
+        Pose {
+          translation 0.000000 0.000000 -0.010000
+          children [
+            Box {
+               size 0.420000 0.260000 0.180000
+            }
+          ]
+        }
+        Pose {
+          translation 0.320000 0.000000 0.010000
+          children [
+            Box {
+               size 0.220000 0.160000 0.140000
+            }
+          ]
+        }
+        Pose {
+          translation -0.320000 0.000000 0.010000
+          children [
+            Box {
+               size 0.220000 0.160000 0.140000
+            }
+          ]
+        }
+        Pose {
+          translation 0.270000 0.000000 0.100000
+          children [
+            Box {
+               size 0.060000 0.160000 0.050000
+            }
+          ]
+        }
+        Pose {
+          translation -0.270000 0.000000 0.100000
+          children [
+            Box {
+               size 0.060000 0.160000 0.050000
+            }
+          ]
         }
       ]
     }
     physics Physics {
       density -1
-      mass 24.042743
-      centerOfMass [ 0.002783 -0.009841 -0.000267 ]
+      mass 25.267696
+      centerOfMass [ -0.001678 -0.004565 0.003165 ]
       inertiaMatrix [
-        1.136788e-01 3.485644e-01 4.084050e-01
-        1.637200e-03 1.502000e-04 3.600000e-05
+        1.669070e-01 8.444934e-01 9.116615e-01
+        -2.328000e-04 4.442700e-03 -2.798000e-04
       ]
     }
   }
