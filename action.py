@@ -7,9 +7,8 @@ from simulation import Simulation
 class Action:
     """对外接口：提供 set_velocity / set_position（相对位移）并返回简单状态。"""
 
-    def __init__(self, simulation: Simulation, dt: float, default_speed: float = 0.1):
+    def __init__(self, simulation: Simulation, default_speed: float = 0.5):
         self.sim = simulation
-        self.sim.configure_dt(dt)
         self.default_speed = default_speed
 
     def set_velocity(self, params: dict):
@@ -18,7 +17,7 @@ class Action:
         params:
           - vx, vy: 本体系线速度
           - yaw_rate: 本体系角速度
-          - duration: 持续时间秒，可选
+          - duration: 持续时间秒
         """
         vx = float(params.get("vx", 0.0))
         vy = float(params.get("vy", 0.0))

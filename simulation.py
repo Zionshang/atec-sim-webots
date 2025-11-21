@@ -3,6 +3,7 @@ import os
 import time
 import math
 from threading import Event, Lock, Thread
+import numpy as np
 
 sys.path.append(os.path.join(os.environ["WEBOTS_HOME"], "lib", "controller", "python"))
 from controller import Supervisor
@@ -10,8 +11,7 @@ from controller import Supervisor
 
 class Simulation(Thread):
     """
-    仅负责 Webots 仿真步进的子线程。
-    通过共享变量+锁接收目标位姿 (x, y, z, yaw)。
+    Webots 仿真步进的子线程。
     """
 
     def __init__(self, def_name: str):
@@ -29,6 +29,10 @@ class Simulation(Thread):
             raise RuntimeError(f"无法找到 DEF 名称为 '{self.def_name}' 的 Robot 节点。")
         self.trans_field = robot.getField("translation")
         self.rot_field = robot.getField("rotation")
+        
+        # 相机
+        self.wrist_camera = self.supervisor.getCamera("wrist_camera")
+        self.wrist_camera.enable(self.time_step_ms)
 
         self.x = 0.0  # 世界系下的位置x
         self.y = 0.0  # 世界系下的位置y
@@ -80,17 +84,29 @@ class Simulation(Thread):
 
             # 执行仿真步进
             status = self.supervisor.step(self.time_step_ms)
-            if status == -1:
-                break
             if status == 0:
                 self.ready_event.set()
+            else:
+                os._exit(0)
 
             # 保持仿真步进周期
             elapsed = time.perf_counter() - start
             remaining = self.dt - elapsed
             if remaining > 0:
                 time.sleep(remaining)
-        print("Exiting simulation.")
 
     def wait_until_ready(self, timeout: float | None = None) -> bool:
         return self.ready_event.wait(timeout=timeout)
+
+    def get_camera_frame(self):
+        """获取相机原始数组  height x width x 3 (BGR) """
+        # 1) 从 Webots 拿原始图像缓冲区（BGRA，连续内存）
+        with self.lock:
+            raw = self.wrist_camera.getImage()
+            width = self.wrist_camera.getWidth()
+            height = self.wrist_camera.getHeight()
+        # 2) 按 height x width x 4 还原成数组（注意 4 通道：BGRA）
+        img_bgra = np.frombuffer(raw, dtype=np.uint8).reshape((height, width, 4))
+        # 3) 去掉 Alpha 通道，保留 BGR
+        img_bgr = img_bgra[:, :, :3]
+        return img_bgr

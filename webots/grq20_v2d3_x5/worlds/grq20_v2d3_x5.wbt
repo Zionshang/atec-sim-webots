@@ -17,16 +17,16 @@ WorldInfo {
   basicTimeStep 2
 }
 Viewpoint {
-  orientation -0.1792033844595288 0.890801209338815 0.4175635908921599 0.8979363164753714
-  position -8.827702310011647 -5.137704353430689 7.91315280604935
+  orientation 0.057175261556899934 0.9893119661304118 -0.1341373293944628 0.8135795051646895
+  position -5.271827304052951 -3.850279281036313 1.6043500786662857
 }
 TexturedBackground {
 }
 TexturedBackgroundLight {
 }
 DEF Grq20V2d3X5 Robot {
-  translation -3.44027 -3.99976 0.39631
-  rotation 0.00013369199860469803 5.477069942837518e-05 0.9999999895633099 1.57071
+  translation -4.17001 -4.12969 0.39631
+  rotation 0 0 1 1.5707099821277235
   children [
     Shape {
       appearance DEF base_link_material PBRAppearance {
@@ -42,7 +42,7 @@ DEF Grq20V2d3X5 Robot {
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        position 2.632845807564315e-05
+        position 2.297841554954524e-05
         anchor 0.2987 0.06 0
       }
       device [
@@ -59,7 +59,7 @@ DEF Grq20V2d3X5 Robot {
       ]
       endPoint Solid {
         translation 0.2987 0.06 0
-        rotation 1 0 0 2.6328458546773495e-05
+        rotation 1 0 0 2.2978421609475646e-05
         children [
           Shape {
             appearance DEF FL_hip_material PBRAppearance {
@@ -75,7 +75,7 @@ DEF Grq20V2d3X5 Robot {
           }
           HingeJoint {
             jointParameters HingeJointParameters {
-              position 0.839999118342544
+              position 0.8399979840859046
               axis 0 1 0
               anchor 0 0.1341 0
             }
@@ -93,7 +93,7 @@ DEF Grq20V2d3X5 Robot {
             ]
             endPoint Solid {
               translation 0 0.1341 0
-              rotation 0 1 0 0.8399991183425439
+              rotation 0 1 0 0.8399979840859046
               children [
                 Shape {
                   appearance DEF FL_thigh_material PBRAppearance {
@@ -109,7 +109,7 @@ DEF Grq20V2d3X5 Robot {
                 }
                 HingeJoint {
                   jointParameters HingeJointParameters {
-                    position -1.6100445581272262
+                    position -1.6100442729509563
                     axis 0 1 0
                     anchor 0 0 -0.26
                   }
@@ -127,7 +127,7 @@ DEF Grq20V2d3X5 Robot {
                   ]
                   endPoint Solid {
                     translation 0 0 -0.26
-                    rotation 0 -1 0 1.6100445581272262
+                    rotation 0 -1 0 1.6100442729509565
                     children [
                       Shape {
                         appearance DEF FL_calf_material PBRAppearance {
@@ -272,7 +272,7 @@ DEF Grq20V2d3X5 Robot {
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        position 2.3550496206812056e-05
+        position 2.020045553401551e-05
         anchor -0.2987 0.06 0
       }
       device [
@@ -289,7 +289,7 @@ DEF Grq20V2d3X5 Robot {
       ]
       endPoint Solid {
         translation -0.2987 0.06 0
-        rotation 1 0 0 2.3550492112128164e-05
+        rotation 1 0 0 2.0200457319119205e-05
         children [
           Shape {
             appearance DEF RL_hip_material PBRAppearance {
@@ -305,7 +305,7 @@ DEF Grq20V2d3X5 Robot {
           }
           HingeJoint {
             jointParameters HingeJointParameters {
-              position 0.8400016141837824
+              position 0.8400004799225824
               axis 0 1 0
               anchor 0 0.1341 0
             }
@@ -323,7 +323,7 @@ DEF Grq20V2d3X5 Robot {
             ]
             endPoint Solid {
               translation 0 0.1341 0
-              rotation 0 1 0 0.8400016141837823
+              rotation 0 1 0 0.8400004799225822
               children [
                 Shape {
                   appearance DEF RL_thigh_material PBRAppearance {
@@ -335,7 +335,7 @@ DEF Grq20V2d3X5 Robot {
                 }
                 HingeJoint {
                   jointParameters HingeJointParameters {
-                    position -1.6100408994710087
+                    position -1.6100406164553234
                     axis 0 1 0
                     anchor 0 0 -0.26
                   }
@@ -353,7 +353,7 @@ DEF Grq20V2d3X5 Robot {
                   ]
                   endPoint Solid {
                     translation 0 0 -0.26
-                    rotation 0 -1 0 1.610040899471009
+                    rotation 0 -1 0 1.6100406164553231
                     children [
                       Shape {
                         appearance DEF RL_calf_material PBRAppearance {
@@ -494,7 +494,7 @@ DEF Grq20V2d3X5 Robot {
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        position -2.723636747514746e-05
+        position -2.3886322383026278e-05
         anchor 0.2987 -0.06 0
       }
       device [
@@ -511,7 +511,7 @@ DEF Grq20V2d3X5 Robot {
       ]
       endPoint Solid {
         translation 0.2987 -0.06 0
-        rotation -0.9999999999999999 0 0 2.7236371616302063e-05
+        rotation -0.9999999999999999 0 0 2.3886315054012113e-05
         children [
           Transform {
             scale 1 -1 1
@@ -533,7 +533,7 @@ DEF Grq20V2d3X5 Robot {
           }
           HingeJoint {
             jointParameters HingeJointParameters {
-              position 0.8400017037363011
+              position 0.8400005694779034
               axis 0 1 0
               anchor 0 -0.1341 0
             }
@@ -551,7 +551,7 @@ DEF Grq20V2d3X5 Robot {
             ]
             endPoint Solid {
               translation 0 -0.1341 0
-              rotation 0 1 0 0.8400017037363012
+              rotation 0 1 0 0.8400005694779032
               children [
                 Transform {
                   scale 1 -1 1
@@ -573,7 +573,7 @@ DEF Grq20V2d3X5 Robot {
                 }
                 HingeJoint {
                   jointParameters HingeJointParameters {
-                    position -1.6100458252532375
+                    position -1.610045540077191
                     axis 0 1 0
                     anchor 0 0 -0.26
                   }
@@ -591,7 +591,7 @@ DEF Grq20V2d3X5 Robot {
                   ]
                   endPoint Solid {
                     translation 0 0 -0.26
-                    rotation 0 -1 0 1.6100458252532375
+                    rotation 0 -0.9999999999999999 0 1.6100455400771911
                     children [
                       Transform {
                         scale 1 -1 1
@@ -742,7 +742,7 @@ DEF Grq20V2d3X5 Robot {
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        position -2.4165622630865946e-05
+        position -2.0815580720664403e-05
         anchor -0.2987 -0.06 0
       }
       device [
@@ -759,7 +759,7 @@ DEF Grq20V2d3X5 Robot {
       ]
       endPoint Solid {
         translation -0.2987 -0.06 0
-        rotation -0.9999999999999999 0 0 2.4165622503050426e-05
+        rotation -1 0 0 2.081557282642014e-05
         children [
           Transform {
             scale 1 -1 1
@@ -781,7 +781,7 @@ DEF Grq20V2d3X5 Robot {
           }
           HingeJoint {
             jointParameters HingeJointParameters {
-              position 0.84000168515963
+              position 0.8400005508988276
               axis 0 1 0
               anchor 0 -0.1341 0
             }
@@ -799,7 +799,7 @@ DEF Grq20V2d3X5 Robot {
             ]
             endPoint Solid {
               translation 0 -0.1341 0
-              rotation 0 1 0 0.8400016851596298
+              rotation 0 1 0 0.8400005508988275
               children [
                 Transform {
                   scale 1 -1 1
@@ -816,7 +816,7 @@ DEF Grq20V2d3X5 Robot {
                 }
                 HingeJoint {
                   jointParameters HingeJointParameters {
-                    position -1.6100417356183143
+                    position -1.6100414526024087
                     axis 0 1 0
                     anchor 0 0 -0.26
                   }
@@ -834,7 +834,7 @@ DEF Grq20V2d3X5 Robot {
                   ]
                   endPoint Solid {
                     translation 0 0 -0.26
-                    rotation 0 -0.9999999999999999 0 1.6100417356183143
+                    rotation 0 -1 0 1.6100414526024087
                     children [
                       Transform {
                         scale 1 -1 1
@@ -979,7 +979,8 @@ DEF Grq20V2d3X5 Robot {
       }
     }
     Solid {
-      translation 0.17 0 0.08
+      translation 0.17000040256437998 -2.777581720181388e-09 0.07763717551444738
+      rotation -0.007962062561240959 -0.9999683022710386 3.5982717977162523e-06 1.3502630664632978e-05
       children [
         Shape {
           appearance DEF link0_material PBRAppearance {
@@ -995,7 +996,7 @@ DEF Grq20V2d3X5 Robot {
         }
         HingeJoint {
           jointParameters HingeJointParameters {
-            position 2.4393837900579164e-07
+            position 2.3060238535857698e-07
             axis 0 0 1
             anchor 0 0 0.0605
           }
@@ -1012,8 +1013,8 @@ DEF Grq20V2d3X5 Robot {
             }
           ]
           endPoint Solid {
-            translation 2.89512306179239e-07 -2.18397648126588e-09 0.048155667943072245
-            rotation -0.012598951169210755 -0.9999205996272115 -0.0002467196663010881 8.170833220990815e-05
+            translation 4.303921358177192e-06 -5.181153779042779e-08 0.021251044776452573
+            rotation -0.012294647285578207 -0.9999241853876089 0.0006820007699611995 0.00027827105738594324
             children [
               Shape {
                 appearance DEF link1_material PBRAppearance {
@@ -1029,7 +1030,7 @@ DEF Grq20V2d3X5 Robot {
               }
               HingeJoint {
                 jointParameters HingeJointParameters {
-                  position -1.491813345578169e-06
+                  position -2.239582304744501e-06
                   axis 0 1 0
                   anchor 0.02 0 0.04
                 }
@@ -1047,7 +1048,7 @@ DEF Grq20V2d3X5 Robot {
                 ]
                 endPoint Solid {
                   translation 0.02 0 0.04
-                  rotation 0 -0.9999999999999999 0 1.4919031871299883e-06
+                  rotation 0 -1 0 2.239540920824429e-06
                   children [
                     Shape {
                       appearance DEF link2_material PBRAppearance {
@@ -1063,7 +1064,7 @@ DEF Grq20V2d3X5 Robot {
                     }
                     HingeJoint {
                       jointParameters HingeJointParameters {
-                        position -1.098660149878583e-05
+                        position -1.6478024104868015e-05
                         axis 0 -1 -7e-06
                         anchor -0.264 0 0
                       }
@@ -1071,7 +1072,7 @@ DEF Grq20V2d3X5 Robot {
                         RotationalMotor {
                           name "joint3"
                           maxVelocity 1000
-                          minPosition -1.098660149878583e-05
+                          minPosition -1.6478024104868015e-05
                           maxPosition 3.14
                           maxTorque 100
                         }
@@ -1081,7 +1082,7 @@ DEF Grq20V2d3X5 Robot {
                       ]
                       endPoint Solid {
                         translation -0.264 0 0
-                        rotation 0.999999999984912 1.8275066785876427e-11 -5.49330074936543e-06 3.1416
+                        rotation 0.9999999999660595 2.740945199967678e-11 -8.23901205233908e-06 3.1415999999999995
                         children [
                           Shape {
                             appearance DEF link3_material PBRAppearance {
@@ -1097,7 +1098,7 @@ DEF Grq20V2d3X5 Robot {
                           }
                           HingeJoint {
                             jointParameters HingeJointParameters {
-                              position -2.644221717140738e-06
+                              position -3.965974465680167e-06
                               axis 0 1 0
                               anchor 0.245 0 -0.056
                             }
@@ -1115,7 +1116,7 @@ DEF Grq20V2d3X5 Robot {
                             ]
                             endPoint Solid {
                               translation 0.245 0 -0.056
-                              rotation 0 -1 0 2.6441899553323326e-06
+                              rotation 0 -1 0 3.965949020660083e-06
                               children [
                                 Shape {
                                   appearance DEF link4_material PBRAppearance {
@@ -1131,7 +1132,7 @@ DEF Grq20V2d3X5 Robot {
                                 }
                                 HingeJoint {
                                   jointParameters HingeJointParameters {
-                                    position 8.155045084720863e-07
+                                    position 7.761398229194647e-07
                                     axis 0 0 1
                                     anchor 0.06775 0.0005 -0.0865
                                   }
@@ -1149,7 +1150,7 @@ DEF Grq20V2d3X5 Robot {
                                   ]
                                   endPoint Solid {
                                     translation 0.06775 0.0005 -0.0865
-                                    rotation 0 0 1 8.15625916922337e-07
+                                    rotation 0 0 1 7.760057786876928e-07
                                     children [
                                       Shape {
                                         appearance DEF link5_material PBRAppearance {
@@ -1165,7 +1166,7 @@ DEF Grq20V2d3X5 Robot {
                                       }
                                       HingeJoint {
                                         jointParameters HingeJointParameters {
-                                          position 4.419401312375422e-07
+                                          position 4.1777601471876476e-07
                                           anchor 0.02895 0 0.0865
                                         }
                                         device [
@@ -1182,8 +1183,22 @@ DEF Grq20V2d3X5 Robot {
                                         ]
                                         endPoint Solid {
                                           translation 0.02895 0 0.0865
-                                          rotation -1 0 0 3.141599558059869
+                                          rotation -1 0 0 3.1415995822239853
                                           children [
+                                            Camera {
+                                              translation 0.0413053 0 0.0699144
+                                              rotation 0 1 0 0.1308996938995747
+                                              children [
+                                                Shape {
+                                                  geometry Box {
+                                                    size 0.02 0.07 0.02
+                                                  }
+                                                }
+                                              ]
+                                              name "wrist_camera"
+                                              width 640
+                                              height 360
+                                            }
                                             Shape {
                                               appearance DEF link6_material PBRAppearance {
                                                 baseColor 0.89804 0.91765 0.92941
@@ -1198,7 +1213,7 @@ DEF Grq20V2d3X5 Robot {
                                             }
                                             SliderJoint {
                                               jointParameters JointParameters {
-                                                position -5.050564692333658e-10
+                                                position -5.032607954993682e-10
                                                 axis 0 1 0
                                               }
                                               device [
@@ -1214,7 +1229,7 @@ DEF Grq20V2d3X5 Robot {
                                                 }
                                               ]
                                               endPoint Solid {
-                                                translation 0.08657 0.024895999494943533 -0.000244
+                                                translation 0.08657 0.024895999496739207 -0.000244
                                                 children [
                                                   Shape {
                                                     appearance DEF link7_material PBRAppearance {
@@ -1264,7 +1279,7 @@ DEF Grq20V2d3X5 Robot {
                                             }
                                             SliderJoint {
                                               jointParameters JointParameters {
-                                                position 5.051413120144115e-10
+                                                position 5.033463973371988e-10
                                                 axis 0 -1 0
                                               }
                                               device [
@@ -1279,7 +1294,7 @@ DEF Grq20V2d3X5 Robot {
                                                 }
                                               ]
                                               endPoint Solid {
-                                                translation 0.08657 -0.02490000050514131 -0.000244
+                                                translation 0.08657 -0.024900000503346394 -0.000244
                                                 children [
                                                   Shape {
                                                     appearance DEF link8_material PBRAppearance {
@@ -1583,18 +1598,19 @@ RectangleArena {
   }
 }
 BiscuitBox {
-  translation 1.49 -1.3 0.5
-  rotation 0 0 1 -1.5707953071795862
+  translation 1.49 -1.3 0.4999901900000002
+  rotation -1.3153936939292373e-17 -2.5981534876725356e-17 -0.9999999999999999 1.5707953071795862
 }
 CerealBox {
-  translation 1.21 -1.54 0.5
+  translation 1.21 -1.54 0.4999754750000002
+  rotation -0.6924481787233361 -0.6880968831851602 -0.21688291572551952 3.804702385516804e-17
   size 0.06 0.1 0.1
 }
 Orange {
-  translation 1.39 1.34 0.55
+  translation 1.39 1.34 0.5499852850000002
 }
 Apple {
-  translation 1.11 1.67 0.54
+  translation 1.11 1.67 0.5499852850000002
 }
 TrashBin {
   translation 4.36 0.569998 2.67501e-06
@@ -3289,7 +3305,8 @@ Solid {
   name "box"
 }
 BeerBottle {
-  translation -1.35 -0.23 0.5
+  translation -1.35 -0.23000000000000004 0.5004950950000002
+  rotation -0.5094049439869642 0.8595202705050846 -0.041611388254949325 3.8103818097072353e-16
 }
 DEF flacon MedicineBottle {
   translation -1.13 -0.25 0.54
