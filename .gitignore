@@ -2,3 +2,5 @@ webots/grq20_v2d3_x5/worlds/.grq20_v2d3_x5.jpg
 webots/grq20_v2d3_x5/worlds/.grq20_v2d3_x5.wbproj
 .vscode
 __pycache__
+webots/**/*.wbproj
+webots/**/*.jpg

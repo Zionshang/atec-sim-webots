@@ -1,0 +1,1757 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/Grass.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/road/protos/Road.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/Pavement.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/plants/protos/PottedTree.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/trees/protos/Pine.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/trees/protos/Forest.proto"
+
+WorldInfo {
+  basicTimeStep 2
+}
+Viewpoint {
+  orientation 0.1113732473879312 0.25390876627995984 -0.9607946389174198 0.8565223207732132
+  position -5.508732580746596 6.856619718098052 2.641384624541245
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+DEF Grq20V2d3X5 Robot {
+  translation 0.214463 0.195457 0.39631
+  rotation 0 0 -1 -0.7853153071795864
+  children [
+    Shape {
+      appearance DEF base_link_material PBRAppearance {
+        baseColor 0.8 0.4 0
+        roughness 1
+        metalness 0
+      }
+      geometry DEF TRUCK Mesh {
+        url [
+          "../protos/meshes/TRUCK.STL"
+        ]
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 2.297841554954524e-05
+        anchor 0.2987 0.06 0
+      }
+      device [
+        RotationalMotor {
+          name "FL_hip_joint"
+          maxVelocity 22
+          minPosition -0.741764919444444
+          maxPosition 0.741764919444444
+          maxTorque 150
+        }
+        PositionSensor {
+          name "FL_hip_joint_sensor"
+        }
+      ]
+      endPoint Solid {
+        translation 0.2987 0.06 0
+        rotation 1 0 0 2.2978421609475646e-05
+        children [
+          Shape {
+            appearance DEF FL_hip_material PBRAppearance {
+              baseColor 1 0.4 0.4
+              roughness 1
+              metalness 0
+            }
+            geometry DEF FL_HIP Mesh {
+              url [
+                "../protos/meshes/FL_HIP.STL"
+              ]
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              position 0.8399979840859046
+              axis 0 1 0
+              anchor 0 0.1341 0
+            }
+            device [
+              RotationalMotor {
+                name "FL_thigh_joint"
+                maxVelocity 22
+                minPosition -1.22173
+                maxPosition 3.8397
+                maxTorque 150
+              }
+              PositionSensor {
+                name "FL_thigh_joint_sensor"
+              }
+            ]
+            endPoint Solid {
+              translation 0 0.1341 0
+              rotation 0 1 0 0.8399979840859046
+              children [
+                Shape {
+                  appearance DEF FL_thigh_material PBRAppearance {
+                    baseColor 1 1 0.4
+                    roughness 1
+                    metalness 0
+                  }
+                  geometry DEF FL_THIGH Mesh {
+                    url [
+                      "../protos/meshes/FL_THIGH.STL"
+                    ]
+                  }
+                }
+                HingeJoint {
+                  jointParameters HingeJointParameters {
+                    position -1.6100442729509563
+                    axis 0 1 0
+                    anchor 0 0 -0.26
+                  }
+                  device [
+                    RotationalMotor {
+                      name "FL_calf_joint"
+                      maxVelocity 22
+                      minPosition -2.77507346333333
+                      maxPosition -0.541052058888889
+                      maxTorque 150
+                    }
+                    PositionSensor {
+                      name "FL_calf_joint_sensor"
+                    }
+                  ]
+                  endPoint Solid {
+                    translation 0 0 -0.26
+                    rotation 0 -1 0 1.6100442729509565
+                    children [
+                      Shape {
+                        appearance DEF FL_calf_material PBRAppearance {
+                          baseColor 0.4 1 0.4
+                          roughness 1
+                          metalness 0
+                        }
+                        geometry DEF FL_CALF Mesh {
+                          url [
+                            "../protos/meshes/FL_CALF.STL"
+                          ]
+                        }
+                      }
+                      Solid {
+                        translation 0 0 -0.26149
+                        children [
+                          Shape {
+                            appearance DEF FL_foot_material PBRAppearance {
+                              baseColor 0 0.5 1
+                              roughness 1
+                              metalness 0
+                            }
+                            geometry Sphere {
+                              radius 0.026
+                            }
+                          }
+                        ]
+                        name "FL_foot"
+                        boundingObject Sphere {
+                          radius 0.026
+                        }
+                        physics Physics {
+                          density -1
+                          mass 0.000205
+                          centerOfMass [
+                            0 0 0
+                          ]
+                          inertiaMatrix [
+                            1.096001e-09 1.096001e-09 1.096001e-09
+                            0 0 0
+                          ]
+                        }
+                      }
+                    ]
+                    name "FL_calf"
+                    boundingObject Group {
+                      children [
+                        Pose {
+                          translation 0.00919 0 -0.06536
+                          rotation 0 -1 0 0.139626
+                          children [
+                            Box {
+                              size 0.033 0.033 0.23
+                            }
+                          ]
+                        }
+                        Pose {
+                          translation 0.01381 0 -0.21574
+                          rotation 0 1 0 0.24103
+                          children [
+                            Box {
+                              size 0.036 0.036 0.09273
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                    physics Physics {
+                      density -1
+                      mass 0.302786
+                      centerOfMass [
+                        0.008 0.003625 -0.128915
+                      ]
+                      inertiaMatrix [
+                        0.0085187 0.0085725 0.0001128
+                        8.6e-06 0.0003718 0.0001434
+                      ]
+                    }
+                  }
+                }
+              ]
+              name "FL_thigh"
+              boundingObject Group {
+                children [
+                  Pose {
+                    translation 0 -0.02125 0
+                    rotation 0.5775032287046065 0.5775032287046065 -0.5770442285228318 2.093475
+                    children [
+                      Cylinder {
+                        height 0.085
+                        radius 0.058
+                      }
+                    ]
+                  }
+                  Pose {
+                    translation -0.02158 0 -0.09691
+                    rotation 0 1 0 0.122173
+                    children [
+                      Box {
+                        size 0.06368 0.036 0.19764
+                      }
+                    ]
+                  }
+                  Pose {
+                    translation -0.01645 0 -0.23181
+                    rotation 0 -1 0 0.436332
+                    children [
+                      Box {
+                        size 0.054 0.036 0.115
+                      }
+                    ]
+                  }
+                ]
+              }
+              physics Physics {
+                density -1
+                mass 2.930464
+                centerOfMass [
+                  -0.003481 -0.032125 -0.031894
+                ]
+                inertiaMatrix [
+                  0.0264127 0.0232267 0.0081071
+                  5.18e-05 0.0012845 0.0002853
+                ]
+              }
+            }
+          }
+        ]
+        name "FL_hip"
+        physics Physics {
+          density -1
+          mass 1.87369
+          centerOfMass [
+            -0.002155 0.006319 1e-06
+          ]
+          inertiaMatrix [
+            0.0021359 0.0034595 0.002322
+            2.5e-05 0 0
+          ]
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 2.020045553401551e-05
+        anchor -0.2987 0.06 0
+      }
+      device [
+        RotationalMotor {
+          name "RL_hip_joint"
+          maxVelocity 22
+          minPosition -0.741764919444444
+          maxPosition 0.741764919444444
+          maxTorque 150
+        }
+        PositionSensor {
+          name "RL_hip_joint_sensor"
+        }
+      ]
+      endPoint Solid {
+        translation -0.2987 0.06 0
+        rotation 1 0 0 2.0200457319119205e-05
+        children [
+          Shape {
+            appearance DEF RL_hip_material PBRAppearance {
+              baseColor 0.8 1 0.8
+              roughness 1
+              metalness 0
+            }
+            geometry DEF RL_HIP Mesh {
+              url [
+                "../protos/meshes/RL_HIP.STL"
+              ]
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              position 0.8400004799225824
+              axis 0 1 0
+              anchor 0 0.1341 0
+            }
+            device [
+              RotationalMotor {
+                name "RL_thigh_joint"
+                maxVelocity 22
+                minPosition -1.22173
+                maxPosition 3.8397
+                maxTorque 150
+              }
+              PositionSensor {
+                name "RL_thigh_joint_sensor"
+              }
+            ]
+            endPoint Solid {
+              translation 0 0.1341 0
+              rotation 0 1 0 0.8400004799225822
+              children [
+                Shape {
+                  appearance DEF RL_thigh_material PBRAppearance {
+                    baseColor 1 0.5 1
+                    roughness 1
+                    metalness 0
+                  }
+                  geometry USE FL_THIGH
+                }
+                HingeJoint {
+                  jointParameters HingeJointParameters {
+                    position -1.6100406164553234
+                    axis 0 1 0
+                    anchor 0 0 -0.26
+                  }
+                  device [
+                    RotationalMotor {
+                      name "RL_calf_joint"
+                      maxVelocity 22
+                      minPosition -2.77507346333333
+                      maxPosition -0.541052058888889
+                      maxTorque 150
+                    }
+                    PositionSensor {
+                      name "RL_calf_joint_sensor"
+                    }
+                  ]
+                  endPoint Solid {
+                    translation 0 0 -0.26
+                    rotation 0 -1 0 1.6100406164553231
+                    children [
+                      Shape {
+                        appearance DEF RL_calf_material PBRAppearance {
+                          baseColor 1 0.4 0.4
+                          roughness 1
+                          metalness 0
+                        }
+                        geometry USE FL_CALF
+                      }
+                      Solid {
+                        translation 0 0 -0.26149
+                        children [
+                          Shape {
+                            appearance DEF RL_foot_material PBRAppearance {
+                              baseColor 1 1 0.4
+                              roughness 1
+                              metalness 0
+                            }
+                            geometry Sphere {
+                              radius 0.026
+                            }
+                          }
+                        ]
+                        name "RL_foot"
+                        boundingObject Sphere {
+                          radius 0.026
+                        }
+                        physics Physics {
+                          density -1
+                          mass 0.000205
+                          centerOfMass [
+                            0 0 0
+                          ]
+                          inertiaMatrix [
+                            1.096001e-09 1.096001e-09 1.096001e-09
+                            0 0 0
+                          ]
+                        }
+                      }
+                    ]
+                    name "RL_calf"
+                    boundingObject Group {
+                      children [
+                        Pose {
+                          translation 0.00919 0 -0.06536
+                          rotation 0 -1 0 0.139626
+                          children [
+                            Box {
+                              size 0.033 0.033 0.23
+                            }
+                          ]
+                        }
+                        Pose {
+                          translation 0.01381 0 -0.21574
+                          rotation 0 1 0 0.24103
+                          children [
+                            Box {
+                              size 0.036 0.036 0.09273
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                    physics Physics {
+                      density -1
+                      mass 0.302786
+                      centerOfMass [
+                        0.008 0.003625 -0.128915
+                      ]
+                      inertiaMatrix [
+                        0.0085187 0.0085725 0.0001128
+                        8.6e-06 0.0003718 0.0001434
+                      ]
+                    }
+                  }
+                }
+              ]
+              name "RL_thigh"
+              boundingObject Group {
+                children [
+                  Pose {
+                    translation 0 -0.02125 0
+                    rotation 0.5775032287046065 0.5775032287046065 -0.5770442285228318 2.093475
+                    children [
+                      Cylinder {
+                        height 0.085
+                        radius 0.058
+                      }
+                    ]
+                  }
+                  Pose {
+                    translation -0.02158 0 -0.09691
+                    rotation 0 1 0 0.122173
+                    children [
+                      Box {
+                        size 0.06368 0.036 0.19764
+                      }
+                    ]
+                  }
+                  Pose {
+                    translation -0.01645 0 -0.23181
+                    rotation 0 -1 0 0.436332
+                    children [
+                      Box {
+                        size 0.054 0.036 0.115
+                      }
+                    ]
+                  }
+                ]
+              }
+              physics Physics {
+                density -1
+                mass 2.930464
+                centerOfMass [
+                  -0.003481 -0.032125 -0.031894
+                ]
+                inertiaMatrix [
+                  0.0264127 0.0232267 0.0081071
+                  5.18e-05 0.0012845 0.0002853
+                ]
+              }
+            }
+          }
+        ]
+        name "RL_hip"
+        physics Physics {
+          density -1
+          mass 1.87369
+          centerOfMass [
+            -0.002155 0.006319 1e-06
+          ]
+          inertiaMatrix [
+            0.0021359 0.0034595 0.002322
+            2.5e-05 0 0
+          ]
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position -2.3886322383026278e-05
+        anchor 0.2987 -0.06 0
+      }
+      device [
+        RotationalMotor {
+          name "FR_hip_joint"
+          maxVelocity 22
+          minPosition -0.741764919444444
+          maxPosition 0.741764919444444
+          maxTorque 150
+        }
+        PositionSensor {
+          name "FR_hip_joint_sensor"
+        }
+      ]
+      endPoint Solid {
+        translation 0.2987 -0.06 0
+        rotation -0.9999999999999999 0 0 2.3886315054012113e-05
+        children [
+          Transform {
+            scale 1 -1 1
+            children [
+              Shape {
+                appearance DEF FR_hip_material PBRAppearance {
+                  baseColor 1 0.4 0.4
+                  roughness 1
+                  metalness 0
+                }
+                geometry DEF FL_HIP_cw Mesh {
+                  url [
+                    "../protos/meshes/FL_HIP.STL"
+                  ]
+                  ccw FALSE
+                }
+              }
+            ]
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              position 0.8400005694779034
+              axis 0 1 0
+              anchor 0 -0.1341 0
+            }
+            device [
+              RotationalMotor {
+                name "FR_thigh_joint"
+                maxVelocity 22
+                minPosition -1.22173
+                maxPosition 3.8397
+                maxTorque 150
+              }
+              PositionSensor {
+                name "FR_thigh_joint_sensor"
+              }
+            ]
+            endPoint Solid {
+              translation 0 -0.1341 0
+              rotation 0 1 0 0.8400005694779032
+              children [
+                Transform {
+                  scale 1 -1 1
+                  children [
+                    Shape {
+                      appearance DEF FR_thigh_material PBRAppearance {
+                        baseColor 1 1 0.4
+                        roughness 1
+                        metalness 0
+                      }
+                      geometry DEF FL_THIGH_cw Mesh {
+                        url [
+                          "../protos/meshes/FL_THIGH.STL"
+                        ]
+                        ccw FALSE
+                      }
+                    }
+                  ]
+                }
+                HingeJoint {
+                  jointParameters HingeJointParameters {
+                    position -1.610045540077191
+                    axis 0 1 0
+                    anchor 0 0 -0.26
+                  }
+                  device [
+                    RotationalMotor {
+                      name "FR_calf_joint"
+                      maxVelocity 22
+                      minPosition -2.77507346333333
+                      maxPosition -0.541052058888889
+                      maxTorque 150
+                    }
+                    PositionSensor {
+                      name "FR_calf_joint_sensor"
+                    }
+                  ]
+                  endPoint Solid {
+                    translation 0 0 -0.26
+                    rotation 0 -0.9999999999999999 0 1.6100455400771911
+                    children [
+                      Transform {
+                        scale 1 -1 1
+                        children [
+                          Shape {
+                            appearance DEF FR_calf_material PBRAppearance {
+                              baseColor 0.4 1 0.4
+                              roughness 1
+                              metalness 0
+                            }
+                            geometry DEF FL_CALF_cw Mesh {
+                              url [
+                                "../protos/meshes/FL_CALF.STL"
+                              ]
+                              ccw FALSE
+                            }
+                          }
+                        ]
+                      }
+                      Solid {
+                        translation 0 0 -0.26149
+                        children [
+                          Shape {
+                            appearance DEF FR_foot_material PBRAppearance {
+                              baseColor 0 0.5 1
+                              roughness 1
+                              metalness 0
+                            }
+                            geometry Sphere {
+                              radius 0.026
+                            }
+                          }
+                        ]
+                        name "FR_foot"
+                        boundingObject Sphere {
+                          radius 0.026
+                        }
+                        physics Physics {
+                          density -1
+                          mass 0.000205
+                          centerOfMass [
+                            0 0 0
+                          ]
+                          inertiaMatrix [
+                            1.096001e-09 1.096001e-09 1.096001e-09
+                            0 0 0
+                          ]
+                        }
+                      }
+                    ]
+                    name "FR_calf"
+                    boundingObject Group {
+                      children [
+                        Pose {
+                          translation 0.00919 0 -0.06536
+                          rotation 0 -1 0 0.139626
+                          children [
+                            Box {
+                              size 0.033 0.033 0.23
+                            }
+                          ]
+                        }
+                        Pose {
+                          translation 0.01381 0 -0.21574
+                          rotation 0 1 0 0.24103
+                          children [
+                            Box {
+                              size 0.036 0.036 0.09273
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                    physics Physics {
+                      density -1
+                      mass 0.302786
+                      centerOfMass [
+                        0.008 -0.003625 -0.128915
+                      ]
+                      inertiaMatrix [
+                        0.0085187 0.0085725 0.0001128
+                        -8.6e-06 0.0003718 -0.0001434
+                      ]
+                    }
+                  }
+                }
+              ]
+              name "FR_thigh"
+              boundingObject Group {
+                children [
+                  Pose {
+                    translation 0 0.02125 0
+                    rotation 0.5775032287046065 0.5775032287046065 -0.5770442285228318 2.093475
+                    children [
+                      Cylinder {
+                        height 0.085
+                        radius 0.058
+                      }
+                    ]
+                  }
+                  Pose {
+                    translation -0.02158 0 -0.09691
+                    rotation 0 1 0 0.122173
+                    children [
+                      Box {
+                        size 0.06368 0.036 0.19764
+                      }
+                    ]
+                  }
+                  Pose {
+                    translation -0.01645 0 -0.23181
+                    rotation 0 -1 0 0.436332
+                    children [
+                      Box {
+                        size 0.054 0.036 0.115
+                      }
+                    ]
+                  }
+                ]
+              }
+              physics Physics {
+                density -1
+                mass 2.930464
+                centerOfMass [
+                  -0.003481 0.032125 -0.031894
+                ]
+                inertiaMatrix [
+                  0.0264127 0.0232267 0.0081071
+                  -5.18e-05 0.0012845 -0.0002853
+                ]
+              }
+            }
+          }
+        ]
+        name "FR_hip"
+        physics Physics {
+          density -1
+          mass 1.87369
+          centerOfMass [
+            -0.002155 -0.006319 1e-06
+          ]
+          inertiaMatrix [
+            0.0021359 0.0034595 0.002322
+            -2.5e-05 0 0
+          ]
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position -2.0815580720664403e-05
+        anchor -0.2987 -0.06 0
+      }
+      device [
+        RotationalMotor {
+          name "RR_hip_joint"
+          maxVelocity 22
+          minPosition -0.741764919444444
+          maxPosition 0.741764919444444
+          maxTorque 150
+        }
+        PositionSensor {
+          name "RR_hip_joint_sensor"
+        }
+      ]
+      endPoint Solid {
+        translation -0.2987 -0.06 0
+        rotation -1 0 0 2.081557282642014e-05
+        children [
+          Transform {
+            scale 1 -1 1
+            children [
+              Shape {
+                appearance DEF RR_hip_material PBRAppearance {
+                  baseColor 0.8 1 0.8
+                  roughness 1
+                  metalness 0
+                }
+                geometry DEF RL_HIP_cw Mesh {
+                  url [
+                    "../protos/meshes/RL_HIP.STL"
+                  ]
+                  ccw FALSE
+                }
+              }
+            ]
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              position 0.8400005508988276
+              axis 0 1 0
+              anchor 0 -0.1341 0
+            }
+            device [
+              RotationalMotor {
+                name "RR_thigh_joint"
+                maxVelocity 22
+                minPosition -1.22173
+                maxPosition 3.8397
+                maxTorque 150
+              }
+              PositionSensor {
+                name "RR_thigh_joint_sensor"
+              }
+            ]
+            endPoint Solid {
+              translation 0 -0.1341 0
+              rotation 0 1 0 0.8400005508988275
+              children [
+                Transform {
+                  scale 1 -1 1
+                  children [
+                    Shape {
+                      appearance DEF RR_thigh_material PBRAppearance {
+                        baseColor 1 0.5 1
+                        roughness 1
+                        metalness 0
+                      }
+                      geometry USE FL_THIGH_cw
+                    }
+                  ]
+                }
+                HingeJoint {
+                  jointParameters HingeJointParameters {
+                    position -1.6100414526024087
+                    axis 0 1 0
+                    anchor 0 0 -0.26
+                  }
+                  device [
+                    RotationalMotor {
+                      name "RR_calf_joint"
+                      maxVelocity 22
+                      minPosition -2.77507346333333
+                      maxPosition -0.541052058888889
+                      maxTorque 150
+                    }
+                    PositionSensor {
+                      name "RR_calf_joint_sensor"
+                    }
+                  ]
+                  endPoint Solid {
+                    translation 0 0 -0.26
+                    rotation 0 -1 0 1.6100414526024087
+                    children [
+                      Transform {
+                        scale 1 -1 1
+                        children [
+                          Shape {
+                            appearance DEF RR_calf_material PBRAppearance {
+                              baseColor 1 0.4 0.4
+                              roughness 1
+                              metalness 0
+                            }
+                            geometry USE FL_CALF_cw
+                          }
+                        ]
+                      }
+                      Solid {
+                        translation 0 0 -0.26149
+                        children [
+                          Shape {
+                            appearance DEF RR_foot_material PBRAppearance {
+                              baseColor 1 1 0.4
+                              roughness 1
+                              metalness 0
+                            }
+                            geometry Sphere {
+                              radius 0.026
+                            }
+                          }
+                        ]
+                        name "RR_foot"
+                        boundingObject Sphere {
+                          radius 0.026
+                        }
+                        physics Physics {
+                          density -1
+                          mass 0.000205
+                          centerOfMass [
+                            0 0 0
+                          ]
+                          inertiaMatrix [
+                            1.096001e-09 1.096001e-09 1.096001e-09
+                            0 0 0
+                          ]
+                        }
+                      }
+                    ]
+                    name "RR_calf"
+                    boundingObject Group {
+                      children [
+                        Pose {
+                          translation 0.00919 0 -0.06536
+                          rotation 0 -1 0 0.139626
+                          children [
+                            Box {
+                              size 0.033 0.033 0.23
+                            }
+                          ]
+                        }
+                        Pose {
+                          translation 0.01381 0 -0.21574
+                          rotation 0 1 0 0.24103
+                          children [
+                            Box {
+                              size 0.036 0.036 0.09273
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                    physics Physics {
+                      density -1
+                      mass 0.302786
+                      centerOfMass [
+                        0.008 -0.003625 -0.128915
+                      ]
+                      inertiaMatrix [
+                        0.0085187 0.0085725 0.0001128
+                        -8.6e-06 0.0003718 -0.0001434
+                      ]
+                    }
+                  }
+                }
+              ]
+              name "RR_thigh"
+              boundingObject Group {
+                children [
+                  Pose {
+                    translation 0 0.02125 0
+                    rotation 0.5775032287046065 0.5775032287046065 -0.5770442285228318 2.093475
+                    children [
+                      Cylinder {
+                        height 0.085
+                        radius 0.058
+                      }
+                    ]
+                  }
+                  Pose {
+                    translation -0.02158 0 -0.09691
+                    rotation 0 1 0 0.122173
+                    children [
+                      Box {
+                        size 0.06368 0.036 0.19764
+                      }
+                    ]
+                  }
+                  Pose {
+                    translation -0.01645 0 -0.23181
+                    rotation 0 -1 0 0.436332
+                    children [
+                      Box {
+                        size 0.054 0.036 0.115
+                      }
+                    ]
+                  }
+                ]
+              }
+              physics Physics {
+                density -1
+                mass 2.930464
+                centerOfMass [
+                  -0.003481 0.032125 -0.031894
+                ]
+                inertiaMatrix [
+                  0.0264127 0.0232267 0.0081071
+                  -5.18e-05 0.0012845 -0.0002853
+                ]
+              }
+            }
+          }
+        ]
+        name "RR_hip"
+        physics Physics {
+          density -1
+          mass 1.87369
+          centerOfMass [
+            -0.002155 -0.006319 1e-06
+          ]
+          inertiaMatrix [
+            0.0021359 0.0034595 0.002322
+            -2.5e-05 0 0
+          ]
+        }
+      }
+    }
+    Solid {
+      translation 0.17000040256437998 -2.777581720181388e-09 0.07763717551444738
+      rotation -0.007962062561240959 -0.9999683022710386 3.5982717977162523e-06 1.3502630664632978e-05
+      children [
+        Shape {
+          appearance DEF link0_material PBRAppearance {
+            baseColor 0.75294 0.75294 0.75294
+            roughness 1
+            metalness 0
+          }
+          geometry DEF link0 Mesh {
+            url [
+              "../protos/meshes/link0.STL"
+            ]
+          }
+        }
+        HingeJoint {
+          jointParameters HingeJointParameters {
+            position 2.3060238535857698e-07
+            axis 0 0 1
+            anchor 0 0 0.0605
+          }
+          device [
+            RotationalMotor {
+              name "joint1"
+              maxVelocity 1000
+              minPosition -3.14
+              maxPosition 2.6
+              maxTorque 100
+            }
+            PositionSensor {
+              name "joint1_sensor"
+            }
+          ]
+          endPoint Solid {
+            translation 4.303921358177192e-06 -5.181153779042779e-08 0.021251044776452573
+            rotation -0.012294647285578207 -0.9999241853876089 0.0006820007699611995 0.00027827105738594324
+            children [
+              Shape {
+                appearance DEF link1_material PBRAppearance {
+                  baseColor 0.79216 0.81961 0.93333
+                  roughness 1
+                  metalness 0
+                }
+                geometry DEF link1 Mesh {
+                  url [
+                    "../protos/meshes/link1.STL"
+                  ]
+                }
+              }
+              HingeJoint {
+                jointParameters HingeJointParameters {
+                  position -2.239582304744501e-06
+                  axis 0 1 0
+                  anchor 0.02 0 0.04
+                }
+                device [
+                  RotationalMotor {
+                    name "joint2"
+                    maxVelocity 1000
+                    minPosition -0.1
+                    maxPosition 3.6
+                    maxTorque 100
+                  }
+                  PositionSensor {
+                    name "joint2_sensor"
+                  }
+                ]
+                endPoint Solid {
+                  translation 0.02 0 0.04
+                  rotation 0 -1 0 2.239540920824429e-06
+                  children [
+                    Shape {
+                      appearance DEF link2_material PBRAppearance {
+                        baseColor 0.75294 0.75294 0.75294
+                        roughness 1
+                        metalness 0
+                      }
+                      geometry DEF link2 Mesh {
+                        url [
+                          "../protos/meshes/link2.STL"
+                        ]
+                      }
+                    }
+                    HingeJoint {
+                      jointParameters HingeJointParameters {
+                        position -1.6478024104868015e-05
+                        axis 0 -1 -7e-06
+                        anchor -0.264 0 0
+                      }
+                      device [
+                        RotationalMotor {
+                          name "joint3"
+                          maxVelocity 1000
+                          minPosition -1.6478024104868015e-05
+                          maxPosition 3.14
+                          maxTorque 100
+                        }
+                        PositionSensor {
+                          name "joint3_sensor"
+                        }
+                      ]
+                      endPoint Solid {
+                        translation -0.264 0 0
+                        rotation 0.9999999999660595 2.740945199967678e-11 -8.23901205233908e-06 3.1415999999999995
+                        children [
+                          Shape {
+                            appearance DEF link3_material PBRAppearance {
+                              baseColor 1 0.98431 0.96471
+                              roughness 1
+                              metalness 0
+                            }
+                            geometry DEF link3 Mesh {
+                              url [
+                                "../protos/meshes/link3.STL"
+                              ]
+                            }
+                          }
+                          HingeJoint {
+                            jointParameters HingeJointParameters {
+                              position -3.965974465680167e-06
+                              axis 0 1 0
+                              anchor 0.245 0 -0.056
+                            }
+                            device [
+                              RotationalMotor {
+                                name "joint4"
+                                maxVelocity 1000
+                                minPosition -1.3
+                                maxPosition 1.3
+                                maxTorque 100
+                              }
+                              PositionSensor {
+                                name "joint4_sensor"
+                              }
+                            ]
+                            endPoint Solid {
+                              translation 0.245 0 -0.056
+                              rotation 0 -1 0 3.965949020660083e-06
+                              children [
+                                Shape {
+                                  appearance DEF link4_material PBRAppearance {
+                                    baseColor 0.79216 0.81961 0.92941
+                                    roughness 1
+                                    metalness 0
+                                  }
+                                  geometry DEF link4 Mesh {
+                                    url [
+                                      "../protos/meshes/link4.STL"
+                                    ]
+                                  }
+                                }
+                                HingeJoint {
+                                  jointParameters HingeJointParameters {
+                                    position 7.761398229194647e-07
+                                    axis 0 0 1
+                                    anchor 0.06775 0.0005 -0.0865
+                                  }
+                                  device [
+                                    RotationalMotor {
+                                      name "joint5"
+                                      maxVelocity 1000
+                                      minPosition -1.57
+                                      maxPosition 1.57
+                                      maxTorque 100
+                                    }
+                                    PositionSensor {
+                                      name "joint5_sensor"
+                                    }
+                                  ]
+                                  endPoint Solid {
+                                    translation 0.06775 0.0005 -0.0865
+                                    rotation 0 0 1 7.760057786876928e-07
+                                    children [
+                                      Shape {
+                                        appearance DEF link5_material PBRAppearance {
+                                          baseColor 0.69804 0.69804 0.69804
+                                          roughness 1
+                                          metalness 0
+                                        }
+                                        geometry DEF link5 Mesh {
+                                          url [
+                                            "../protos/meshes/link5.STL"
+                                          ]
+                                        }
+                                      }
+                                      HingeJoint {
+                                        jointParameters HingeJointParameters {
+                                          position 4.1777601471876476e-07
+                                          anchor 0.02895 0 0.0865
+                                        }
+                                        device [
+                                          RotationalMotor {
+                                            name "joint6"
+                                            maxVelocity 1000
+                                            minPosition -2.1
+                                            maxPosition 2.1
+                                            maxTorque 100
+                                          }
+                                          PositionSensor {
+                                            name "joint6_sensor"
+                                          }
+                                        ]
+                                        endPoint Solid {
+                                          translation 0.02895 0 0.0865
+                                          rotation -1 0 0 3.1415995822239853
+                                          children [
+                                            Camera {
+                                              translation 0.0413053 0 0.0699144
+                                              rotation 0 1 0 0.1308996938995747
+                                              children [
+                                                Shape {
+                                                  geometry Box {
+                                                    size 0.02 0.07 0.02
+                                                  }
+                                                }
+                                              ]
+                                              name "wrist_camera"
+                                              width 640
+                                              height 360
+                                            }
+                                            Shape {
+                                              appearance DEF link6_material PBRAppearance {
+                                                baseColor 0.89804 0.91765 0.92941
+                                                roughness 1
+                                                metalness 0
+                                              }
+                                              geometry DEF link6 Mesh {
+                                                url [
+                                                  "../protos/meshes/link6.STL"
+                                                ]
+                                              }
+                                            }
+                                            SliderJoint {
+                                              jointParameters JointParameters {
+                                                position -5.032607954993682e-10
+                                                axis 0 1 0
+                                              }
+                                              device [
+                                                LinearMotor {
+                                                  name "joint7"
+                                                  maxVelocity 1000
+                                                  minPosition -5.050564692333658e-10
+                                                  maxPosition 0.044
+                                                  maxForce 100
+                                                }
+                                                PositionSensor {
+                                                  name "joint7_sensor"
+                                                }
+                                              ]
+                                              endPoint Solid {
+                                                translation 0.08657 0.024895999496739207 -0.000244
+                                                children [
+                                                  Shape {
+                                                    appearance DEF link7_material PBRAppearance {
+                                                      roughness 1
+                                                      metalness 0
+                                                    }
+                                                    geometry DEF link7 Mesh {
+                                                      url [
+                                                        "../protos/meshes/link7.STL"
+                                                      ]
+                                                    }
+                                                  }
+                                                ]
+                                                name "link7"
+                                                boundingObject Group {
+                                                  children [
+                                                    Pose {
+                                                      translation 0.05 -0.023 0
+                                                      children [
+                                                        Box {
+                                                          size 0.04 0.004 0.0105
+                                                        }
+                                                      ]
+                                                    }
+                                                    Pose {
+                                                      translation 0.015 -0.023 0
+                                                      children [
+                                                        Box {
+                                                          size 0.03 0.004 0.036
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                                physics Physics {
+                                                  density -1
+                                                  mass 0.064798
+                                                  centerOfMass [
+                                                    -0.000355 -0.007827 -0.002988
+                                                  ]
+                                                  inertiaMatrix [
+                                                    2e-05 3e-05 3e-05
+                                                    0 0 0
+                                                  ]
+                                                }
+                                              }
+                                            }
+                                            SliderJoint {
+                                              jointParameters JointParameters {
+                                                position 5.033463973371988e-10
+                                                axis 0 -1 0
+                                              }
+                                              device [
+                                                LinearMotor {
+                                                  name "joint8"
+                                                  maxVelocity 1000
+                                                  maxPosition 0.044
+                                                  maxForce 100
+                                                }
+                                                PositionSensor {
+                                                  name "joint8_sensor"
+                                                }
+                                              ]
+                                              endPoint Solid {
+                                                translation 0.08657 -0.024900000503346394 -0.000244
+                                                children [
+                                                  Shape {
+                                                    appearance DEF link8_material PBRAppearance {
+                                                      roughness 1
+                                                      metalness 0
+                                                    }
+                                                    geometry DEF link8 Mesh {
+                                                      url [
+                                                        "../protos/meshes/link8.STL"
+                                                      ]
+                                                    }
+                                                  }
+                                                ]
+                                                name "link8"
+                                                boundingObject Group {
+                                                  children [
+                                                    Pose {
+                                                      translation 0.05 0.023 0
+                                                      children [
+                                                        Box {
+                                                          size 0.04 0.004 0.0105
+                                                        }
+                                                      ]
+                                                    }
+                                                    Pose {
+                                                      translation 0.015 0.023 0
+                                                      children [
+                                                        Box {
+                                                          size 0.03 0.004 0.036
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                                physics Physics {
+                                                  density -1
+                                                  mass 0.064798
+                                                  centerOfMass [
+                                                    -0.000355 0.007828 0.00242
+                                                  ]
+                                                  inertiaMatrix [
+                                                    2e-05 3e-05 3e-05
+                                                    0 0 0
+                                                  ]
+                                                }
+                                              }
+                                            }
+                                          ]
+                                          name "link6"
+                                          boundingObject Pose {
+                                            translation 0.03 0 0
+                                            rotation 0 1 0 1.57
+                                            children [
+                                              Cylinder {
+                                                height 0.06
+                                                radius 0.03
+                                              }
+                                            ]
+                                          }
+                                          physics Physics {
+                                            density -1
+                                            mass 0.44089
+                                            centerOfMass [
+                                              0.041697 2.4e-05 0.000145
+                                            ]
+                                            inertiaMatrix [
+                                              0.00038 0.00028 0.0005
+                                              0 0 0
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    ]
+                                    name "link5"
+                                    boundingObject Pose {
+                                      translation 0.005 0 0.086
+                                      rotation 0 1 0 1.57
+                                      children [
+                                        Cylinder {
+                                          height 0.04
+                                          radius 0.03
+                                        }
+                                      ]
+                                    }
+                                    physics Physics {
+                                      density -1
+                                      mass 0.63488
+                                      centerOfMass [
+                                        0.003612 -1.5e-05 0.055214
+                                      ]
+                                      inertiaMatrix [
+                                        0.00083 0.00082 0.00026
+                                        0 7e-05 0
+                                      ]
+                                    }
+                                  }
+                                }
+                              ]
+                              name "link4"
+                              boundingObject Pose {
+                                translation 0.068 0 -0.066
+                                children [
+                                  Cylinder {
+                                    height 0.04
+                                    radius 0.03
+                                  }
+                                ]
+                              }
+                              physics Physics {
+                                density -1
+                                mass 0.11714
+                                centerOfMass [
+                                  0.040231 0.004481 -0.035335
+                                ]
+                                inertiaMatrix [
+                                  0.00019 0.00023 0.00014
+                                  -2e-05 -9e-05 2e-05
+                                ]
+                              }
+                            }
+                          }
+                        ]
+                        name "link3"
+                        boundingObject Group {
+                          children [
+                            Pose {
+                              translation 0.245 0 -0.056
+                              rotation 1 0 0 1.57
+                              children [
+                                Cylinder {
+                                  height 0.05
+                                  radius 0.028
+                                }
+                              ]
+                            }
+                            Pose {
+                              translation 0.135 0 -0.056
+                              children [
+                                Box {
+                                  size 0.19 0.05 0.04
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                        physics Physics {
+                          density -1
+                          mass 0.54534
+                          centerOfMass [
+                            0.18531 0.000684 -0.051638
+                          ]
+                          inertiaMatrix [
+                            0.00036 0.00423 0.0042
+                            -3e-05 -0.00039 1e-05
+                          ]
+                        }
+                      }
+                    }
+                  ]
+                  name "link2"
+                  boundingObject Group {
+                    children [
+                      Pose {
+                        rotation 1 0 0 1.57
+                        children [
+                          Cylinder {
+                            height 0.06
+                            radius 0.03
+                          }
+                        ]
+                      }
+                      Pose {
+                        translation -0.13 0 0
+                        children [
+                          Box {
+                            size 0.22 0.06 0.05
+                          }
+                        ]
+                      }
+                      Pose {
+                        translation -0.26 0 0
+                        rotation 1 0 0 1.57
+                        children [
+                          Cylinder {
+                            height 0.06
+                            radius 0.03
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                  physics Physics {
+                    density -1
+                    mass 1.0795
+                    centerOfMass [
+                      -0.13237 0.002085 0.000105
+                    ]
+                    inertiaMatrix [
+                      0.00051 0.01599 0.01605
+                      1e-05 -4e-05 0
+                    ]
+                  }
+                }
+              }
+            ]
+            name "link1"
+            physics Physics {
+              density -1
+              mass 0.066982
+              centerOfMass [
+                0.005423 -0.008029 0.017086
+              ]
+              inertiaMatrix [
+                8e-05 3e-05 8e-05
+                0 1e-05 0
+              ]
+            }
+          }
+        }
+      ]
+      name "link0"
+      boundingObject Pose {
+        translation 0 0 0.03
+        children [
+          Cylinder {
+            height 0.06
+            radius 0.03
+          }
+        ]
+      }
+      physics Physics {
+        density -1
+        mass 0.43995
+        centerOfMass [
+          -3e-05 3.1e-05 0.027324
+        ]
+        inertiaMatrix [
+          0.00017 0.00017 0.00016
+          0 0 0
+        ]
+      }
+    }
+  ]
+  name "Grq20V2d3X5"
+  boundingObject Group {
+    children [
+      Pose {
+        translation 0 0 -0.01
+        children [
+          Box {
+            size 0.42 0.26 0.18
+          }
+        ]
+      }
+      Pose {
+        translation 0.32 0 0.01
+        children [
+          Box {
+            size 0.22 0.16 0.14
+          }
+        ]
+      }
+      Pose {
+        translation -0.32 0 0.01
+        children [
+          Box {
+            size 0.22 0.16 0.14
+          }
+        ]
+      }
+      Pose {
+        translation 0.27 0 0.1
+        children [
+          Box {
+            size 0.06 0.16 0.05
+          }
+        ]
+      }
+      Pose {
+        translation -0.27 0 0.1
+        children [
+          Box {
+            size 0.06 0.16 0.05
+          }
+        ]
+      }
+    ]
+  }
+  controller "<extern>"
+  supervisor TRUE
+}
+RectangleArena {
+  translation 58.8 16.52 0
+  floorSize 150 50
+  floorAppearance Grass {
+  }
+  wallHeight 0
+  wallAppearance Appearance {
+    material Material {
+      diffuseColor 0.568627 0.254902 0.67451
+    }
+  }
+}
+Road {
+  translation 0 0 0.02
+  width 1
+  numberOfLanes 1
+  rightBorder FALSE
+  leftBorder FALSE
+  wayPoints [
+    0 0 0
+    50 50 0
+    100 0 0
+  ]
+  splineSubdivision 8
+  appearance Pavement {
+    type "black stone"
+  }
+}
+PottedTree {
+  translation 4.86444 3.62886 0
+  rotation 0 0 -1 1.0472
+}
+PottedTree {
+  translation 0.804941 1.89845 0
+  rotation 0 0 1 -0.785395307179586
+  name "potted tree(1)"
+}
+PottedTree {
+  translation 2.71063 3.52051 0
+  rotation 0 0 1 1.62771e-06
+  name "potted tree(2)"
+}
+PottedTree {
+  translation 12.8572 11.7169 0
+  rotation 0 0 -1 0.523597
+  name "potted tree(3)"
+}
+PottedTree {
+  translation 21.3551 19.0931 0
+  rotation 0 0 -1 0.785396
+  name "potted tree(4)"
+}
+PottedTree {
+  translation 4.865 5.59774 0
+  rotation 0 0 1 -0.523595307179586
+  name "potted tree(5)"
+}
+Pine {
+  translation 78.9039 21.0803 0
+  rotation 0 0 1 -1.3089953071795861
+}
+Pine {
+  translation 1.52 0.112874 0
+  rotation 0 0 1 -0.523595307179586
+  name "pine tree(1)"
+}
+Pine {
+  translation 82.6926 15.4681 0
+  rotation 0 0 1 -1.047195307179586
+  name "pine tree(2)"
+}
+Pine {
+  translation 24.5963 24.181 0
+  rotation 0 0 1 -1.047195307179586
+  name "pine tree(3)"
+}
+Pine {
+  translation 5.99 7.85494 -3.67029e-14
+  rotation 9.58979e-09 3.57898e-08 1 -0.523595307179586
+  name "pine tree(4)"
+}
+Pine {
+  translation 47.8371 31.4272 0
+  rotation 0 0 1 -1.047195307179586
+  name "pine tree(5)"
+}
+Pine {
+  translation 33.4751 30.0973 0
+  rotation 0 0 1 -1.3089953071795861
+  name "pine tree(6)"
+}
+Pine {
+  translation 89.1073 11.9342 0
+  rotation 0 0 1 -0.523595307179586
+  name "pine tree(7)"
+}
+Pine {
+  translation 62.27 32.0753 0
+  rotation 0 0 1 -2.094395307179586
+  name "pine tree(8)"
+}
+Pine {
+  translation 14.3996 16.9845 0
+  rotation 0 0 1 -0.785395307179586
+  name "pine tree(9)"
+}
+Pine {
+  translation 11.3477 9.73978 0
+  rotation 0 0 1 0.785398
+  name "pine tree(10)"
+}
+Forest {
+  translation 8.23808 7.93163 0.01
+  rotation 2.31518e-08 9.58979e-09 -1 -0.785395307179586
+  shape [
+    -15 5
+    -15 -5
+    15 -5
+    15 5
+  ]
+  density 0.06
+  maxHeight 4
+}
+Forest {
+  translation 30.3739 25.0962 0.01
+  rotation 3.20881e-08 1.85261e-08 -1 -0.523595307179586
+  shape [
+    -15 5
+    -15 -5
+    15 -5
+    15 5
+  ]
+  density 0.06
+  maxHeight 4
+}
+Forest {
+  translation 56.1277 31.7902 0.01
+  rotation -4.47253e-08 1.74861e-07 1 -0.2618053071795865
+  shape [
+    -15 5
+    -15 -5
+    15 -5
+    15 5
+  ]
+  density 0.05
+  maxHeight 4
+}
+Forest {
+  translation 76.629 20.4516 0.01
+  rotation -3.01721e-08 5.36621e-08 1 -0.7854053071795866
+  shape [
+    -15 5
+    -15 -5
+    15 -5
+    15 5
+  ]
+  density 0.05
+  maxHeight 4
+}
+Forest {
+  translation 92.5712 9.06648 0.01
+  rotation -3.01721e-08 5.36621e-08 1 -0.7854053071795866
+  shape [
+    -15 5
+    -15 -5
+    15 -5
+    15 5
+  ]
+  density 0.06
+  randomSeed 1
+  maxHeight 4
+}
